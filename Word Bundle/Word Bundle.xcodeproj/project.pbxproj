@@ -16,6 +16,11 @@
 		FBCECEAF2814847A00CD558C /* Word_BundleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECEAE2814847A00CD558C /* Word_BundleTests.swift */; };
 		FBCECEB92814847A00CD558C /* Word_BundleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECEB82814847A00CD558C /* Word_BundleUITests.swift */; };
 		FBCECEBB2814847A00CD558C /* Word_BundleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECEBA2814847A00CD558C /* Word_BundleUITestsLaunchTests.swift */; };
+		FBCECECA2814863C00CD558C /* OptionalString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECEC92814863C00CD558C /* OptionalString+Extension.swift */; };
+		FBCECECC281486E900CD558C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECECB281486E900CD558C /* String+Extension.swift */; };
+		FBCECECE2814876D00CD558C /* Device+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECECD2814876D00CD558C /* Device+Extension.swift */; };
+		FBCECED02814883F00CD558C /* Numeric+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECECF2814883F00CD558C /* Numeric+Extension.swift */; };
+		FBCECED2281488AE00CD558C /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECED1281488AE00CD558C /* Int+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,12 @@
 		FBCECEB42814847A00CD558C /* Word BundleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Word BundleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCECEB82814847A00CD558C /* Word_BundleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_BundleUITests.swift; sourceTree = "<group>"; };
 		FBCECEBA2814847A00CD558C /* Word_BundleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_BundleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FBCECEC92814863C00CD558C /* OptionalString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionalString+Extension.swift"; sourceTree = "<group>"; };
+		FBCECECB281486E900CD558C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		FBCECECD2814876D00CD558C /* Device+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+Extension.swift"; sourceTree = "<group>"; };
+		FBCECECF2814883F00CD558C /* Numeric+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+Extension.swift"; sourceTree = "<group>"; };
+		FBCECED1281488AE00CD558C /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		FBCECED828148CFD00CD558C /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,12 +109,14 @@
 		FBCECE972814847600CD558C /* Word Bundle */ = {
 			isa = PBXGroup;
 			children = (
-				FBCECE982814847600CD558C /* Word_BundleApp.swift */,
 				FBCECE9A2814847600CD558C /* ContentView.swift */,
-				FBCECE9C2814847900CD558C /* Assets.xcassets */,
 				FBCECEA12814847900CD558C /* Persistence.swift */,
-				FBCECEA32814847900CD558C /* Word_Bundle.xcdatamodeld */,
+				FBCECE982814847600CD558C /* Word_BundleApp.swift */,
+				FBCECE9C2814847900CD558C /* Assets.xcassets */,
 				FBCECE9E2814847900CD558C /* Preview Content */,
+				FBCECEC72814862600CD558C /* Shared */,
+				FBCECEA32814847900CD558C /* Word_Bundle.xcdatamodeld */,
+				FBCECED828148CFD00CD558C /* MyPlayground.playground */,
 			);
 			path = "Word Bundle";
 			sourceTree = "<group>";
@@ -133,6 +146,26 @@
 			path = "Word BundleUITests";
 			sourceTree = "<group>";
 		};
+		FBCECEC72814862600CD558C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FBCECEC82814862D00CD558C /* Extensions */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		FBCECEC82814862D00CD558C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FBCECEC92814863C00CD558C /* OptionalString+Extension.swift */,
+				FBCECECB281486E900CD558C /* String+Extension.swift */,
+				FBCECECD2814876D00CD558C /* Device+Extension.swift */,
+				FBCECECF2814883F00CD558C /* Numeric+Extension.swift */,
+				FBCECED1281488AE00CD558C /* Int+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,12 +176,15 @@
 				FBCECE912814847600CD558C /* Sources */,
 				FBCECE922814847600CD558C /* Frameworks */,
 				FBCECE932814847600CD558C /* Resources */,
+				FBCECED928148F5800CD558C /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Word Bundle";
+			packageProductDependencies = (
+			);
 			productName = "Word Bundle";
 			productReference = FBCECE952814847600CD558C /* Word Bundle.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +257,8 @@
 				Base,
 			);
 			mainGroup = FBCECE8C2814847600CD558C;
+			packageReferences = (
+			);
 			productRefGroup = FBCECE962814847600CD558C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,14 +296,40 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FBCECED928148F5800CD558C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FBCECE912814847600CD558C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FBCECEA22814847900CD558C /* Persistence.swift in Sources */,
+				FBCECECE2814876D00CD558C /* Device+Extension.swift in Sources */,
 				FBCECEA52814847900CD558C /* Word_Bundle.xcdatamodeld in Sources */,
+				FBCECED2281488AE00CD558C /* Int+Extension.swift in Sources */,
 				FBCECE9B2814847600CD558C /* ContentView.swift in Sources */,
+				FBCECECA2814863C00CD558C /* OptionalString+Extension.swift in Sources */,
+				FBCECED02814883F00CD558C /* Numeric+Extension.swift in Sources */,
+				FBCECECC281486E900CD558C /* String+Extension.swift in Sources */,
 				FBCECE992814847600CD558C /* Word_BundleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +495,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -460,6 +525,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
