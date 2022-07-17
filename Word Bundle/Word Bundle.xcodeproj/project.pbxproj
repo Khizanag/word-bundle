@@ -103,16 +103,10 @@
 			path = "Design System";
 			sourceTree = "<group>";
 		};
-		FB0829A02884BA3C00FFFB4B /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		FBCECE8C2814847600CD558C = {
 			isa = PBXGroup;
 			children = (
+				FBF464682884C7C500B4A96B /* Network */,
 				FBCECE972814847600CD558C /* Word Bundle */,
 				FBCECEAD2814847A00CD558C /* Word BundleTests */,
 				FBCECEB72814847A00CD558C /* Word BundleUITests */,
@@ -134,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				FB0829A12884BA9D00FFFB4B /* Word Bundle.entitlements */,
-				FB0829A02884BA3C00FFFB4B /* Network */,
 				FB08299F2884BA2B00FFFB4B /* Design System */,
 				FBCECE9A2814847600CD558C /* ContentView.swift */,
 				FBCECEA12814847900CD558C /* Persistence.swift */,
@@ -193,6 +186,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FBF464682884C7C500B4A96B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -204,7 +204,6 @@
 				FBCECE922814847600CD558C /* Frameworks */,
 				FBCECE932814847600CD558C /* Resources */,
 				FBCECED928148F5800CD558C /* SwiftLint */,
-				FBCECEE22814967300CD558C /* R.swift */,
 			);
 			buildRules = (
 			);
@@ -342,24 +341,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		FBCECEE22814967300CD558C /* R.swift */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = R.swift;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd BuildTools\nSDKROOT=(xcrun --sdk macosx --show-sdk-path)\n\n#Temporarily uncomment the following line to update your packages (based on the versions defined in BuildTools/Package.swift)\n#swift package update\n\n#Run your build tool - using swiftformat as an example\nswift run -c release rswift generate \"$SRCROOT/generated/R.generated.swift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
