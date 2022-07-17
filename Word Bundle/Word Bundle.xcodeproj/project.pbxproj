@@ -106,7 +106,6 @@
 		FBCECE8C2814847600CD558C = {
 			isa = PBXGroup;
 			children = (
-				FBF464682884C7C500B4A96B /* Network */,
 				FBCECE972814847600CD558C /* Word Bundle */,
 				FBCECEAD2814847A00CD558C /* Word BundleTests */,
 				FBCECEB72814847A00CD558C /* Word BundleUITests */,
@@ -127,6 +126,7 @@
 		FBCECE972814847600CD558C /* Word Bundle */ = {
 			isa = PBXGroup;
 			children = (
+				FBF464682884C7C500B4A96B /* Network */,
 				FB0829A12884BA9D00FFFB4B /* Word Bundle.entitlements */,
 				FB08299F2884BA2B00FFFB4B /* Design System */,
 				FBCECE9A2814847600CD558C /* ContentView.swift */,
