@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0829A32884BB9000FFFB4B /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0829A22884BB9000FFFB4B /* DesignSystem.swift */; };
+		FB0829A52884BBC200FFFB4B /* DesignSystem+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0829A42884BBC200FFFB4B /* DesignSystem+Size.swift */; };
+		FB0829A72884BC2B00FFFB4B /* DesignSystem+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0829A62884BC2B00FFFB4B /* DesignSystem+Color.swift */; };
 		FBCECE992814847600CD558C /* Word_BundleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECE982814847600CD558C /* Word_BundleApp.swift */; };
 		FBCECE9B2814847600CD558C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECE9A2814847600CD558C /* ContentView.swift */; };
 		FBCECE9D2814847900CD558C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCECE9C2814847900CD558C /* Assets.xcassets */; };
@@ -41,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB0829A12884BA9D00FFFB4B /* Word Bundle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Word Bundle.entitlements"; sourceTree = "<group>"; };
+		FB0829A22884BB9000FFFB4B /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		FB0829A42884BBC200FFFB4B /* DesignSystem+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Size.swift"; sourceTree = "<group>"; };
+		FB0829A62884BC2B00FFFB4B /* DesignSystem+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Color.swift"; sourceTree = "<group>"; };
 		FBCECE952814847600CD558C /* Word Bundle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Bundle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCECE982814847600CD558C /* Word_BundleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_BundleApp.swift; sourceTree = "<group>"; };
 		FBCECE9A2814847600CD558C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +93,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB08299F2884BA2B00FFFB4B /* Design System */ = {
+			isa = PBXGroup;
+			children = (
+				FB0829A22884BB9000FFFB4B /* DesignSystem.swift */,
+				FB0829A42884BBC200FFFB4B /* DesignSystem+Size.swift */,
+				FB0829A62884BC2B00FFFB4B /* DesignSystem+Color.swift */,
+			);
+			path = "Design System";
+			sourceTree = "<group>";
+		};
+		FB0829A02884BA3C00FFFB4B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		FBCECE8C2814847600CD558C = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +133,9 @@
 		FBCECE972814847600CD558C /* Word Bundle */ = {
 			isa = PBXGroup;
 			children = (
+				FB0829A12884BA9D00FFFB4B /* Word Bundle.entitlements */,
+				FB0829A02884BA3C00FFFB4B /* Network */,
+				FB08299F2884BA2B00FFFB4B /* Design System */,
 				FBCECE9A2814847600CD558C /* ContentView.swift */,
 				FBCECEA12814847900CD558C /* Persistence.swift */,
 				FBCECE982814847600CD558C /* Word_BundleApp.swift */,
@@ -177,6 +204,7 @@
 				FBCECE922814847600CD558C /* Frameworks */,
 				FBCECE932814847600CD558C /* Resources */,
 				FBCECED928148F5800CD558C /* SwiftLint */,
+				FBCECEE22814967300CD558C /* R.swift */,
 			);
 			buildRules = (
 			);
@@ -315,6 +343,24 @@
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		FBCECEE22814967300CD558C /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd BuildTools\nSDKROOT=(xcrun --sdk macosx --show-sdk-path)\n\n#Temporarily uncomment the following line to update your packages (based on the versions defined in BuildTools/Package.swift)\n#swift package update\n\n#Run your build tool - using swiftformat as an example\nswift run -c release rswift generate \"$SRCROOT/generated/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -328,6 +374,9 @@
 				FBCECED2281488AE00CD558C /* Int+Extension.swift in Sources */,
 				FBCECE9B2814847600CD558C /* ContentView.swift in Sources */,
 				FBCECECA2814863C00CD558C /* OptionalString+Extension.swift in Sources */,
+				FB0829A52884BBC200FFFB4B /* DesignSystem+Size.swift in Sources */,
+				FB0829A32884BB9000FFFB4B /* DesignSystem.swift in Sources */,
+				FB0829A72884BC2B00FFFB4B /* DesignSystem+Color.swift in Sources */,
 				FBCECED02814883F00CD558C /* Numeric+Extension.swift in Sources */,
 				FBCECECC281486E900CD558C /* String+Extension.swift in Sources */,
 				FBCECE992814847600CD558C /* Word_BundleApp.swift in Sources */,
@@ -486,6 +535,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Word Bundle/Word Bundle.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Word Bundle/Preview Content\"";
@@ -505,6 +556,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "khizanag.Word-Bundle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -516,6 +568,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Word Bundle/Word Bundle.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Word Bundle/Preview Content\"";
@@ -535,6 +589,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "khizanag.Word-Bundle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
