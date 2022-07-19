@@ -20,6 +20,14 @@ extension String {
         !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
     }
 
+    func deletingPrefix(_ prefix: String) -> String {
+        guard hasPrefix(prefix) else {
+            return self
+        }
+
+        return String(dropFirst(prefix.count))
+    }
+
     // MARK: - Subscript(s)
     subscript (i: Int) -> Character {
         self[index(startIndex, offsetBy: i)]
