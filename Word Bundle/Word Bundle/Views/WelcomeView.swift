@@ -45,20 +45,7 @@ struct WelcomeView: View {
     }
 
     var getStartedButton: some View {
-        NavigationLink(destination: ContentView()) {
-            HStack {
-                Text("Get Started")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                    .padding()
-            }
-            .frame(maxWidth: .infinity)
-            .background(DesignSystem.Color.color3().value)
-            .cornerRadius(8)
-            .padding()
-        }
+        NavigationButton(title: Localisation.getStarted(), destination: RemindersSettingView())
     }
 }
 

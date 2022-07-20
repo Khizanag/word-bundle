@@ -13,8 +13,11 @@
 		FB66A4292887EB7100F9F850 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A4282887EB7100F9F850 /* WelcomeView.swift */; };
 		FB66A42C2887FAD000F9F850 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB66A42E2887FAD000F9F850 /* Localizable.strings */; };
 		FB66A430288804E400F9F850 /* Localisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A42F288804E400F9F850 /* Localisation.swift */; };
+		FB66A43528880EF600F9F850 /* RemindersSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A43428880EF600F9F850 /* RemindersSettingView.swift */; };
+		FB66A43728880F5C00F9F850 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A43628880F5C00F9F850 /* NavigationButton.swift */; };
+		FB66A43A288816B700F9F850 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A439288816B700F9F850 /* MainView.swift */; };
+		FB66A43C288833A200F9F850 /* ReminderSettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A43B288833A200F9F850 /* ReminderSettingItem.swift */; };
 		FBCECE992814847600CD558C /* Word_BundleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECE982814847600CD558C /* Word_BundleApp.swift */; };
-		FBCECE9B2814847600CD558C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECE9A2814847600CD558C /* ContentView.swift */; };
 		FBCECE9D2814847900CD558C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCECE9C2814847900CD558C /* Assets.xcassets */; };
 		FBCECEA02814847900CD558C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCECE9F2814847900CD558C /* Preview Assets.xcassets */; };
 		FBCECEA22814847900CD558C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECEA12814847900CD558C /* Persistence.swift */; };
@@ -55,9 +58,12 @@
 		FB66A4282887EB7100F9F850 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		FB66A42D2887FAD000F9F850 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FB66A42F288804E400F9F850 /* Localisation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localisation.swift; sourceTree = "<group>"; };
+		FB66A43428880EF600F9F850 /* RemindersSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersSettingView.swift; sourceTree = "<group>"; };
+		FB66A43628880F5C00F9F850 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
+		FB66A439288816B700F9F850 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		FB66A43B288833A200F9F850 /* ReminderSettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderSettingItem.swift; sourceTree = "<group>"; };
 		FBCECE952814847600CD558C /* Word Bundle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Bundle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCECE982814847600CD558C /* Word_BundleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_BundleApp.swift; sourceTree = "<group>"; };
-		FBCECE9A2814847600CD558C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FBCECE9C2814847900CD558C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBCECE9F2814847900CD558C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FBCECEA12814847900CD558C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -104,7 +110,6 @@
 		FB08299F2884BA2B00FFFB4B /* Design System */ = {
 			isa = PBXGroup;
 			children = (
-				FBF464702884CF2A00B4A96B /* Protocols */,
 				FB0829A22884BB9000FFFB4B /* DesignSystem.swift */,
 				FB0829A42884BBC200FFFB4B /* DesignSystem+Size.swift */,
 				FB0829A62884BC2B00FFFB4B /* DesignSystem+Color.swift */,
@@ -130,6 +135,26 @@
 			path = "Localisation Files";
 			sourceTree = "<group>";
 		};
+		FB66A43328880EBE00F9F850 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FB66A4382888157E00F9F850 /* Components */,
+				FB66A439288816B700F9F850 /* MainView.swift */,
+				FB66A4282887EB7100F9F850 /* WelcomeView.swift */,
+				FB66A43428880EF600F9F850 /* RemindersSettingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FB66A4382888157E00F9F850 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FB66A43628880F5C00F9F850 /* NavigationButton.swift */,
+				FB66A43B288833A200F9F850 /* ReminderSettingItem.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		FBCECE8C2814847600CD558C = {
 			isa = PBXGroup;
 			children = (
@@ -153,11 +178,11 @@
 		FBCECE972814847600CD558C /* Word Bundle */ = {
 			isa = PBXGroup;
 			children = (
+				FB66A43328880EBE00F9F850 /* Views */,
 				FB66A4252887209300F9F850 /* Localization */,
 				FBF464682884C7C500B4A96B /* Network */,
 				FB0829A12884BA9D00FFFB4B /* Word Bundle.entitlements */,
 				FB08299F2884BA2B00FFFB4B /* Design System */,
-				FBCECE9A2814847600CD558C /* ContentView.swift */,
 				FBCECEA12814847900CD558C /* Persistence.swift */,
 				FBCECE982814847600CD558C /* Word_BundleApp.swift */,
 				FBCECE9C2814847900CD558C /* Assets.xcassets */,
@@ -165,7 +190,6 @@
 				FBCECEC72814862600CD558C /* Shared */,
 				FBCECEA32814847900CD558C /* Word_Bundle.xcdatamodeld */,
 				FBCECED828148CFD00CD558C /* MyPlayground.playground */,
-				FB66A4282887EB7100F9F850 /* WelcomeView.swift */,
 			);
 			path = "Word Bundle";
 			sourceTree = "<group>";
@@ -220,13 +244,6 @@
 			children = (
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		FBF464702884CF2A00B4A96B /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,13 +406,16 @@
 				FBCECEA22814847900CD558C /* Persistence.swift in Sources */,
 				FBCECECE2814876D00CD558C /* Device+Extension.swift in Sources */,
 				FB66A4292887EB7100F9F850 /* WelcomeView.swift in Sources */,
+				FB66A43C288833A200F9F850 /* ReminderSettingItem.swift in Sources */,
 				FBCECEA52814847900CD558C /* Word_Bundle.xcdatamodeld in Sources */,
 				FBCECED2281488AE00CD558C /* Int+Extension.swift in Sources */,
-				FBCECE9B2814847600CD558C /* ContentView.swift in Sources */,
 				FBCECECA2814863C00CD558C /* OptionalString+Extension.swift in Sources */,
+				FB66A43728880F5C00F9F850 /* NavigationButton.swift in Sources */,
+				FB66A43528880EF600F9F850 /* RemindersSettingView.swift in Sources */,
 				FB0829A52884BBC200FFFB4B /* DesignSystem+Size.swift in Sources */,
 				FB0829A32884BB9000FFFB4B /* DesignSystem.swift in Sources */,
 				FB0829A72884BC2B00FFFB4B /* DesignSystem+Color.swift in Sources */,
+				FB66A43A288816B700F9F850 /* MainView.swift in Sources */,
 				FBF4646F2884CED000B4A96B /* DesignSystem+Images.swift in Sources */,
 				FB66A430288804E400F9F850 /* Localisation.swift in Sources */,
 				FBCECED02814883F00CD558C /* Numeric+Extension.swift in Sources */,

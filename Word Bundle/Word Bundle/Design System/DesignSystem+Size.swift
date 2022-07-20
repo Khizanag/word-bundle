@@ -19,5 +19,9 @@ public extension DesignSystem {
         case xSmall   = 4
         case xxSmall  = 2
         case xxxSmall = 1
+
+        public func callAsFunction() -> Double {
+            rawValue
+        }
     }
 }

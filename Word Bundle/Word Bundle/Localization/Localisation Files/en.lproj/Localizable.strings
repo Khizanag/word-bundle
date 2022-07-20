@@ -10,5 +10,15 @@
 "welcomePageTitle" = "Expand your VOCABULARY";
 "welcomePageDescription" = "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected.";
 
+/* Reminders Setting Page */
+"remindersSettingPageTitle" = "Learn words with daily reminders";
+
 /* Shared */
+"endAt" = "End at";
 "getStarted" = "Get Started";
+"howMany" = "How many";
+"startAt" = "Start at";
+
+/* Words */
+"wordSalubrious" = "Salubrious";
+"wordSalubriousDefinition" = "Something that is benefitial to your mind. ";
