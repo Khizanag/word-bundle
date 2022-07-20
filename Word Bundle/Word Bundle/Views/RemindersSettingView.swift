@@ -11,6 +11,7 @@ struct RemindersSettingView: View {
     // MARK: - Body
     var body: some View {
         VStack {
+            Spacer()
             exampleWordComponentView
             Spacer()
             titleLabel

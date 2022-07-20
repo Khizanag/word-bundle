@@ -22,7 +22,7 @@ struct WelcomeView: View {
             .navigationTitle(Localisation.wordBundle())
         }
     }
-    
+
     var titleLabel: some View {
         Text(Localisation.welcomePageTitle())
             .font(.title)
