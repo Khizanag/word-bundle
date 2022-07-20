@@ -5,9 +5,14 @@
 //  Created by Giga Khizanishvili on 18.07.22.
 //
 
-import Foundation
+import SwiftUI
 
 public extension DesignSystem {
-    enum Image {
+    enum Image: String {
+        case booksAndMobile
+
+        func callAsFunction() -> SwiftUI.Image {
+            SwiftUI.Image(rawValue)
+        }
     }
 }

@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Word Bundle
+
+  Created by Giga Khizanishvili on 20.07.22.
+  
+*/
+
+/* Welcome Page */
+"welcomePageTitle" = "Expand your VOCABULARY";
+"welcomePageDescription" = "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected.";
+
+/* Shared */
+"getStarted" = "Get Started";
