@@ -9,19 +9,21 @@ import SwiftUI
 
 struct NavigationButton<DestinationType: View>: View {
     // MARK: - Properties
-    let title: String
+    let buttonTitle: String
+    let navigationTitle: String
     let destination: DestinationType
 
     var body: some View {
         NavigationLink(destination: destination) {
             HStack {
-                Text(title)
+                Text(buttonTitle)
                     .font(.headline)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                     .padding()
             }
+            .navigationTitle(navigationTitle)
             .frame(maxWidth: .infinity)
             .background(DesignSystem.Color.color3().value)
             .cornerRadius(8)
@@ -32,6 +34,6 @@ struct NavigationButton<DestinationType: View>: View {
 
 struct NavigationButton_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationButton(title: Localisation.getStarted(), destination: MainView())
+        NavigationButton(buttonTitle: Localisation.getStarted(), navigationTitle: Localisation.wordBundle(), destination: MainView())
     }
 }

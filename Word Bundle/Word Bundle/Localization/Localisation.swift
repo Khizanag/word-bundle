@@ -13,6 +13,7 @@ public enum Localisation: String {
     case welcomePageDescription
 
     // MARK: - Reminders Setting Page
+    case reminders
     case remindersSettingPageTitle
 
     // MARK: - Words
@@ -20,6 +21,7 @@ public enum Localisation: String {
     case wordSalubriousDefinition
 
     // MARK: - Shared
+    case wordBundle
     case endAt
     case getStarted
     case howMany

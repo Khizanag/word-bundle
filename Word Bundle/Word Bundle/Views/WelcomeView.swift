@@ -45,7 +45,7 @@ struct WelcomeView: View {
     }
 
     var getStartedButton: some View {
-        NavigationButton(title: Localisation.getStarted(), destination: RemindersSettingView())
+        NavigationButton(buttonTitle: Localisation.getStarted(), navigationTitle: Localisation.wordBundle().capitalized, destination: RemindersSettingView())
     }
 }
 
