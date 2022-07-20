@@ -11,15 +11,16 @@
 "welcomePageDescription" = "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected.";
 
 /* Reminders Setting Page */
-"reminders" = "reminders";
+"reminders" = "Reminders";
 "remindersSettingPageTitle" = "Learn words with daily reminders";
 
 /* Shared */
-"wordBundle" = "word bundle";
 "endAt" = "End at";
 "getStarted" = "Get Started";
+"home" = "Home";
 "howMany" = "How many";
 "startAt" = "Start at";
+"wordBundle" = "Word bundle";
 
 /* Words */
 "wordSalubrious" = "Salubrious";

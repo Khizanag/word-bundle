@@ -21,11 +21,12 @@ public enum Localisation: String {
     case wordSalubriousDefinition
 
     // MARK: - Shared
-    case wordBundle
     case endAt
     case getStarted
+    case home
     case howMany
     case startAt
+    case wordBundle
 
     private var localized: String {
         NSLocalizedString(rawValue, tableName: nil, bundle: Bundle.main, value: "", comment: "")

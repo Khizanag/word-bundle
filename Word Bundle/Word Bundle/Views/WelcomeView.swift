@@ -11,21 +11,18 @@ struct WelcomeView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
-                image
+                DesignSystem.Image.booksAndMobile()
+                    .padding(.bottom)
                 titleLabel
                 descriptionLabel
                 Spacer()
-                getStartedButton
+                NavigationButton(buttonTitle: Localisation.getStarted(), destination: RemindersSettingView())
                 Spacer()
             }
+            .navigationTitle(Localisation.wordBundle())
         }
     }
-
-    var image: some View {
-        DesignSystem.Image.booksAndMobile()
-            .padding(.bottom)
-    }
-
+    
     var titleLabel: some View {
         Text(Localisation.welcomePageTitle())
             .font(.title)
@@ -42,10 +39,6 @@ struct WelcomeView: View {
             .foregroundColor(DesignSystem.Color.secondaryTextDark().value)
             .multilineTextAlignment(.center)
             .padding()
-    }
-
-    var getStartedButton: some View {
-        NavigationButton(buttonTitle: Localisation.getStarted(), navigationTitle: Localisation.wordBundle().capitalized, destination: RemindersSettingView())
     }
 }
 

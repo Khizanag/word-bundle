@@ -10,7 +10,8 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         ZStack {
-            DesignSystem.Color.color3()()
+            DesignSystem.Color.color2()()
+                .ignoresSafeArea()
 
             TabView {
                 HelloWorldView(text: "Giga")
@@ -23,10 +24,10 @@ struct MainView: View {
                         Image(systemName: "books.vertical.fill")
                         Text("Library")
                     }
-                HelloWorldView(text: "Homeeee")
+                HomeView()
                     .tabItem {
                         Image(systemName: "scroll.fill")
-                        Text("Home")
+                        Text(Localisation.home())
                     }
                 HelloWorldView(text: "Message")
                     .tabItem {

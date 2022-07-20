@@ -10,13 +10,16 @@ import SwiftUI
 struct RemindersSettingView: View {
     // MARK: - Body
     var body: some View {
-        exampleWordComponentView
-        Spacer()
-        titleLabel
-        properties
-        Spacer()
-        NavigationButton(buttonTitle: Localisation.getStarted(), navigationTitle: Localisation.reminders().capitalized, destination: MainView())
-        Spacer()
+        VStack {
+            exampleWordComponentView
+            Spacer()
+            titleLabel
+            properties
+            Spacer()
+            NavigationButton(buttonTitle: Localisation.getStarted(), destination: MainView())
+            Spacer()
+        }
+        .navigationTitle(Localisation.reminders())
     }
 
     var exampleWordComponentView: some View {
