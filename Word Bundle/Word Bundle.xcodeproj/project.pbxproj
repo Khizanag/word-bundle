@@ -17,6 +17,8 @@
 		FB66A43728880F5C00F9F850 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A43628880F5C00F9F850 /* NavigationButton.swift */; };
 		FB66A43A288816B700F9F850 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A439288816B700F9F850 /* MainView.swift */; };
 		FB66A43C288833A200F9F850 /* ReminderSettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A43B288833A200F9F850 /* ReminderSettingItem.swift */; };
+		FB66A44628885FCD00F9F850 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A44528885FCD00F9F850 /* UserDefaults+Extension.swift */; };
+		FB66A44828885FDE00F9F850 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A44728885FDE00F9F850 /* UserDefaultKeys.swift */; };
 		FBCECE992814847600CD558C /* Word_BundleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECE982814847600CD558C /* Word_BundleApp.swift */; };
 		FBCECE9D2814847900CD558C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCECE9C2814847900CD558C /* Assets.xcassets */; };
 		FBCECEA02814847900CD558C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCECE9F2814847900CD558C /* Preview Assets.xcassets */; };
@@ -62,6 +64,8 @@
 		FB66A43628880F5C00F9F850 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		FB66A439288816B700F9F850 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FB66A43B288833A200F9F850 /* ReminderSettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderSettingItem.swift; sourceTree = "<group>"; };
+		FB66A44528885FCD00F9F850 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		FB66A44728885FDE00F9F850 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
 		FBCECE952814847600CD558C /* Word Bundle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Bundle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCECE982814847600CD558C /* Word_BundleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_BundleApp.swift; sourceTree = "<group>"; };
 		FBCECE9C2814847900CD558C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,6 +159,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		FB66A44428885FBF00F9F850 /* User Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				FB66A44528885FCD00F9F850 /* UserDefaults+Extension.swift */,
+				FB66A44728885FDE00F9F850 /* UserDefaultKeys.swift */,
+			);
+			path = "User Defaults";
+			sourceTree = "<group>";
+		};
 		FBCECE8C2814847600CD558C = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +191,7 @@
 		FBCECE972814847600CD558C /* Word Bundle */ = {
 			isa = PBXGroup;
 			children = (
+				FB66A44428885FBF00F9F850 /* User Defaults */,
 				FB66A43328880EBE00F9F850 /* Views */,
 				FB66A4252887209300F9F850 /* Localization */,
 				FBF464682884C7C500B4A96B /* Network */,
@@ -403,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB66A44828885FDE00F9F850 /* UserDefaultKeys.swift in Sources */,
 				FBCECEA22814847900CD558C /* Persistence.swift in Sources */,
 				FBCECECE2814876D00CD558C /* Device+Extension.swift in Sources */,
 				FB66A4292887EB7100F9F850 /* WelcomeView.swift in Sources */,
@@ -414,6 +429,7 @@
 				FB66A43528880EF600F9F850 /* RemindersSettingView.swift in Sources */,
 				FB0829A52884BBC200FFFB4B /* DesignSystem+Size.swift in Sources */,
 				FB0829A32884BB9000FFFB4B /* DesignSystem.swift in Sources */,
+				FB66A44628885FCD00F9F850 /* UserDefaults+Extension.swift in Sources */,
 				FB0829A72884BC2B00FFFB4B /* DesignSystem+Color.swift in Sources */,
 				FB66A43A288816B700F9F850 /* MainView.swift in Sources */,
 				FBF4646F2884CED000B4A96B /* DesignSystem+Images.swift in Sources */,
