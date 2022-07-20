@@ -9,6 +9,7 @@ import SwiftUI
 
 public extension DesignSystem {
     enum Image: String {
+        case bell
         case booksAndMobile
 
         func callAsFunction() -> SwiftUI.Image {
