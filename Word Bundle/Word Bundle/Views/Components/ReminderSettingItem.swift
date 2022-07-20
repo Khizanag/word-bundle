@@ -16,7 +16,7 @@ struct ReminderSettingItem: View {
     @State var count: Int
 
     // MARK: - Example
-    static var example = ReminderSettingItem(title: "Title", count: 10, countDisplayer: { "\($0)" }, countUpdater: { max(1, $0 + $1 ) })
+    static var example = ReminderSettingItem(title: Localisation.howMany(), count: 10, countDisplayer: { $0.toString() }, countUpdater: { $0 + $1 })
 
     // MARK: - Init
     init(title: String, count: Int, countDisplayer: @escaping (Int) -> String, countUpdater: @escaping (Int, Int) -> Int) {
