@@ -32,7 +32,7 @@ struct WelcomeView: View {
             .fontWeight(.bold)
             .foregroundColor(DesignSystem.Color.primaryTextDark().value)
             .multilineTextAlignment(.center)
-            .padding(.all)
+            .padding()
             .padding(.horizontal)
     }
 
@@ -41,7 +41,7 @@ struct WelcomeView: View {
             .foregroundColor(DesignSystem.Color.secondaryTextDark().value)
             .foregroundColor(DesignSystem.Color.secondaryTextDark().value)
             .multilineTextAlignment(.center)
-            .padding(.all)
+            .padding()
     }
 
     var getStartedButton: some View {
