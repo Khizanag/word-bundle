@@ -19,7 +19,7 @@ struct MainView: View {
                         Image(systemName: "phone.fill")
                         Text("calls")
                     }
-                HelloWorldView(text: "Library")
+                LibraryView()
                     .tabItem {
                         Image(systemName: "books.vertical.fill")
                         Text("Library")
@@ -41,6 +41,7 @@ struct MainView: View {
                     }
             }
         }
+        .navigationBarHidden(true)
     }
 }
 

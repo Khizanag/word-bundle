@@ -64,7 +64,7 @@ struct RemindersSettingView: View {
     var properties: some View {
         // FIXME: Logic of time date changing on plus and minus
         let timeCountDisplayer: (Int) -> String = { "\($0/2):\($0.isMultiple(of: 2) ? "00" : "30")" }
-        let timeCountUpdater: (Int, Int) -> Int = { ($0 + $1) % 48 } // 48 number of half hours in day
+        let timeCountUpdater: (Int, Int) -> Int = { ($0 + $1 + 48) % 48 } // 48 number of half hours in day
 
         return VStack(spacing: DesignSystem.Size.medium()) {
             ReminderSettingItem(title: Localisation.howMany(), count: 10, countDisplayer: { "\($0)x" }, countUpdater: { max(1, $0 + $1) })
