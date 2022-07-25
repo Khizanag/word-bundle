@@ -30,13 +30,12 @@ struct ReminderSettingItem: View {
         HStack {
             Text(Localisation.howMany())
             Spacer()
-            // FIXME: button + and - icons
-            Button("-") {
+            Button("-") { // FIXME: minus icon
                 count = countUpdater(count, -1)
             }
             Text(countDisplayer(count))
                 .frame(width: 64) // FIXME: to design system
-            Button("+") {
+            Button("+") { // FIXME: plus icon
                 count = countUpdater(count, +1)
             }
         }

@@ -13,6 +13,7 @@ public enum Localisation: String {
     case welcomePageDescription
 
     // MARK: - Reminders Setting Page
+    case reminders
     case remindersSettingPageTitle
 
     // MARK: - Words
@@ -22,8 +23,10 @@ public enum Localisation: String {
     // MARK: - Shared
     case endAt
     case getStarted
+    case home
     case howMany
     case startAt
+    case wordBundle
 
     private var localized: String {
         NSLocalizedString(rawValue, tableName: nil, bundle: Bundle.main, value: "", comment: "")
