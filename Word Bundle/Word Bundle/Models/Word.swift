@@ -9,7 +9,7 @@ import Foundation
 
 struct Word {
     let id: UUID
-    let languageId: UUID
+    let language: Language
     let word: String
     let definition: String
     let partOfSpeech: PartOfSpeech

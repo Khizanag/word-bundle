@@ -5,9 +5,7 @@
 //  Created by Giga Khizanishvili on 21.07.22.
 //
 
-import Foundation
-
-enum PartOfSpeech {
+public enum PartOfSpeech {
     case noun
     case pronoun
     case verb
