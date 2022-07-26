@@ -11,9 +11,15 @@ struct WordView: View {
     let word: Word
 
     var body: some View {
-        Text(word.word)
-            .font(.largeTitle)
-            .foregroundColor(DesignSystem.Color.primaryTextLight()())
+        ZStack {
+            Color.gray
+            Text(word.word)
+                .font(.largeTitle)
+                .foregroundColor(DesignSystem.Color.primaryTextLight()())
+        }
+//        .navigationBarHidden(true)
+        .navigationTitle(word.word)
+        .ignoresSafeArea()
     }
 }
 

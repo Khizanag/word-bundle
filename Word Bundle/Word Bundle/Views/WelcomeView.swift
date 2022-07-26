@@ -16,7 +16,7 @@ struct WelcomeView: View {
                 titleLabel
                 descriptionLabel
                 Spacer()
-                NavigationButton(buttonTitle: Localisation.getStarted(), destination: RemindersSettingView())
+                NavigationButton(title: Localisation.getStarted(), destination: RemindersSettingView())
                 Spacer()
             }
             .navigationTitle(Localisation.wordBundle())

@@ -20,6 +20,7 @@ struct HomeView: View {
         Pager(page: page, data: wordBundle.words.shuffled(), id: \.id) { word in
             ZStack {
                 Color.gray // TODO: choose color
+
                 VStack {
                     Text(word.word)
                         .font(.largeTitle)
@@ -27,12 +28,14 @@ struct HomeView: View {
                         .foregroundColor(DesignSystem.Color.primaryTextLight()())
                         .multilineTextAlignment(.center)
                         .padding()
+
                     Text("(\(word.partOfSpeech.shortTitle).) \(word.definition)")
                         .font(.headline)
                         .fontWeight(.bold)
                         .foregroundColor(DesignSystem.Color.secondaryTextLight()())
                         .multilineTextAlignment(.center)
                         .padding()
+
                     VStack {
                         ForEach(word.examples, id: \.self) { example in
                             Text(example)
@@ -40,10 +43,13 @@ struct HomeView: View {
                                 .fontWeight(.light)
                                 .foregroundColor(DesignSystem.Color.secondaryTextLight()())
                                 .multilineTextAlignment(.center)
-                                .padding(.vertical, DesignSystem.Size.xSmall())
+                                .padding(.top, DesignSystem.Size.xxxSmall())
                         }
                     }
                     .padding(.top, DesignSystem.Size.xxxLarge())
+
+                    NavigationButton(title: "Show word detailed...", destination: WordView(word: word))
+                        .offset(y: 96)
                 }
                 .padding()
             }

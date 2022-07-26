@@ -14,7 +14,7 @@ struct Word_BundleApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainView()
+            WelcomeView()
         }
     }
 }
