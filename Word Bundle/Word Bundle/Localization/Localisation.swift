@@ -45,7 +45,6 @@ public enum Localisation: String {
     case iranianPersian
     case italian
     case japanese
-    case kannada
     case kazakh
     case korean
     case mandarinChinese

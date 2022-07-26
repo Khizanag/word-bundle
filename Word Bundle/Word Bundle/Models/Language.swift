@@ -24,7 +24,6 @@ enum Language: String, CaseIterable {
     case iranianPersian
     case italian
     case japanese
-    case kannada
     case kazakh
     case korean
     case mandarinChinese
@@ -58,7 +57,6 @@ extension Language {
         case .iranianPersian: return "en"
         case .italian: return "en"
         case .japanese: return "en"
-        case .kannada: return "en"
         case .kazakh: return "en"
         case .korean: return "en"
         case .mandarinChinese: return "en"

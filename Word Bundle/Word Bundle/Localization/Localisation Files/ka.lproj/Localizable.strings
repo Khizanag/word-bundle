@@ -6,15 +6,15 @@
   
 */
 
-/* Welcome Page */
+// MARK: - Welcome Page
 "welcomePageTitle" = "განავრცე შენი სიტყვათა მარაგი";
 "welcomePageDescription" = "სიტყვის კონების საშუალებით შენ შესაძლებლობა გექნება შენი გზით იარო კონკრეტული ენის შესასწავლად, თავად დაამატო ის სიტყვები, რომელთა სწავლად გინდა და გაიმარტივო ენის შესწავლის პროცესი.";
 
-/* Reminders Setting Page */
+// MARK: - Reminders Setting Page
 "reminders" = "შემხსენებლები";
 "remindersSettingPageTitle" = "ისწავლე სიტყვები ყოველდღიური შემხსენებლების დახმარებით";
 
-/* Shared */
+// MARK: - Shared
 "endAt" = "როდემდე";
 "getStarted" = "დავიწყოთ";
 "home" = "მთავარი";
@@ -22,6 +22,36 @@
 "startAt" = "როდიდან";
 "wordBundle" = "სიტყვის კონა";
 
-/* Words */
+// MARK: - Words
 "wordSalubrious" = "Salubrious";
 "wordSalubriousDefinition" = "Something that is benefitial to your mind. ";
+
+// MARK: - Languages
+"armenian" = "სომხური";
+"azerbaijani" = "აზერნაიჯანული";
+"bengali" = "ბენგალიური";
+"czech" = "ჩეხური";
+"dutch" = "ჰოლანდიური";
+"egyptianArabic" = "ეგვიპტური არაბული";
+"english" = "ინგლისური";
+"french" = "ფრანგული";
+"georgian" = "ქართული";
+"german" = "გერმანული";
+"greek" = "ბერძნული";
+"hindi" = "ჰინდი";
+"hungarian" = "უნგრული";
+"iranianPersian" = "ირანული სპარსული";
+"italian" = "იტალიური";
+"japanese" = "იაპონური";
+"kazakh" = "ყაზახური";
+"korean" = "კორეული";
+"mandarinChinese" = "ჩინური მანდარინი";
+"nepali" = "ნეპალი";
+"polish" = "პოლონური";
+"portuguese" = "პორტუგალიური";
+"romanian" = "რუმინული";
+"spanish" = "ესპანური";
+"thai" = "ტაილანდური";
+"turkish" = "თურქული";
+"ukrainian" = "უკრაიკული";
+"vietnamese" = "ვიეტნამური";
