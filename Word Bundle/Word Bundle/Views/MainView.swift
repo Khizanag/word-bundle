@@ -17,7 +17,7 @@ struct MainView: View {
                 HelloWorldView(text: "Giga")
                     .tabItem {
                         Image(systemName: "phone.fill")
-                        Text("calls")
+                        Text("Calls")
                     }
                 LibraryView()
                     .tabItem {

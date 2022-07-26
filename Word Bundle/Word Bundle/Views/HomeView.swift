@@ -5,40 +5,57 @@
 //  Created by Giga Khizanishvili on 21.07.22.
 //
 
-import SwiftUIPager
 import SwiftUI
+import SwiftUIPager
 
 struct HomeView: View {
     @State var page: Page = .first()
-
-    @State var words: [Word] = [
-        Word.example,
-        Word.example,
-        Word.example,
-        Word.example,
-        Word.example,
-        Word.example
-    ]
+    @State var wordBundle: WordBundle = .example
 
     let colors: [Color] = [
-        .red, .green, .blue, .gray
+        .blue, .gray, .red, .green
     ]
 
     var body: some View {
-        Pager(page: page, data: colors, id: \.self) { color in
+        Pager(page: page, data: wordBundle.words.shuffled(), id: \.id) { word in
             ZStack {
-                color
-                Text(page.index.toString())
+                Color.gray // TODO: choose color
+                VStack {
+                    Text(word.word)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(DesignSystem.Color.primaryTextLight()())
+                        .multilineTextAlignment(.center)
+                        .padding()
+                    Text("(\(word.partOfSpeech.shortTitle).) \(word.definition)")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .foregroundColor(DesignSystem.Color.secondaryTextLight()())
+                        .multilineTextAlignment(.center)
+                        .padding()
+                    VStack {
+                        ForEach(word.examples, id: \.self) { example in
+                            Text(example)
+                                .font(.footnote)
+                                .fontWeight(.light)
+                                .foregroundColor(DesignSystem.Color.secondaryTextLight()())
+                                .multilineTextAlignment(.center)
+                                .padding(.vertical, DesignSystem.Size.xSmall())
+                        }
+                    }
+                    .padding(.top, DesignSystem.Size.xxxLarge())
+                }
+                .padding()
             }
         }
-        .sensitivity(.high)
+        .sensitivity(.low)
         .vertical()
-        .ignoresSafeArea(edges: .top)
+        .ignoresSafeArea()
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        WelcomeView()
     }
 }

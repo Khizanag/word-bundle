@@ -17,5 +17,5 @@ struct WordBundle {
     let note: String
     let isFavourited: Bool
 
-    static let example = WordBundle(id: UUID(), language: .georgian, icon: .init("arrow"), words: [], creationDate: .now, note: "", isFavourited: false)
+    static let example = WordBundle(id: UUID(), language: .georgian, icon: Image("search"), words: [.camel, .good, .ball], creationDate: .now, note: "", isFavourited: false)
 }

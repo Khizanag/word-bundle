@@ -15,3 +15,19 @@ enum PartOfSpeech {
     case conjunction
     case interjection
 }
+
+extension PartOfSpeech {
+    // FIXME: correct forms
+    var shortTitle: String {
+        switch self {
+        case .noun: return "nou"
+        case .pronoun: return "pron"
+        case .verb: return "verb"
+        case .adjective: return "adj"
+        case .adverb: return "adv"
+        case .preposition: return "prep"
+        case .conjunction: return "conj"
+        case .interjection: return "int"
+        }
+    }
+}

@@ -9,10 +9,10 @@ import Foundation
 
 struct Word {
     let id: UUID
-    let bundle: WordBundle
+    let bundleId: UUID
     let language: Language
     let word: String
-    let definition: String
+    let definition: String // TODO: definition as array of the strings
     let partOfSpeech: PartOfSpeech
     let examples: [String]
     let synonyms: [String]
@@ -21,20 +21,6 @@ struct Word {
     let likes: Int
     let dislikes: Int
     let isFavourited: Bool
-
-    static let example = Word(
-        id: UUID(),
-        bundle: WordBundle.example,
-        language: .georgian,
-        word: "Ball",
-        definition: "round thing",
-        partOfSpeech: .adverb,
-        examples: [],
-        synonyms: [],
-        antonyms: [],
-        note: "",
-        likes: 3,
-        dislikes: 1,
-        isFavourited: true
-    )
 }
+
+extension Word: Equatable { }
