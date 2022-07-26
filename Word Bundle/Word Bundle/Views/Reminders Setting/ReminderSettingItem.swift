@@ -7,23 +7,20 @@
 
 import SwiftUI
 
-struct ReminderSettingItem: View {
+struct ReminderSettingItem<Value>: View {
     // MARK: - Properties
     let title: String
-    let countDisplayer: (Int) -> String
-    let countUpdater: (Int, Int) -> Int
+    let valueDisplayer: (Value) -> String
+    let valueUpdater: (Value, Int) -> Value
 
-    @State var count: Int
-
-    // MARK: - Example
-    static var example = ReminderSettingItem(title: Localisation.howMany(), count: 10, countDisplayer: { $0.toString() }, countUpdater: { $0 + $1 })
+    @State var value: Value
 
     // MARK: - Init
-    init(title: String, count: Int, countDisplayer: @escaping (Int) -> String, countUpdater: @escaping (Int, Int) -> Int) {
+    init(title: String, value: Value, valueDisplayer: @escaping (Value) -> String, valueUpdater: @escaping (Value, Int) -> Value) {
         self.title = title
-        self.count = count
-        self.countDisplayer = countDisplayer
-        self.countUpdater = countUpdater
+        self._value = State(initialValue: value)
+        self.valueDisplayer = valueDisplayer
+        self.valueUpdater = valueUpdater
     }
 
     var body: some View {
@@ -31,12 +28,12 @@ struct ReminderSettingItem: View {
             Text(title)
             Spacer()
             Button("-") { // FIXME: minus icon
-                count = countUpdater(count, -1)
+                value = valueUpdater(value, -1)
             }
-            Text(countDisplayer(count))
+            Text(valueDisplayer(value))
                 .frame(width: 64) // FIXME: to design system
             Button("+") { // FIXME: plus icon
-                count = countUpdater(count, +1)
+                value = valueUpdater(value, +1)
             }
         }
         .padding()
@@ -48,6 +45,6 @@ struct ReminderSettingItem: View {
 // MARK: - Previews
 struct ReminderSettingItem_Previews: PreviewProvider {
     static var previews: some View {
-        ReminderSettingItem.example
+        ReminderSettingItem(title: Localisation.howMany(), value: 10, valueDisplayer: { $0.toString() }, valueUpdater: +)
     }
 }

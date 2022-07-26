@@ -60,16 +60,22 @@ struct RemindersSettingView: View {
             .multilineTextAlignment(.center)
     }
 
-    /// `startAt` and `endAt` properties displays time with 30 min intervals
     var properties: some View {
-        // FIXME: Logic of time date changing on plus and minus
-        let timeCountDisplayer: (Int) -> String = { "\($0/2):\($0.isMultiple(of: 2) ? "00" : "30")" }
-        let timeCountUpdater: (Int, Int) -> Int = { ($0 + $1 + 48) % 48 } // 48 number of half hours in day
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+
+        let fromDate = dateFormatter.date(from: "10:00") ?? .now
+        let toDate = dateFormatter.date(from: "20:00") ?? .now
+
+        let numMinutesPerStep = 30
+
+        let dateDisplayer: (Date) -> String = { dateFormatter.string(from: $0) }
+        let dateUpdater: (Date, Int) -> Date = { $0.addingTimeInterval(.init($1 * 60 * numMinutesPerStep)) }
 
         return VStack(spacing: DesignSystem.Size.medium()) {
-            ReminderSettingItem(title: Localisation.howMany(), count: 10, countDisplayer: { "\($0)x" }, countUpdater: { max(1, $0 + $1) })
-            ReminderSettingItem(title: Localisation.startAt(), count: 20, countDisplayer: timeCountDisplayer, countUpdater: timeCountUpdater)
-            ReminderSettingItem(title: Localisation.endAt(), count: 40, countDisplayer: timeCountDisplayer, countUpdater: timeCountUpdater)
+            ReminderSettingItem(title: Localisation.howMany(), value: 10, valueDisplayer: { "\($0)x" }, valueUpdater: { max(1, $0 + $1) })
+            ReminderSettingItem(title: Localisation.startAt(), value: fromDate, valueDisplayer: dateDisplayer, valueUpdater: dateUpdater)
+            ReminderSettingItem(title: Localisation.endAt(), value: toDate, valueDisplayer: dateDisplayer, valueUpdater: dateUpdater)
         }
         .padding(.horizontal)
     }
