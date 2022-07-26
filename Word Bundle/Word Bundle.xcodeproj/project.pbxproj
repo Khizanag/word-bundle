@@ -153,10 +153,10 @@
 		FB66A43328880EBE00F9F850 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FB66A462289006BA00F9F850 /* Reminders Setting */,
 				FB66A4382888157E00F9F850 /* Components */,
 				FB66A439288816B700F9F850 /* MainView.swift */,
 				FB66A4282887EB7100F9F850 /* WelcomeView.swift */,
-				FB66A43428880EF600F9F850 /* RemindersSettingView.swift */,
 				FB66A4502888B5F100F9F850 /* HomeView.swift */,
 				FB66A4522888B8ED00F9F850 /* LibraryView.swift */,
 			);
@@ -167,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				FB66A43628880F5C00F9F850 /* NavigationButton.swift */,
-				FB66A43B288833A200F9F850 /* ReminderSettingItem.swift */,
 				FB66A4492888A8E300F9F850 /* HelloWorldView.swift */,
 			);
 			path = Components;
@@ -182,6 +181,15 @@
 				FB66A456288F3EB900F9F850 /* WordBundle.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FB66A462289006BA00F9F850 /* Reminders Setting */ = {
+			isa = PBXGroup;
+			children = (
+				FB66A43B288833A200F9F850 /* ReminderSettingItem.swift */,
+				FB66A43428880EF600F9F850 /* RemindersSettingView.swift */,
+			);
+			path = "Reminders Setting";
 			sourceTree = "<group>";
 		};
 		FBCECE8C2814847600CD558C = {

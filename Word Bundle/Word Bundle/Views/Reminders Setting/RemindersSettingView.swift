@@ -68,8 +68,8 @@ struct RemindersSettingView: View {
 
         return VStack(spacing: DesignSystem.Size.medium()) {
             ReminderSettingItem(title: Localisation.howMany(), count: 10, countDisplayer: { "\($0)x" }, countUpdater: { max(1, $0 + $1) })
-            ReminderSettingItem(title: Localisation.startAt(), count: 15, countDisplayer: timeCountDisplayer, countUpdater: timeCountUpdater)
-            ReminderSettingItem(title: Localisation.endAt(), count: 10, countDisplayer: timeCountDisplayer, countUpdater: timeCountUpdater)
+            ReminderSettingItem(title: Localisation.startAt(), count: 20, countDisplayer: timeCountDisplayer, countUpdater: timeCountUpdater)
+            ReminderSettingItem(title: Localisation.endAt(), count: 40, countDisplayer: timeCountDisplayer, countUpdater: timeCountUpdater)
         }
         .padding(.horizontal)
     }
