@@ -58,15 +58,15 @@ public enum Localisation: String {
     case ukrainian
     case vietnamese
 
+    private var key: String { rawValue }
+
     private var localized: String {
-        let language: Language = UserDefaults.standard.object(forKey: "language") as? Language ?? .georgian
+        let language: Language = (UserDefaults.standard.object(forKey: "language") as? Language) ?? .georgian
         let path = Bundle.main.path(forResource: language.localizableIdentifier, ofType: "lproj")
         let bundle = Bundle(path: path!)!
 
-        return NSLocalizedString(rawValue, tableName: nil, bundle: bundle, value: "", comment: "")
+        return NSLocalizedString(key, tableName: nil, bundle: bundle, value: "", comment: "")
     }
 
-    public func callAsFunction() -> String {
-        localized
-    }
+    public func callAsFunction() -> String { localized }
 }
