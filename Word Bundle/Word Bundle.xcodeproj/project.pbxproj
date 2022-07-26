@@ -153,7 +153,7 @@
 		FB66A43328880EBE00F9F850 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FB66A46328900CD900F9F850 /* Reminder Setting */,
+				FB66A462289006BA00F9F850 /* Reminders Setting */,
 				FB66A4382888157E00F9F850 /* Components */,
 				FB66A439288816B700F9F850 /* MainView.swift */,
 				FB66A4282887EB7100F9F850 /* WelcomeView.swift */,
@@ -183,13 +183,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		FB66A46328900CD900F9F850 /* Reminder Setting */ = {
+		FB66A462289006BA00F9F850 /* Reminders Setting */ = {
 			isa = PBXGroup;
 			children = (
 				FB66A43B288833A200F9F850 /* ReminderSettingItem.swift */,
 				FB66A43428880EF600F9F850 /* RemindersSettingView.swift */,
 			);
-			path = "Reminder Setting";
+			path = "Reminders Setting";
 			sourceTree = "<group>";
 		};
 		FBCECE8C2814847600CD558C = {
