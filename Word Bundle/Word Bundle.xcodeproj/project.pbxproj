@@ -76,6 +76,7 @@
 		FB66A4522888B8ED00F9F850 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		FB66A454288F239700F9F850 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		FB66A456288F3EB900F9F850 /* WordBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBundle.swift; sourceTree = "<group>"; };
+		FB66A461288FCEDA00F9F850 /* ka */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ka; path = ka.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FBCECE952814847600CD558C /* Word Bundle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Bundle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCECE982814847600CD558C /* Word_BundleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_BundleApp.swift; sourceTree = "<group>"; };
 		FBCECE9C2814847900CD558C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -364,6 +365,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ka,
 			);
 			mainGroup = FBCECE8C2814847600CD558C;
 			packageReferences = (
@@ -497,6 +499,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FB66A42D2887FAD000F9F850 /* en */,
+				FB66A461288FCEDA00F9F850 /* ka */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -568,6 +572,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  Word Bundle
+
+  Created by Giga Khizanishvili on 20.07.22.
+  
+*/
+
+/* Welcome Page */
+"welcomePageTitle" = "განავრცე შენი სიტყვათა მარაგი";
+"welcomePageDescription" = "სიტყვის კონების საშუალებით შენ შესაძლებლობა გექნება შენი გზით იარო კონკრეტული ენის შესასწავლად, თავად დაამატო ის სიტყვები, რომელთა სწავლად გინდა და გაიმარტივო ენის შესწავლის პროცესი.";
+
+/* Reminders Setting Page */
+"reminders" = "შემხსენებლები";
+"remindersSettingPageTitle" = "ისწავლე სიტყვები ყოველდღიური შემხსენებლების დახმარებით";
+
+/* Shared */
+"endAt" = "როდემდე";
+"getStarted" = "დავიწყოთ";
+"home" = "მთავარი";
+"howMany" = "რამდენი";
+"startAt" = "როდიდან";
+"wordBundle" = "სიტყვის კონა";
+
+/* Words */
+"wordSalubrious" = "Salubrious";
+"wordSalubriousDefinition" = "Something that is benefitial to your mind. ";
