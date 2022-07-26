@@ -21,4 +21,20 @@ struct Word {
     let likes: Int
     let dislikes: Int
     let isFavourited: Bool
+
+    static let example = Word(
+        id: UUID(),
+        bundle: WordBundle.example,
+        language: .georgian,
+        word: "Ball",
+        definition: "round thing",
+        partOfSpeech: .adverb,
+        examples: [],
+        synonyms: [],
+        antonyms: [],
+        note: "",
+        likes: 3,
+        dislikes: 1,
+        isFavourited: true
+    )
 }

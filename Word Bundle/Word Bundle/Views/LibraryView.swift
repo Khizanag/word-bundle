@@ -15,7 +15,6 @@ struct LibraryView: View {
                 .padding(.bottom)
             Text("Hello, World Library")
         }
-        .navigationTitle("Library")
     }
 }
 

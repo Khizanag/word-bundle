@@ -24,6 +24,8 @@
 		FB66A4532888B8ED00F9F850 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A4522888B8ED00F9F850 /* LibraryView.swift */; };
 		FB66A455288F239800F9F850 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A454288F239700F9F850 /* Language.swift */; };
 		FB66A457288F3EBA00F9F850 /* WordBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A456288F3EB900F9F850 /* WordBundle.swift */; };
+		FB66A466289048F000F9F850 /* VTabView in Frameworks */ = {isa = PBXBuildFile; productRef = FB66A465289048F000F9F850 /* VTabView */; };
+		FB66A469289051E700F9F850 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = FB66A468289051E700F9F850 /* SwiftUIPager */; };
 		FBCECE992814847600CD558C /* Word_BundleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECE982814847600CD558C /* Word_BundleApp.swift */; };
 		FBCECE9D2814847900CD558C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCECE9C2814847900CD558C /* Assets.xcassets */; };
 		FBCECEA02814847900CD558C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCECE9F2814847900CD558C /* Preview Assets.xcassets */; };
@@ -102,6 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB66A469289051E700F9F850 /* SwiftUIPager in Frameworks */,
+				FB66A466289048F000F9F850 /* VTabView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +306,8 @@
 			);
 			name = "Word Bundle";
 			packageProductDependencies = (
+				FB66A465289048F000F9F850 /* VTabView */,
+				FB66A468289051E700F9F850 /* SwiftUIPager */,
 			);
 			productName = "Word Bundle";
 			productReference = FBCECE952814847600CD558C /* Word Bundle.app */;
@@ -377,6 +383,8 @@
 			);
 			mainGroup = FBCECE8C2814847600CD558C;
 			packageReferences = (
+				FB66A464289048F000F9F850 /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */,
+				FB66A467289051E700F9F850 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
 			);
 			productRefGroup = FBCECE962814847600CD558C /* Products */;
 			projectDirPath = "";
@@ -813,6 +821,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FB66A464289048F000F9F850 /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-vertical-tab-view";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		FB66A467289051E700F9F850 /* XCRemoteSwiftPackageReference "SwiftUIPager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fermoya/SwiftUIPager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FB66A465289048F000F9F850 /* VTabView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB66A464289048F000F9F850 /* XCRemoteSwiftPackageReference "swiftui-vertical-tab-view" */;
+			productName = VTabView;
+		};
+		FB66A468289051E700F9F850 /* SwiftUIPager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB66A467289051E700F9F850 /* XCRemoteSwiftPackageReference "SwiftUIPager" */;
+			productName = SwiftUIPager;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		FBCECEA32814847900CD558C /* Word_Bundle.xcdatamodeld */ = {
