@@ -23,6 +23,7 @@
 		FB66A4512888B5F100F9F850 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A4502888B5F100F9F850 /* HomeView.swift */; };
 		FB66A4532888B8ED00F9F850 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A4522888B8ED00F9F850 /* LibraryView.swift */; };
 		FB66A455288F239800F9F850 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A454288F239700F9F850 /* Language.swift */; };
+		FB66A457288F3EBA00F9F850 /* WordBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A456288F3EB900F9F850 /* WordBundle.swift */; };
 		FBCECE992814847600CD558C /* Word_BundleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECE982814847600CD558C /* Word_BundleApp.swift */; };
 		FBCECE9D2814847900CD558C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCECE9C2814847900CD558C /* Assets.xcassets */; };
 		FBCECEA02814847900CD558C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCECE9F2814847900CD558C /* Preview Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		FB66A4502888B5F100F9F850 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FB66A4522888B8ED00F9F850 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		FB66A454288F239700F9F850 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		FB66A456288F3EB900F9F850 /* WordBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBundle.swift; sourceTree = "<group>"; };
 		FBCECE952814847600CD558C /* Word Bundle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Bundle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCECE982814847600CD558C /* Word_BundleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_BundleApp.swift; sourceTree = "<group>"; };
 		FBCECE9C2814847900CD558C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				FB66A44C2888B3A300F9F850 /* Word.swift */,
 				FB66A44E2888B54800F9F850 /* PartOfSpeech.swift */,
 				FB66A454288F239700F9F850 /* Language.swift */,
+				FB66A456288F3EB900F9F850 /* WordBundle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBCECEA22814847900CD558C /* Persistence.swift in Sources */,
+				FB66A457288F3EBA00F9F850 /* WordBundle.swift in Sources */,
 				FBCECECE2814876D00CD558C /* Device+Extension.swift in Sources */,
 				FB66A4292887EB7100F9F850 /* WelcomeView.swift in Sources */,
 				FB66A4532888B8ED00F9F850 /* LibraryView.swift in Sources */,
