@@ -28,7 +28,7 @@ struct ReminderSettingItem: View {
 
     var body: some View {
         HStack {
-            Text(Localisation.howMany())
+            Text(title)
             Spacer()
             Button("-") { // FIXME: minus icon
                 count = countUpdater(count, -1)
