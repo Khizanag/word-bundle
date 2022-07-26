@@ -5,7 +5,7 @@
 //  Created by Giga Khizanishvili on 20.07.22.
 //
 
-import Foundation
+import SwiftUI
 
 public enum Localisation: String {
     // MARK: - Welcome Page
@@ -28,8 +28,42 @@ public enum Localisation: String {
     case startAt
     case wordBundle
 
+    // MARK: - Languages
+    case armenian
+    case azerbaijani
+    case bengali
+    case czech
+    case dutch
+    case egyptianArabic
+    case english
+    case french
+    case georgian
+    case german
+    case greek
+    case hindi
+    case hungarian
+    case iranianPersian
+    case italian
+    case japanese
+    case kazakh
+    case korean
+    case mandarinChinese
+    case nepali
+    case polish
+    case portuguese
+    case romanian
+    case spanish
+    case thai
+    case turkish
+    case ukrainian
+    case vietnamese
+
     private var localized: String {
-        NSLocalizedString(rawValue, tableName: nil, bundle: Bundle.main, value: "", comment: "")
+        let language: Language = UserDefaults.standard.object(forKey: "language") as? Language ?? .georgian
+        let path = Bundle.main.path(forResource: language.localizableIdentifier, ofType: "lproj")
+        let bundle = Bundle(path: path!)!
+
+        return NSLocalizedString(rawValue, tableName: nil, bundle: bundle, value: "", comment: "")
     }
 
     public func callAsFunction() -> String {

@@ -6,15 +6,15 @@
   
 */
 
-/* Welcome Page */
+// MARK: - Welcome Page
 "welcomePageTitle" = "Expand your VOCABULARY";
 "welcomePageDescription" = "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected.";
 
-/* Reminders Setting Page */
+// MARK: - Reminders Setting Page
 "reminders" = "Reminders";
 "remindersSettingPageTitle" = "Learn words with daily reminders";
 
-/* Shared */
+// MARK: - Shared
 "endAt" = "End at";
 "getStarted" = "Get Started";
 "home" = "Home";
@@ -22,6 +22,36 @@
 "startAt" = "Start at";
 "wordBundle" = "Word bundle";
 
-/* Words */
+// MARK: - Words
 "wordSalubrious" = "Salubrious";
 "wordSalubriousDefinition" = "Something that is benefitial to your mind. ";
+
+// MARK: - Languages
+"armenian" = "Armenian";
+"azerbaijani" = "Azerbaijani";
+"bengali" = "Bengali";
+"czech" = "Czech";
+"dutch" = "Dutch";
+"egyptianArabic" = "Egyptian Arabic";
+"english" = "English";
+"french" = "French";
+"georgian" = "Georgian";
+"german" = "German";
+"greek" = "Greek";
+"hindi" = "Hindi";
+"hungarian" = "Hungarian";
+"iranianPersian" = "Iranian Persian";
+"italian" = "Italian";
+"japanese" = "Japanese";
+"kazakh" = "Kazakh";
+"korean" = "Korean";
+"mandarinChinese" = "Mandarin Chinese";
+"nepali" = "Nepali";
+"polish" = "Polish";
+"portuguese" = "Portuguese";
+"romanian" = "Romanian";
+"spanish" = "Spanish";
+"thai" = "Thai";
+"turkish" = "Turkish";
+"ukrainian" = "Ukrainian";
+"vietnamese" = "Vietnamese";

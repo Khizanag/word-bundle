@@ -9,6 +9,7 @@ import Foundation
 
 struct Word {
     let id: UUID
+    let bundle: WordBundle
     let language: Language
     let word: String
     let definition: String
