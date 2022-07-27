@@ -9,14 +9,14 @@ import SwiftUI
 
 struct NavigationButton<DestinationType: View>: View {
     // MARK: - Properties
-    let buttonTitle: String
+    let title: String
     let destination: DestinationType
 
     // MARK: - Body
     var body: some View {
         NavigationLink(destination: destination) {
             HStack {
-                Text(buttonTitle)
+                Text(title)
                     .font(.headline)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
@@ -33,6 +33,6 @@ struct NavigationButton<DestinationType: View>: View {
 
 struct NavigationButton_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationButton(buttonTitle: Localisation.getStarted(), destination: MainView())
+        NavigationButton(title: Localisation.getStarted(), destination: MainView())
     }
 }

@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "swiftui-vertical-tab-view",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/lorenzofiamingo/swiftui-vertical-tab-view",
-      "state" : {
-        "revision" : "e029f75f9c43e52e351528a78e293a997200b9f8",
-        "version" : "2.0.0"
-      }
-    },
-    {
       "identity" : "swiftuipager",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/fermoya/SwiftUIPager",

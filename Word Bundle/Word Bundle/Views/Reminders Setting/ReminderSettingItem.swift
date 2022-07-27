@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ReminderSettingItem<Value>: View {
     // MARK: - Properties
-    let title: String
-    let valueDisplayer: (Value) -> String
-    let valueUpdater: (Value, Int) -> Value
+    private let title: String
+    private let valueDisplayer: (Value) -> String
+    private let valueUpdater: (Value, Int) -> Value
 
-    @State var value: Value
+    @State private var value: Value
 
     // MARK: - Init
     init(title: String, value: Value, valueDisplayer: @escaping (Value) -> String, valueUpdater: @escaping (Value, Int) -> Value) {

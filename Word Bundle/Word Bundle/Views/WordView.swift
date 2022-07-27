@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct WordView: View {
-    let word: Word
+    @Binding var word: Word
 
     var body: some View {
-        Text(word.word)
-            .font(.largeTitle)
-            .foregroundColor(DesignSystem.Color.primaryTextLight()())
+        ZStack {
+            Color.gray
+            Text(word.word)
+                .font(.largeTitle)
+                .foregroundColor(DesignSystem.Color.primaryTextLight()())
+        }
+        .navigationTitle(word.word)
+        .ignoresSafeArea()
     }
 }
 
 struct WordView_Previews: PreviewProvider {
     static var previews: some View {
-        WordView(word: .good)
+        WordView(word: .init(projectedValue: .constant(.good)))
     }
 }

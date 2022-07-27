@@ -16,14 +16,14 @@ struct WelcomeView: View {
                 titleLabel
                 descriptionLabel
                 Spacer()
-                NavigationButton(buttonTitle: Localisation.getStarted(), destination: RemindersSettingView())
+                NavigationButton(title: Localisation.getStarted(), destination: RemindersSettingView())
                 Spacer()
             }
             .navigationTitle(Localisation.wordBundle())
         }
     }
 
-    var titleLabel: some View {
+    private var titleLabel: some View {
         Text(Localisation.welcomePageTitle())
             .font(.title)
             .fontWeight(.bold)
@@ -33,7 +33,7 @@ struct WelcomeView: View {
             .padding(.horizontal)
     }
 
-    var descriptionLabel: some View {
+    private var descriptionLabel: some View {
         Text(Localisation.welcomePageDescription())
             .foregroundColor(DesignSystem.Color.secondaryTextDark().value)
             .foregroundColor(DesignSystem.Color.secondaryTextDark().value)
