@@ -12,7 +12,7 @@ struct LibraryView: View {
         ZStack {
             DesignSystem.Color.color3()()
                 .ignoresSafeArea()
-            Text("Hello, World Library")
+            Text("Hello, Library!")
         }
     }
 }

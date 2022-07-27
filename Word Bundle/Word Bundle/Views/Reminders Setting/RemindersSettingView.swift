@@ -23,7 +23,7 @@ struct RemindersSettingView: View {
         .navigationTitle(Localisation.reminders())
     }
 
-    var exampleWordComponentView: some View {
+    private var exampleWordComponentView: some View {
         HStack {
             // FIXME: icon should be lefter
             DesignSystem.Image.bell()
@@ -52,7 +52,7 @@ struct RemindersSettingView: View {
         .cornerRadius(DesignSystem.Size.small())
     }
 
-    var titleLabel: some View {
+    private var titleLabel: some View {
         Text(Localisation.remindersSettingPageTitle())
             .font(.title3)
             .fontWeight(.regular)
@@ -60,7 +60,7 @@ struct RemindersSettingView: View {
             .multilineTextAlignment(.center)
     }
 
-    var properties: some View {
+    private var properties: some View {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
 

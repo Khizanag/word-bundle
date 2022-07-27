@@ -23,7 +23,7 @@ struct WelcomeView: View {
         }
     }
 
-    var titleLabel: some View {
+    private var titleLabel: some View {
         Text(Localisation.welcomePageTitle())
             .font(.title)
             .fontWeight(.bold)
@@ -33,7 +33,7 @@ struct WelcomeView: View {
             .padding(.horizontal)
     }
 
-    var descriptionLabel: some View {
+    private var descriptionLabel: some View {
         Text(Localisation.welcomePageDescription())
             .foregroundColor(DesignSystem.Color.secondaryTextDark().value)
             .foregroundColor(DesignSystem.Color.secondaryTextDark().value)

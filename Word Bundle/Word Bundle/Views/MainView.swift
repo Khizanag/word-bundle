@@ -24,7 +24,7 @@ struct MainView: View {
                         Image(systemName: "books.vertical.fill")
                         Text("Library")
                     }
-                HomeView()
+                HomeView(wordBundle: .example)
                     .tabItem {
                         Image(systemName: "scroll.fill")
                         Text(Localisation.home())
