@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    private let dictionariesRepository: DictionariesRepository = OxfordDictionariesRepository()
+    @State private var textFieldText = ""
+
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
@@ -18,6 +21,13 @@ struct WelcomeView: View {
                 Spacer()
                 NavigationButton(title: Localisation.getStarted(), destination: RemindersSettingView())
                 Spacer()
+                TextField("Type word to search here", text: $textFieldText)
+                Button("Fetch Data") {
+                    Task {
+                        let entry = await dictionariesRepository.entries(of: textFieldText, language: .english)
+                        print(entry ?? "Fetched entry was nil")
+                    }
+                }
             }
             .navigationTitle(Localisation.wordBundle())
         }
@@ -42,6 +52,7 @@ struct WelcomeView: View {
     }
 }
 
+// MARK: - Previews
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
         WelcomeView()

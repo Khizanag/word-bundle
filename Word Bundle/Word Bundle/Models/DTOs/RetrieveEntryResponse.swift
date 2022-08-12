@@ -10,26 +10,18 @@ import Foundation
 /// https://developer.oxforddictionaries.com/documentation#/Entries
 
 // TODO: remove fields that are not necessary
-struct RetrieveEntry {
-    let metadata: Metadata?
+struct RetrieveEntryResponse: Codable {
     let results: [HeadwordEntry]?
 
-    struct HeadwordEntry {
+    struct HeadwordEntry: Codable {
         let id: String
         let language: String
         let lexicalEntries: [LexicalEntry]
         let pronunciations: [Pronunciation]?
         let type: String?
-        let word: String // DEPRECATED TODO: remove?
     }
 
-    struct Metadata {
-        let operation: String
-        let provider: String
-        let schema: String
-    }
-
-    struct LexicalEntry {
+    struct LexicalEntry: Codable {
         let compounds: [RelatedEntry]?
         let derivativeOf: [RelatedEntry]?
         let derivatives: [RelatedEntry]?
@@ -46,7 +38,7 @@ struct RetrieveEntry {
         let variantForms: [VariantForm]?
     }
 
-    struct Entry {
+    struct Entry: Codable {
         let crossReferenceMarkers: [String]?
         let crossReferences: [CrossReference]?
         let etymologies: [String]?
@@ -59,7 +51,7 @@ struct RetrieveEntry {
         let variantForms: [VariantForm]?
     }
 
-    struct Pronunciation {
+    struct Pronunciation: Codable {
         let audioFile: String? /// The URL of the sound file
         let dialects: [String]?
         let phoneticNotation: String?
@@ -68,7 +60,7 @@ struct RetrieveEntry {
         let registers: [Register]?
     }
 
-    struct RelatedEntry {
+    struct RelatedEntry: Codable {
         let domains: [Domain]?
         let id: String // TODO: remove
         let language: String?
@@ -77,7 +69,7 @@ struct RetrieveEntry {
         let text: String
     }
 
-    struct InflectedForm {
+    struct InflectedForm: Codable {
         let domains: [Domain]?
         let grammaticalFeatures: [GrammaticalFeature]?
         let inflectedForm: String
@@ -87,7 +79,7 @@ struct RetrieveEntry {
         let registers: [Register]?
     }
 
-    struct Sense {
+    struct Sense: Codable {
         let antonyms: [SynonymsAntonym]?
         let constructions: [Construction]?
         let crossReferenceMarkers: [String]?
@@ -95,7 +87,7 @@ struct RetrieveEntry {
         let definitions: [String]?
         let domainClasses: [DomainClass]?
         let domains: [Domain]?
-        let etymologies: [String]
+        let etymologies: [String]?
         let examples: [Example]?
         let id: String?
         let inflections: [InflectedForm]?
@@ -107,23 +99,22 @@ struct RetrieveEntry {
         let shortDefinitions: [String]?
         let subsenses: [Sense]?
         let synonyms: [SynonymsAntonym]?
-        let thesaurusLinks: [ThesaurusLink]?
         let variantForms: [VariantForm]?
     }
 
-    struct GrammaticalFeature {
+    struct GrammaticalFeature: Codable {
         let id: String
         let text: String
         let type: String
     }
 
-    struct CategorizedText {
+    struct CategorizedText: Codable {
         let id: String?
         let text: String
         let type: String
     }
 
-    struct VariantForm {
+    struct VariantForm: Codable {
         let domains: [Domain]?
         let notes: [CategorizedText]?
         let pronunciations: [Pronunciation]?
@@ -132,13 +123,13 @@ struct RetrieveEntry {
         let text: String
     }
 
-    struct CrossReference {
+    struct CrossReference: Codable {
         let id: String
         let text: String
         let type: String
     }
 
-    struct Construction {
+    struct Construction: Codable {
         let domains: [Domain]?
         let examples: [[String]]?
         let notes: [CategorizedText]?
@@ -147,12 +138,7 @@ struct RetrieveEntry {
         let text: String
     }
 
-    struct ThesaurusLink {
-        let entry_id: String
-        let sense_id: String
-    }
-
-    struct SynonymsAntonym {
+    struct SynonymsAntonym: Codable {
         let domains: [Domain]?
         let id: String?
         let language: String?
@@ -161,7 +147,7 @@ struct RetrieveEntry {
         let text: String
     }
 
-    struct Example {
+    struct Example: Codable {
         let definitions: [String]?
         let domains: [Domain]?
         let notes: [CategorizedText]?
@@ -171,7 +157,7 @@ struct RetrieveEntry {
         let text: String
     }
 
-    struct IdText {
+    struct IdText: Codable {
         let id: String
         let text: String
     }
