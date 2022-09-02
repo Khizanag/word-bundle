@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D16D1A8528A6AD2800000984 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D1A8428A6AD2800000984 /* Theme.swift */; };
+		D16D1A8728A6AF5B00000984 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D1A8628A6AF5B00000984 /* AspectVGrid.swift */; };
+		D16D1A8928A6B03A00000984 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D1A8828A6B03A00000984 /* ThemeView.swift */; };
+		D16D1A8B28A6CF7200000984 /* ThemesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D1A8A28A6CF7200000984 /* ThemesModel.swift */; };
 		FB0829A32884BB9000FFFB4B /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0829A22884BB9000FFFB4B /* DesignSystem.swift */; };
 		FB0829A52884BBC200FFFB4B /* DesignSystem+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0829A42884BBC200FFFB4B /* DesignSystem+Size.swift */; };
 		FB0829A72884BC2B00FFFB4B /* DesignSystem+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0829A62884BC2B00FFFB4B /* DesignSystem+Color.swift */; };
@@ -64,6 +68,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D16D1A8428A6AD2800000984 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		D16D1A8628A6AF5B00000984 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
+		D16D1A8828A6B03A00000984 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		D16D1A8A28A6CF7200000984 /* ThemesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesModel.swift; sourceTree = "<group>"; };
 		FB0829A12884BA9D00FFFB4B /* Word Bundle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Word Bundle.entitlements"; sourceTree = "<group>"; };
 		FB0829A22884BB9000FFFB4B /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		FB0829A42884BBC200FFFB4B /* DesignSystem+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Size.swift"; sourceTree = "<group>"; };
@@ -189,6 +197,7 @@
 				FB66A4502888B5F100F9F850 /* HomeView.swift */,
 				FB66A4522888B8ED00F9F850 /* LibraryView.swift */,
 				FB66A46C2890665700F9F850 /* WordView.swift */,
+				D16D1A8628A6AF5B00000984 /* AspectVGrid.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +205,7 @@
 		FB66A4382888157E00F9F850 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D16D1A8828A6B03A00000984 /* ThemeView.swift */,
 				FB66A43628880F5C00F9F850 /* NavigationButton.swift */,
 				FB66A4492888A8E300F9F850 /* HelloWorldView.swift */,
 			);
@@ -212,6 +222,8 @@
 				FB66A454288F239700F9F850 /* Language.swift */,
 				FB66A456288F3EB900F9F850 /* WordBundle.swift */,
 				FB66A46A2890590100F9F850 /* Word+Examples.swift */,
+				D16D1A8428A6AD2800000984 /* Theme.swift */,
+				D16D1A8A28A6CF7200000984 /* ThemesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -480,12 +492,15 @@
 				FBCECEA22814847900CD558C /* Persistence.swift in Sources */,
 				FB66A457288F3EBA00F9F850 /* WordBundle.swift in Sources */,
 				FBCECECE2814876D00CD558C /* Device+Extension.swift in Sources */,
+				D16D1A8B28A6CF7200000984 /* ThemesModel.swift in Sources */,
+				D16D1A8928A6B03A00000984 /* ThemeView.swift in Sources */,
 				FB66A4292887EB7100F9F850 /* WelcomeView.swift in Sources */,
 				FB4190732891E91900D95C44 /* RetrieveEntryResponse.swift in Sources */,
 				FB66A4532888B8ED00F9F850 /* LibraryView.swift in Sources */,
 				FB66A46D2890665800F9F850 /* WordView.swift in Sources */,
 				FB66A43C288833A200F9F850 /* ReminderSettingItem.swift in Sources */,
 				FBCECEA52814847900CD558C /* Word_Bundle.xcdatamodeld in Sources */,
+				D16D1A8728A6AF5B00000984 /* AspectVGrid.swift in Sources */,
 				FB66A4512888B5F100F9F850 /* HomeView.swift in Sources */,
 				FBCECED2281488AE00CD558C /* Int+Extension.swift in Sources */,
 				FBCECECA2814863C00CD558C /* OptionalString+Extension.swift in Sources */,
@@ -501,6 +516,7 @@
 				FB66A44A2888A8E300F9F850 /* HelloWorldView.swift in Sources */,
 				FB66A430288804E400F9F850 /* Localisation.swift in Sources */,
 				FB41906E28917B6500D95C44 /* RetrieveEntryOriginalResponse.swift in Sources */,
+				D16D1A8528A6AD2800000984 /* Theme.swift in Sources */,
 				FBCECED02814883F00CD558C /* Numeric+Extension.swift in Sources */,
 				FB66A44D2888B3A300F9F850 /* Word.swift in Sources */,
 				FBCECECC281486E900CD558C /* String+Extension.swift in Sources */,

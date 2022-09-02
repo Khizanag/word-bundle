@@ -8,17 +8,27 @@
 import SwiftUI
 
 struct LibraryView: View {
+    @ObservedObject var themesModel: ThemesModel
+    
     var body: some View {
         ZStack {
-            DesignSystem.Color.color3()()
-                .ignoresSafeArea()
-            Text("Hello, Library!")
+            themesView
+        }
+    }
+    
+    private var themesView: some View {
+        AspectVGrid.init(items: themesModel.themes, aspectRatio: 2/3) { theme in
+            ThemeView(theme: theme)
+                .padding(DesignSystem.Size.small())
+                .onTapGesture {
+                    themesModel.selectTheme(theme: theme)
+                }
         }
     }
 }
 
 struct LibraryView_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryView()
+        LibraryView(themesModel: .init())
     }
 }

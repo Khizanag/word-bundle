@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MainView: View {
+    @ObservedObject var themesModel = ThemesModel()
+    
     var body: some View {
         ZStack {
-            DesignSystem.Color.color2()()
+            themesModel.getSelectedTheme()?.color
                 .ignoresSafeArea()
 
             TabView {
@@ -19,12 +21,12 @@ struct MainView: View {
                         Image(systemName: "phone.fill")
                         Text("Calls")
                     }
-                LibraryView()
+                LibraryView(themesModel: themesModel)
                     .tabItem {
                         Image(systemName: "books.vertical.fill")
                         Text("Library")
                     }
-                HomeView(wordBundle: .example)
+                HomeView(wordBundle: .example, themesModel: themesModel)
                     .tabItem {
                         Image(systemName: "scroll.fill")
                         Text(Localisation.home())
