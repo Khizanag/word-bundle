@@ -10,7 +10,9 @@
 		FB0829A32884BB9000FFFB4B /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0829A22884BB9000FFFB4B /* DesignSystem.swift */; };
 		FB0829A52884BBC200FFFB4B /* DesignSystem+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0829A42884BBC200FFFB4B /* DesignSystem+Size.swift */; };
 		FB0829A72884BC2B00FFFB4B /* DesignSystem+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0829A62884BC2B00FFFB4B /* DesignSystem+Color.swift */; };
-		FB41906B2891289700D95C44 /* SwipeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41906A2891289700D95C44 /* SwipeModifier.swift */; };
+		FB41906E28917B6500D95C44 /* RetrieveEntryOriginalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41906D28917B6500D95C44 /* RetrieveEntryOriginalResponse.swift */; };
+		FB41907128918FAE00D95C44 /* OxfordDictionariesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41907028918FAE00D95C44 /* OxfordDictionariesRepository.swift */; };
+		FB4190732891E91900D95C44 /* RetrieveEntryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4190722891E91900D95C44 /* RetrieveEntryResponse.swift */; };
 		FB66A4292887EB7100F9F850 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A4282887EB7100F9F850 /* WelcomeView.swift */; };
 		FB66A42C2887FAD000F9F850 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB66A42E2887FAD000F9F850 /* Localizable.strings */; };
 		FB66A430288804E400F9F850 /* Localisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A42F288804E400F9F850 /* Localisation.swift */; };
@@ -66,7 +68,9 @@
 		FB0829A22884BB9000FFFB4B /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		FB0829A42884BBC200FFFB4B /* DesignSystem+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Size.swift"; sourceTree = "<group>"; };
 		FB0829A62884BC2B00FFFB4B /* DesignSystem+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Color.swift"; sourceTree = "<group>"; };
-		FB41906A2891289700D95C44 /* SwipeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeModifier.swift; sourceTree = "<group>"; };
+		FB41906D28917B6500D95C44 /* RetrieveEntryOriginalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveEntryOriginalResponse.swift; sourceTree = "<group>"; };
+		FB41907028918FAE00D95C44 /* OxfordDictionariesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxfordDictionariesRepository.swift; sourceTree = "<group>"; };
+		FB4190722891E91900D95C44 /* RetrieveEntryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveEntryResponse.swift; sourceTree = "<group>"; };
 		FB66A4282887EB7100F9F850 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		FB66A42D2887FAD000F9F850 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FB66A42F288804E400F9F850 /* Localisation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localisation.swift; sourceTree = "<group>"; };
@@ -141,6 +145,23 @@
 			path = "Design System";
 			sourceTree = "<group>";
 		};
+		FB41906C2891752700D95C44 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				FB41906D28917B6500D95C44 /* RetrieveEntryOriginalResponse.swift */,
+				FB4190722891E91900D95C44 /* RetrieveEntryResponse.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		FB41906F28918F7F00D95C44 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				FB41907028918FAE00D95C44 /* OxfordDictionariesRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		FB66A4252887209300F9F850 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +205,8 @@
 		FB66A44B2888B39800F9F850 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FB41906F28918F7F00D95C44 /* Repositories */,
+				FB41906C2891752700D95C44 /* DTOs */,
 				FB66A44C2888B3A300F9F850 /* Word.swift */,
 				FB66A44E2888B54800F9F850 /* PartOfSpeech.swift */,
 				FB66A454288F239700F9F850 /* Language.swift */,
@@ -271,7 +294,6 @@
 			isa = PBXGroup;
 			children = (
 				FBCECEC82814862D00CD558C /* Extensions */,
-				FB41906A2891289700D95C44 /* SwipeModifier.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -459,6 +481,7 @@
 				FB66A457288F3EBA00F9F850 /* WordBundle.swift in Sources */,
 				FBCECECE2814876D00CD558C /* Device+Extension.swift in Sources */,
 				FB66A4292887EB7100F9F850 /* WelcomeView.swift in Sources */,
+				FB4190732891E91900D95C44 /* RetrieveEntryResponse.swift in Sources */,
 				FB66A4532888B8ED00F9F850 /* LibraryView.swift in Sources */,
 				FB66A46D2890665800F9F850 /* WordView.swift in Sources */,
 				FB66A43C288833A200F9F850 /* ReminderSettingItem.swift in Sources */,
@@ -468,15 +491,16 @@
 				FBCECECA2814863C00CD558C /* OptionalString+Extension.swift in Sources */,
 				FB66A46B2890590100F9F850 /* Word+Examples.swift in Sources */,
 				FB66A43728880F5C00F9F850 /* NavigationButton.swift in Sources */,
-				FB41906B2891289700D95C44 /* SwipeModifier.swift in Sources */,
 				FB66A43528880EF600F9F850 /* RemindersSettingView.swift in Sources */,
 				FB0829A52884BBC200FFFB4B /* DesignSystem+Size.swift in Sources */,
 				FB0829A32884BB9000FFFB4B /* DesignSystem.swift in Sources */,
+				FB41907128918FAE00D95C44 /* OxfordDictionariesRepository.swift in Sources */,
 				FB0829A72884BC2B00FFFB4B /* DesignSystem+Color.swift in Sources */,
 				FB66A43A288816B700F9F850 /* MainView.swift in Sources */,
 				FBF4646F2884CED000B4A96B /* DesignSystem+Images.swift in Sources */,
 				FB66A44A2888A8E300F9F850 /* HelloWorldView.swift in Sources */,
 				FB66A430288804E400F9F850 /* Localisation.swift in Sources */,
+				FB41906E28917B6500D95C44 /* RetrieveEntryOriginalResponse.swift in Sources */,
 				FBCECED02814883F00CD558C /* Numeric+Extension.swift in Sources */,
 				FB66A44D2888B3A300F9F850 /* Word.swift in Sources */,
 				FBCECECC281486E900CD558C /* String+Extension.swift in Sources */,
