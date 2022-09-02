@@ -11,6 +11,7 @@ import SwiftUIPager
 struct HomeView: View {
     // MARK: - Properties
     private var wordBundle: WordBundle
+    @ObservedObject private var themesModel: ThemesModel
     @State private var page: Page = .first()
     @State private var words: [Word]
     @State private var isWordDetailViewActive = false
@@ -18,21 +19,20 @@ struct HomeView: View {
     @State private var activeWord: Word
 
     // MARK: - Init
-    init(wordBundle: WordBundle) {
+    init(wordBundle: WordBundle, themesModel: ThemesModel) {
         self.wordBundle = wordBundle
         let words = wordBundle.words.shuffled()
         self._words = State(initialValue: words)
         self._activeWord = State(initialValue: words[0])
+        self.themesModel = themesModel
     }
 
     var body: some View {
         VStack {
-            NavigationLink(destination: LibraryView(), isActive: $isWordBundleDetailViewActive) { }
             NavigationLink(destination: WordView(word: $activeWord), isActive: $isWordDetailViewActive) { }
             Pager(page: page, data: wordBundle.words, id: \.id) { word in
                 ZStack {
-                    Color.gray // TODO: choose color
-
+                    themesModel.getSelectedTheme()?.color
                     VStack {
                         Text(word.word)
                             .font(.largeTitle)
@@ -95,6 +95,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(wordBundle: .example)
+        HomeView(wordBundle: .example, themesModel: .init())
     }
 }
