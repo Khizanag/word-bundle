@@ -22,6 +22,7 @@ struct WelcomeView: View {
                 NavigationButton(title: Localisation.getStarted(), destination: RemindersSettingView())
                 Spacer()
                 TextField("Type word to search here", text: $textFieldText)
+                    .padding()
                 Button("Fetch Data") {
                     Task {
                         let entry = await dictionariesRepository.entries(of: textFieldText, language: .english)

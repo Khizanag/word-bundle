@@ -20,7 +20,7 @@ final class OxfordDictionariesRepository: DictionariesRepository {
 
     func entries(of word: String, language: Language) async -> RetrieveEntryResponse? {
         let endpoint = "entries"
-        let wordId = word.lowercased()
+        let wordId = word.lowercased() // FIXME: when there is space in input
 
         let url = URL(string: "\(baseUrl)/\(version)/\(endpoint)/\(language.localizableIdentifier)/\(wordId)")!
 
