@@ -13,9 +13,9 @@ struct Theme: Identifiable {
     let isEmpty: Bool
     let color: Color // TODO: maybe replace with image?
     var isSelected: Bool = false
-    
+
     static let themes: [Theme] = [
-        .init(id: 1, isEmpty: true,  color: .accentColor),
+        .init(id: 1, isEmpty: true, color: .accentColor),
         .init(id: 2, isEmpty: false, color: .red),
         .init(id: 3, isEmpty: false, color: .blue),
         .init(id: 4, isEmpty: false, color: .brown),

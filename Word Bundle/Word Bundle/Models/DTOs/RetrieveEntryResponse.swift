@@ -96,7 +96,7 @@ struct RetrieveEntryResponse: Codable {
 ///        let registers: [Register]?
 ///        let semanticClasses: [SemanticClass]?
         let shortDefinitions: [String]?
-        let subsenses: [Sense]?
+///        let subsenses: [Sense]? // additional layer of sense
         let synonyms: [SynonymsAntonym]?
 ///        let variantForms: [VariantForm]?
     }

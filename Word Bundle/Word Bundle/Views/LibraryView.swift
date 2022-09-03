@@ -9,15 +9,15 @@ import SwiftUI
 
 struct LibraryView: View {
     @ObservedObject var themesModel: ThemesModel
-    
+
     var body: some View {
         ZStack {
             themesView
         }
     }
-    
+
     private var themesView: some View {
-        AspectVGrid.init(items: themesModel.themes, aspectRatio: 2/3) { theme in
+        AspectVGrid(items: themesModel.themes, aspectRatio: 2/3) { theme in
             ThemeView(theme: theme)
                 .padding(DesignSystem.Size.small())
                 .onTapGesture {

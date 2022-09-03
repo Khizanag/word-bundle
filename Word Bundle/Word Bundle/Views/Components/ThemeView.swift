@@ -10,7 +10,7 @@ import SwiftUI
 struct ThemeView: View {
     private typealias Size = DesignSystem.Size
     var theme: Theme
-    
+
     var body: some View {
         ZStack {
             let rect = RoundedRectangle(cornerRadius: Size.medium())
@@ -33,11 +33,8 @@ struct ThemeView: View {
                         }
                         Spacer()
                     }
-                    
                 }
-                
             }
         }
     }
 }
-
