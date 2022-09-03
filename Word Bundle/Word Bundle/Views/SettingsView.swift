@@ -10,22 +10,20 @@ import SwiftUI
 struct SettingsView: View {
     // TODO: find and fix navigation title bug
     var body: some View {
-        NavigationView {
-            List {
-                NavigationLink(destination: Text("Reminder Settings")) { // TODO: change destination
-                    Image(systemName: "bell.badge")
-                    Text("Reminder Settings")
-                }
-                .padding()
-
-                NavigationLink(destination: Text("Change Backgound Theme")) { // TODO: change destination
-                    Image(systemName: "paintbrush")
-                    Text("Change Backgound Theme")
-                }
-                .padding()
+        List {
+            NavigationLink(destination: Text("Reminder Settings")) { // TODO: change destination
+                Image(systemName: "bell.badge")
+                Text("Reminder Settings")
             }
-            .navigationTitle("Settings")
+//            .padding() // TODO: discuss needed or not
+
+            NavigationLink(destination: Text("Change Background Theme")) { // TODO: change destination
+                Image(systemName: "paintbrush")
+                Text("Change Background Theme")
+            }
+//            .padding() // TODO: discuss needed or not
         }
+        .navigationTitle("Settings")
     }
 }
 
