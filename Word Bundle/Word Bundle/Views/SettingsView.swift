@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SettingsView: View {
-
     // TODO: find and fix navigation title bug
     var body: some View {
         NavigationView {
@@ -18,7 +17,7 @@ struct SettingsView: View {
                     Text("Reminder Settings")
                 }
                 .padding()
-                
+
                 NavigationLink(destination: Text("Change Backgound Theme")) { // TODO: change destination
                     Image(systemName: "paintbrush")
                     Text("Change Backgound Theme")

@@ -36,7 +36,6 @@ struct MainView: View {
                         Image(systemName: "message.fill")
                         Text("Contact")
                     }
-                
                 SettingsView()
                     .tabItem {
                         Image(systemName: "brain.head.profile")
