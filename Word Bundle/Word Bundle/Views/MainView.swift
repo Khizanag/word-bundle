@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject var themesModel = ThemesModel()
-    
+
     var body: some View {
         ZStack {
             themesModel.getSelectedTheme()?.color

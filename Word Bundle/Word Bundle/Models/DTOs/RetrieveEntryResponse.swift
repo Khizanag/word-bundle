@@ -16,7 +16,7 @@ struct RetrieveEntryResponse: Codable {
 ///        let id: String
 ///        let language: String
         let lexicalEntries: [LexicalEntry]
-        let pronunciations: [Pronunciation]?
+///        let pronunciations: [Pronunciation]?
 ///        let type: String?
     }
 
@@ -91,12 +91,12 @@ struct RetrieveEntryResponse: Codable {
         let examples: [Example]?
 ///        let inflections: [InflectedForm]?
 ///        let notes: [CategorizedText]?
-        let pronunciations: [Pronunciation]?
+///        let pronunciations: [Pronunciation]?
 ///        let regions: [Region]?
 ///        let registers: [Register]?
 ///        let semanticClasses: [SemanticClass]?
         let shortDefinitions: [String]?
-        let subsenses: [Sense]?
+///        let subsenses: [Sense]? // additional layer of sense
         let synonyms: [SynonymsAntonym]?
 ///        let variantForms: [VariantForm]?
     }
