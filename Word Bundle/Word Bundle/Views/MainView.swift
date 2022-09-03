@@ -36,10 +36,10 @@ struct MainView: View {
                         Image(systemName: "message.fill")
                         Text("Contact")
                     }
-                HelloWorldView(text: "Brain")
+                SettingsView()
                     .tabItem {
                         Image(systemName: "brain.head.profile")
-                        Text("Profile")
+                        Text("Settings")
                     }
             }
         }
