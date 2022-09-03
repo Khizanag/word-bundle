@@ -6,6 +6,10 @@
 //
 
 import SwiftUI
+import AVFoundation
+
+var player: AVPlayer?
+
 
 struct WelcomeView: View {
     private let dictionariesRepository: DictionariesRepository = OxfordDictionariesRepository()
@@ -27,6 +31,25 @@ struct WelcomeView: View {
                     Task {
                         let entry = await dictionariesRepository.entries(of: textFieldText, language: .english)
                         print(entry ?? "Fetched entry was nil")
+                    }
+                }
+                
+                Button("Play Sound") {
+                    Task {
+                        let entry = await dictionariesRepository.entries(of: textFieldText, language: .english)
+                        let audioFile = entry?.results?[0].lexicalEntries[0].entries?[0].pronunciations?[0].audioFile // TODO: help
+                        let url = NSURL(string: audioFile ?? "")
+                           do {
+                               let playerItem = AVPlayerItem(url: url! as URL)
+                               player = AVPlayer(playerItem: playerItem)
+                               player!.volume = 1.0
+                               player!.play()
+                           } catch let error as NSError { // TODO: fix warning
+                               player = nil
+                               print(error.localizedDescription)
+                           } catch {
+                               print("AVAudioPlayer init failed")
+                           }
                     }
                 }
             }
