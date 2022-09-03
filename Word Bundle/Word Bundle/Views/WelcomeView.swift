@@ -5,15 +5,13 @@
 //  Created by Giga Khizanishvili on 20.07.22.
 //
 
-import SwiftUI
 import AVFoundation
-
-var player: AVPlayer?
-
+import SwiftUI
 
 struct WelcomeView: View {
     private let dictionariesRepository: DictionariesRepository = OxfordDictionariesRepository()
     @State private var textFieldText = ""
+    @State private var player: AVPlayer?
 
     var body: some View {
         NavigationView {
@@ -31,25 +29,18 @@ struct WelcomeView: View {
                     Task {
                         let entry = await dictionariesRepository.entries(of: textFieldText, language: .english)
                         print(entry ?? "Fetched entry was nil")
+
+                        guard let audioFile = entry?.results?[0].lexicalEntries[0].entries?[0].pronunciations?[0].audioFile else { return } // TODO: help
+                        guard let url = URL(string: audioFile) else { return }
+                        let playerItem = AVPlayerItem(url: url)
+                        player = AVPlayer(playerItem: playerItem)
                     }
                 }
-                
+
                 Button("Play Sound") {
                     Task {
-                        let entry = await dictionariesRepository.entries(of: textFieldText, language: .english)
-                        let audioFile = entry?.results?[0].lexicalEntries[0].entries?[0].pronunciations?[0].audioFile // TODO: help
-                        let url = NSURL(string: audioFile ?? "")
-                           do {
-                               let playerItem = AVPlayerItem(url: url! as URL)
-                               player = AVPlayer(playerItem: playerItem)
-                               player!.volume = 1.0
-                               player!.play()
-                           } catch let error as NSError { // TODO: fix warning
-                               player = nil
-                               print(error.localizedDescription)
-                           } catch {
-                               print("AVAudioPlayer init failed")
-                           }
+                        await player?.seek(to: .zero)
+                        player?.play()
                     }
                 }
             }
