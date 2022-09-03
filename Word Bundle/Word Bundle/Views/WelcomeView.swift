@@ -23,10 +23,12 @@ struct WelcomeView: View {
                 Spacer()
                 TextField("Type word to search here", text: $textFieldText)
                     .padding()
+                
                 Button("Fetch Data") {
                     Task {
                         let entry = await dictionariesRepository.entries(of: textFieldText, language: .english)
                         print(entry ?? "Fetched entry was nil")
+                     
                     }
                 }
             }
