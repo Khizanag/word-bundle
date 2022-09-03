@@ -16,7 +16,7 @@ struct RetrieveEntryResponse: Codable {
 ///        let id: String
 ///        let language: String
         let lexicalEntries: [LexicalEntry]
-        let pronunciations: [Pronunciation]?
+//        let pronunciations: [Pronunciation]? // TODO: discuss with Giga
 ///        let type: String?
     }
 
@@ -91,7 +91,7 @@ struct RetrieveEntryResponse: Codable {
         let examples: [Example]?
 ///        let inflections: [InflectedForm]?
 ///        let notes: [CategorizedText]?
-        let pronunciations: [Pronunciation]?
+//        let pronunciations: [Pronunciation]?  // TODO: discuss with Giga
 ///        let regions: [Region]?
 ///        let registers: [Register]?
 ///        let semanticClasses: [SemanticClass]?
