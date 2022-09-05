@@ -24,6 +24,6 @@ struct WordView: View {
 
 struct WordView_Previews: PreviewProvider {
     static var previews: some View {
-        WordView(word: .init(projectedValue: .constant(.good)))
+        WordView(word: .init(projectedValue: .constant(.basketball)))
     }
 }

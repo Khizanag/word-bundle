@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RemindersSettingView: View {
+    let words: [Word]
+
     // MARK: - Body
     var body: some View {
         VStack {
@@ -17,7 +19,7 @@ struct RemindersSettingView: View {
             titleLabel
             properties
             Spacer()
-            NavigationButton(title: Localisation.getStarted(), destination: MainView())
+            NavigationButton(title: Localisation.getStarted(), destination: MainView(words: words))
             Spacer()
         }
         .navigationTitle(Localisation.reminders())
@@ -84,6 +86,6 @@ struct RemindersSettingView: View {
 // MARK: - Previews
 struct RemindersSettingView_Previews: PreviewProvider {
     static var previews: some View {
-        RemindersSettingView()
+        RemindersSettingView(words: [])
     }
 }
