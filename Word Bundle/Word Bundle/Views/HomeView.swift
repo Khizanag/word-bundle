@@ -13,16 +13,17 @@ struct HomeView: View {
     private var wordBundle: WordBundle
     @ObservedObject private var themesModel: ThemesModel
     @State private var page: Page = .first()
-    @State private var words: [Word]
+    private var words: [Word]
     @State private var isWordDetailViewActive = false
     @State private var isWordBundleDetailViewActive = false
     @State private var activeWord: Word
 
+    @State private var isButtonShown = true
+
     // MARK: - Init
-    init(wordBundle: WordBundle, themesModel: ThemesModel) {
-        self.wordBundle = wordBundle
-        let words = wordBundle.words.shuffled()
-        self._words = State(initialValue: words)
+    init(wordBundle: WordBundle, words: [Word], themesModel: ThemesModel) {
+        self.wordBundle = wordBundle // TODO: undo
+        self.words = words
         self._activeWord = State(initialValue: words[0])
         self.themesModel = themesModel
     }
@@ -30,7 +31,7 @@ struct HomeView: View {
     var body: some View {
         VStack {
             NavigationLink(destination: WordView(word: $activeWord), isActive: $isWordDetailViewActive) { }
-            Pager(page: page, data: wordBundle.words, id: \.id) { word in
+            Pager(page: page, data: words, id: \.id) { word in
                 ZStack {
                     themesModel.getSelectedTheme()?.color
                     VStack {
@@ -41,7 +42,9 @@ struct HomeView: View {
                             .multilineTextAlignment(.center)
                             .padding()
 
-                        Text("(\(word.partOfSpeech.shortTitle).) \(word.definition)")
+                        let lexicalCategory = word.lexicalEntries.first?.lexicalCategory ?? ""
+                        let definition = word.lexicalEntries.first?.entries.first?.senses.first?.definitions.first ?? ""
+                        Text("(\(lexicalCategory)) \(definition)")// FIXME: second part
                             .font(.headline)
                             .fontWeight(.bold)
                             .foregroundColor(DesignSystem.Color.secondaryTextLight()())
@@ -49,7 +52,8 @@ struct HomeView: View {
                             .padding()
 
                         VStack {
-                            ForEach(word.examples, id: \.self) { example in
+                            let examples = word.lexicalEntries.first?.entries.first?.senses.first?.examples ?? ["No Example..."]
+                            ForEach(examples, id: \.self) { example in
                                 Text(example)
                                     .font(.footnote)
                                     .fontWeight(.light)
@@ -74,12 +78,12 @@ struct HomeView: View {
                             case (-100...100, ...0):
                                 withAnimation {
                                     page.update(.next)
-                                    activeWord = wordBundle.words[page.index]
+                                    activeWord = words[page.index]
                                 }
                             case (-100...100, 0...):
                                 withAnimation {
                                     page.update(.previous)
-                                    activeWord = wordBundle.words[page.index]
+                                    activeWord = words[page.index]
                                 }
                             default: break
                             }
@@ -95,6 +99,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(wordBundle: .example, themesModel: .init())
+        HomeView(wordBundle: .example, words: [], themesModel: .init())
     }
 }
