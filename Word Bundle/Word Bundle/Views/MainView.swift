@@ -10,6 +10,8 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject var themesModel = ThemesModel()
 
+    let words: [Word]
+
     var body: some View {
         ZStack {
             themesModel.getSelectedTheme()?.color
@@ -21,21 +23,25 @@ struct MainView: View {
                         Image(systemName: "phone.fill")
                         Text("Calls")
                     }
+
                 LibraryView(themesModel: themesModel)
                     .tabItem {
                         Image(systemName: "books.vertical.fill")
                         Text("Library")
                     }
-                HomeView(wordBundle: .example, themesModel: themesModel)
+
+                HomeView(wordBundle: .example, words: words, themesModel: themesModel)
                     .tabItem {
                         Image(systemName: "scroll.fill")
                         Text(Localisation.home())
                     }
+
                 HelloWorldView(text: "Message")
                     .tabItem {
                         Image(systemName: "message.fill")
                         Text("Contact")
                     }
+
                 SettingsView()
                     .tabItem {
                         Image(systemName: "brain.head.profile")
@@ -50,6 +56,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(words: [])
     }
 }

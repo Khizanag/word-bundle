@@ -12,6 +12,9 @@ struct WelcomeView: View {
     private let dictionariesRepository: DictionariesRepository = OxfordDictionariesRepository()
     @State private var textFieldText = ""
     @State private var player: AVPlayer?
+    @State private var words: [Word] = []
+    @State private var isButtonLoading = false
+    @State private var isTextFieldDisabled = false
 
     var body: some View {
         NavigationView {
@@ -21,24 +24,20 @@ struct WelcomeView: View {
                 titleLabel
                 descriptionLabel
                 Spacer()
-                NavigationButton(title: Localisation.getStarted(), destination: RemindersSettingView())
+                NavigationButton(title: Localisation.getStarted(), destination: RemindersSettingView(words: words))
                 Spacer()
+
                 TextField("Type word to search here", text: $textFieldText)
+                    .disabled(isTextFieldDisabled)
                     .padding()
 
-                Button("Fetch Data") {
-                    Task {
-                        let entry = await dictionariesRepository.entries(of: textFieldText, language: .english)
-                        print(entry ?? "Fetched entry was nil")
+                enterButton
+                    .frame(maxWidth: .infinity)
+                    .background(DesignSystem.Color.color3().value) // FIXME: try to remove
+                    .cornerRadius(8)
+                    .padding()
 
-                        guard let audioFile = entry?.results?[0].lexicalEntries[0].entries?[0].pronunciations?[0].audioFile else { return } // TODO: help
-                        guard let url = URL(string: audioFile) else { return }
-                        let playerItem = AVPlayerItem(url: url)
-                        player = AVPlayer(playerItem: playerItem)
-                    }
-                }
-
-                Button("Play Sound") {
+                Button("Play last word's Sound") {
                     Task {
                         await player?.seek(to: .zero)
                         player?.play()
@@ -65,6 +64,50 @@ struct WelcomeView: View {
             .foregroundColor(DesignSystem.Color.secondaryTextDark().value)
             .multilineTextAlignment(.center)
             .padding()
+    }
+
+    private var enterButton: some View {
+        LoadingButton(
+            action: {
+                isTextFieldDisabled = true
+                isButtonLoading = true
+
+                Task {
+                    defer {
+                        textFieldText = ""
+                        isTextFieldDisabled = false
+                        isButtonLoading = false
+                    }
+
+                    guard let response = await dictionariesRepository.entries(of: textFieldText, language: .english) else { return }
+
+                    print(response)
+
+                    guard let word = Word.make(from: response),
+                          let audioFile = word.pronunciation.audioFile,
+                          let url = URL(string: audioFile) else { return }
+
+                    self.words.append(word)
+
+                    let playerItem = AVPlayerItem(url: url)
+                    player = AVPlayer(playerItem: playerItem)
+                }
+            },
+            isLoading: $isButtonLoading,
+            style: .init(
+                width: 300,
+                height: 50,
+                cornerRadius: 8,
+                backgroundColor: DesignSystem.Color.color3().value,
+                loadingColor: .clear,
+                strokeWidth: 3,
+                strokeColor: .indigo
+            ),
+            builder: { // TODO: redesign
+                Text("Add word to Dictionary")
+                    .foregroundColor(.white)
+            }
+        )
     }
 }
 

@@ -51,6 +51,9 @@
 		FBCECECE2814876D00CD558C /* Device+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECECD2814876D00CD558C /* Device+Extension.swift */; };
 		FBCECED02814883F00CD558C /* Numeric+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECECF2814883F00CD558C /* Numeric+Extension.swift */; };
 		FBCECED2281488AE00CD558C /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECED1281488AE00CD558C /* Int+Extension.swift */; };
+		FBE5450128C66DE40093ABF3 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE5450028C66DE40093ABF3 /* LoadingButton.swift */; };
+		FBE5450328C66E190093ABF3 /* LoadingButton+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE5450228C66E190093ABF3 /* LoadingButton+Style.swift */; };
+		FBE5450628C66E670093ABF3 /* CircleLoadingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE5450528C66E670093ABF3 /* CircleLoadingBar.swift */; };
 		FBF4646F2884CED000B4A96B /* DesignSystem+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF4646E2884CED000B4A96B /* DesignSystem+Images.swift */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +124,9 @@
 		FBCECECF2814883F00CD558C /* Numeric+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+Extension.swift"; sourceTree = "<group>"; };
 		FBCECED1281488AE00CD558C /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		FBCECED828148CFD00CD558C /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FBE5450028C66DE40093ABF3 /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		FBE5450228C66E190093ABF3 /* LoadingButton+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoadingButton+Style.swift"; sourceTree = "<group>"; };
+		FBE5450528C66E670093ABF3 /* CircleLoadingBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLoadingBar.swift; sourceTree = "<group>"; };
 		FBF4646E2884CED000B4A96B /* DesignSystem+Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Images.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +165,15 @@
 				FBF4646E2884CED000B4A96B /* DesignSystem+Images.swift */,
 			);
 			path = "Design System";
+			sourceTree = "<group>";
+		};
+		FB296D4128C4211500E8541D /* Word */ = {
+			isa = PBXGroup;
+			children = (
+				FB66A44C2888B3A300F9F850 /* Word.swift */,
+				FB66A46A2890590100F9F850 /* Word+Examples.swift */,
+			);
+			path = Word;
 			sourceTree = "<group>";
 		};
 		FB41906C2891752700D95C44 /* DTOs */ = {
@@ -215,6 +230,7 @@
 		FB66A4382888157E00F9F850 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FBE544FF28C66DCF0093ABF3 /* LoadingButton */,
 				D16D1A8828A6B03A00000984 /* ThemeView.swift */,
 				FB66A43628880F5C00F9F850 /* NavigationButton.swift */,
 				FB66A4492888A8E300F9F850 /* HelloWorldView.swift */,
@@ -225,13 +241,11 @@
 		FB66A44B2888B39800F9F850 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FB41906F28918F7F00D95C44 /* Repositories */,
+				FB296D4128C4211500E8541D /* Word */,
 				FB41906C2891752700D95C44 /* DTOs */,
-				FB66A44C2888B3A300F9F850 /* Word.swift */,
 				FB66A44E2888B54800F9F850 /* PartOfSpeech.swift */,
 				FB66A454288F239700F9F850 /* Language.swift */,
 				FB66A456288F3EB900F9F850 /* WordBundle.swift */,
-				FB66A46A2890590100F9F850 /* Word+Examples.swift */,
 				D16D1A8428A6AD2800000984 /* Theme.swift */,
 				D16D1A8A28A6CF7200000984 /* ThemesModel.swift */,
 				D13891C528C68459003ABBA1 /* UnsplashImageResponse.swift */,
@@ -271,6 +285,7 @@
 		FBCECE972814847600CD558C /* Word Bundle */ = {
 			isa = PBXGroup;
 			children = (
+				FB41906F28918F7F00D95C44 /* Repositories */,
 				FB66A44B2888B39800F9F850 /* Models */,
 				FB66A43328880EBE00F9F850 /* Views */,
 				FB66A4252887209300F9F850 /* Localization */,
@@ -331,6 +346,23 @@
 				D13891C328C68208003ABBA1 /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FBE544FF28C66DCF0093ABF3 /* LoadingButton */ = {
+			isa = PBXGroup;
+			children = (
+				FBE5450028C66DE40093ABF3 /* LoadingButton.swift */,
+				FBE5450228C66E190093ABF3 /* LoadingButton+Style.swift */,
+				FBE5450528C66E670093ABF3 /* CircleLoadingBar.swift */,
+			);
+			path = LoadingButton;
+			sourceTree = "<group>";
+		};
+		FBF464682884C7C500B4A96B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -493,12 +525,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE5450128C66DE40093ABF3 /* LoadingButton.swift in Sources */,
 				D17B645C28C36E6C005CB55D /* SettingsView.swift in Sources */,
 				FBCECEA22814847900CD558C /* Persistence.swift in Sources */,
 				FB66A457288F3EBA00F9F850 /* WordBundle.swift in Sources */,
 				D13891C428C68208003ABBA1 /* UIImage+Extension.swift in Sources */,
 				FBCECECE2814876D00CD558C /* Device+Extension.swift in Sources */,
 				D16D1A8B28A6CF7200000984 /* ThemesModel.swift in Sources */,
+				FBE5450628C66E670093ABF3 /* CircleLoadingBar.swift in Sources */,
 				D16D1A8928A6B03A00000984 /* ThemeView.swift in Sources */,
 				FB66A4292887EB7100F9F850 /* WelcomeView.swift in Sources */,
 				FB4190732891E91900D95C44 /* RetrieveEntryResponse.swift in Sources */,
@@ -509,6 +543,7 @@
 				FBCECEA52814847900CD558C /* Word_Bundle.xcdatamodeld in Sources */,
 				D16D1A8728A6AF5B00000984 /* AspectVGrid.swift in Sources */,
 				FB66A4512888B5F100F9F850 /* HomeView.swift in Sources */,
+				FBE5450328C66E190093ABF3 /* LoadingButton+Style.swift in Sources */,
 				FBCECED2281488AE00CD558C /* Int+Extension.swift in Sources */,
 				FBCECECA2814863C00CD558C /* OptionalString+Extension.swift in Sources */,
 				FB66A46B2890590100F9F850 /* Word+Examples.swift in Sources */,

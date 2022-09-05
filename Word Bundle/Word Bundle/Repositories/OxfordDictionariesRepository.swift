@@ -12,6 +12,7 @@ protocol DictionariesRepository {
 }
 
 final class OxfordDictionariesRepository: DictionariesRepository {
+    // TODO: refactor
     private let appId = "30c65836"
     private let appKey = "98393f76981a3549edbdde7a3226b0ed"
 
