@@ -28,6 +28,14 @@ extension String {
         return String(dropFirst(prefix.count))
     }
 
+    func capitalizeFirstLetter() -> String { // TODO: discuss if it needs to be mutating
+        return capitalizingFirstLetter()
+    }
+    
+    private func capitalizingFirstLetter() -> String {
+        return prefix(1).uppercased() + self.lowercased().dropFirst()
+    }
+
     // MARK: - Subscript(s)
     subscript (i: Int) -> Character {
         self[index(startIndex, offsetBy: i)]
