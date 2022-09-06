@@ -18,7 +18,7 @@ struct MainView: View {
                 .ignoresSafeArea()
 
             TabView {
-                HelloWorldView(text: "Giga")
+                WordsView(words: words)
                     .tabItem {
                         Image(systemName: "phone.fill")
                         Text("Calls")
