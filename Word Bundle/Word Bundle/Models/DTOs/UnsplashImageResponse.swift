@@ -7,10 +7,9 @@
 
 import Foundation
 
-
 struct UnsplashImageResponse: Codable {
     let results: [Result]
-    
+
     struct Result: Codable {
         let urls: URLs
     }

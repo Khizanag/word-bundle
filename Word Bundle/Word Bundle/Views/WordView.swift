@@ -11,14 +11,14 @@ struct WordView: View {
     @Binding var word: Word
     @State private var imageUrl: String = ""
     private let imageRepository: ImageRepository = UnsplashImageRepository()
-    
+
     var body: some View {
         VStack {
-            //Color.gray
+            // Color.gray
             Image(uiImage: UIImage.load(url: imageUrl))
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-            
+
             Button("Fetch Data") {
                 Task {
                     imageUrl = await imageRepository.getFullUrl(of: word.word).orEmpty

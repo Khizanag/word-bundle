@@ -4,7 +4,6 @@
 //
 //  Created by Mariam Ormotsadze on 05.09.22.
 //
-
 import Foundation
 
 protocol ImageRepository {
@@ -12,9 +11,13 @@ protocol ImageRepository {
 }
 
 final class UnsplashImageRepository: ImageRepository {
+    private let clientID = "WxvZ6NKKvHcB_6jwRYBI9HuokIpaMOvNgogbSBXxKeE"
+    private let baseUrl = "https://" + "api.unsplash.com"
+    private let imageEndpoint = "search/photos"
+
     func getFullUrl(of word: String) async -> String? {
-        let clientID = "WxvZ6NKKvHcB_6jwRYBI9HuokIpaMOvNgogbSBXxKeE"
-        let fullUrl = "https://api.unsplash.com/search/photos?page=1&query=\(word)&client_id=\(clientID)"
+        let queryParams = "page=1&query=\(word)&client_id=\(clientID)"
+        let fullUrl = "\(baseUrl)/\(imageEndpoint)?\(queryParams)"
 
         guard let url = URL(string: fullUrl) else { return nil }
 
