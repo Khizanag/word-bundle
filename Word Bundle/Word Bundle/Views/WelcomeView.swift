@@ -79,11 +79,7 @@ struct WelcomeView: View {
                         isButtonLoading = false
                     }
 
-                    guard let response = await dictionariesRepository.entries(of: textFieldText, language: .english) else { return }
-
-                    print(response)
-
-                    guard let word = Word.make(from: response),
+                    guard let word = await dictionariesRepository.entries(of: textFieldText, language: .english),
                           let audioFile = word.pronunciation.audioFile,
                           let url = URL(string: audioFile) else { return }
 
