@@ -1,5 +1,5 @@
 //
-//  LibraryView.swift
+//  ThemesView.swift
 //  Word Bundle
 //
 //  Created by Giga Khizanishvili on 21.07.22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LibraryView: View {
+struct ThemesView: View {
     @ObservedObject var themesModel: ThemesModel
 
     var body: some View {
@@ -27,8 +27,8 @@ struct LibraryView: View {
     }
 }
 
-struct LibraryView_Previews: PreviewProvider {
+struct ThemesView_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryView(themesModel: .init())
+        ThemesView(themesModel: .init())
     }
 }

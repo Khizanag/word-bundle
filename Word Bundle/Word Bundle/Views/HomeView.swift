@@ -25,7 +25,7 @@ struct HomeView: View {
     private var entities: FetchedResults<WordEntity>
 
     // MARK: - Init
-    init(wordBundle: WordBundle, words: [Word], themesModel: ThemesModel) {
+    init(wordBundle: WordBundle, words: [Word] = [.basketball], themesModel: ThemesModel) {
         self.wordBundle = wordBundle // TODO: undo
         self.themesModel = themesModel
     }

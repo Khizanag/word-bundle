@@ -77,9 +77,8 @@ struct WordsView: View {
         )
     }
 
-    // MARK: - Functions
+    // MARK: - Private functions
     private func deleteRow(at indexSet: IndexSet) {
-//         words.remove(atOffsets: indexSet)
         // TODO: implement
     }
 
@@ -99,8 +98,6 @@ struct WordsView: View {
                   let url = URL(string: audioFile) else { return }
 
             word.imageUrl = await imageRepository.getFullUrl(of: textFieldText)
-
-//            words.append(word)
 
             do {
                 let wordEntity = WordEntity(context: viewContext)

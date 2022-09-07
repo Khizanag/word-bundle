@@ -14,6 +14,9 @@
 		D16D1A8928A6B03A00000984 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D1A8828A6B03A00000984 /* ThemeView.swift */; };
 		D16D1A8B28A6CF7200000984 /* ThemesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D1A8A28A6CF7200000984 /* ThemesModel.swift */; };
 		D17B645C28C36E6C005CB55D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B645B28C36E6C005CB55D /* SettingsView.swift */; };
+		D1F46EF428C8CF360015132B /* WordBundlePreviewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F46EF328C8CF360015132B /* WordBundlePreviewItemView.swift */; };
+		D1F46EF628C8D4F40015132B /* WordBundlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F46EF528C8D4F40015132B /* WordBundlesView.swift */; };
+		D1F46EF828C8E9B40015132B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F46EF728C8E9B40015132B /* Color+Extension.swift */; };
 		FB0829A32884BB9000FFFB4B /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0829A22884BB9000FFFB4B /* DesignSystem.swift */; };
 		FB0829A52884BBC200FFFB4B /* DesignSystem+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0829A42884BBC200FFFB4B /* DesignSystem+Size.swift */; };
 		FB0829A72884BC2B00FFFB4B /* DesignSystem+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0829A62884BC2B00FFFB4B /* DesignSystem+Color.swift */; };
@@ -33,7 +36,7 @@
 		FB66A44D2888B3A300F9F850 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A44C2888B3A300F9F850 /* Word.swift */; };
 		FB66A44F2888B54800F9F850 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A44E2888B54800F9F850 /* PartOfSpeech.swift */; };
 		FB66A4512888B5F100F9F850 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A4502888B5F100F9F850 /* HomeView.swift */; };
-		FB66A4532888B8ED00F9F850 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A4522888B8ED00F9F850 /* LibraryView.swift */; };
+		FB66A4532888B8ED00F9F850 /* ThemesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A4522888B8ED00F9F850 /* ThemesView.swift */; };
 		FB66A455288F239800F9F850 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A454288F239700F9F850 /* Language.swift */; };
 		FB66A457288F3EBA00F9F850 /* WordBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A456288F3EB900F9F850 /* WordBundle.swift */; };
 		FB66A469289051E700F9F850 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = FB66A468289051E700F9F850 /* SwiftUIPager */; };
@@ -87,6 +90,9 @@
 		D16D1A8828A6B03A00000984 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		D16D1A8A28A6CF7200000984 /* ThemesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesModel.swift; sourceTree = "<group>"; };
 		D17B645B28C36E6C005CB55D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D1F46EF328C8CF360015132B /* WordBundlePreviewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBundlePreviewItemView.swift; sourceTree = "<group>"; };
+		D1F46EF528C8D4F40015132B /* WordBundlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBundlesView.swift; sourceTree = "<group>"; };
+		D1F46EF728C8E9B40015132B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		FB0829A12884BA9D00FFFB4B /* Word Bundle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Word Bundle.entitlements"; sourceTree = "<group>"; };
 		FB0829A22884BB9000FFFB4B /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		FB0829A42884BBC200FFFB4B /* DesignSystem+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Size.swift"; sourceTree = "<group>"; };
@@ -105,7 +111,7 @@
 		FB66A44C2888B3A300F9F850 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		FB66A44E2888B54800F9F850 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		FB66A4502888B5F100F9F850 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		FB66A4522888B8ED00F9F850 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		FB66A4522888B8ED00F9F850 /* ThemesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesView.swift; sourceTree = "<group>"; };
 		FB66A454288F239700F9F850 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		FB66A456288F3EB900F9F850 /* WordBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBundle.swift; sourceTree = "<group>"; };
 		FB66A461288FCEDA00F9F850 /* ka */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ka; path = ka.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -232,11 +238,13 @@
 				FB66A439288816B700F9F850 /* MainView.swift */,
 				FB66A4282887EB7100F9F850 /* WelcomeView.swift */,
 				FB66A4502888B5F100F9F850 /* HomeView.swift */,
-				FB66A4522888B8ED00F9F850 /* LibraryView.swift */,
+				FB66A4522888B8ED00F9F850 /* ThemesView.swift */,
 				FB66A46C2890665700F9F850 /* WordView.swift */,
 				D16D1A8628A6AF5B00000984 /* AspectVGrid.swift */,
 				D17B645B28C36E6C005CB55D /* SettingsView.swift */,
 				D100617628C7746F00B027C2 /* WordsView.swift */,
+				D1F46EF328C8CF360015132B /* WordBundlePreviewItemView.swift */,
+				D1F46EF528C8D4F40015132B /* WordBundlesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -357,6 +365,7 @@
 				FBCECECF2814883F00CD558C /* Numeric+Extension.swift */,
 				FBCECED1281488AE00CD558C /* Int+Extension.swift */,
 				FBE5450A28C7894E0093ABF3 /* Dictionary+Extension.swift */,
+				D1F46EF728C8E9B40015132B /* Color+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -549,7 +558,7 @@
 				FB66A4292887EB7100F9F850 /* WelcomeView.swift in Sources */,
 				FBBBA1F728C952A600F64A78 /* WordEntity.swift in Sources */,
 				FB4190732891E91900D95C44 /* RetrieveEntryResponse.swift in Sources */,
-				FB66A4532888B8ED00F9F850 /* LibraryView.swift in Sources */,
+				FB66A4532888B8ED00F9F850 /* ThemesView.swift in Sources */,
 				FBE5450828C76D440093ABF3 /* UnsplashImageRepository.swift in Sources */,
 				FB66A46D2890665800F9F850 /* WordView.swift in Sources */,
 				FB66A43C288833A200F9F850 /* ReminderSettingItem.swift in Sources */,
@@ -558,6 +567,7 @@
 				FBE5450328C66E190093ABF3 /* LoadingButton+Style.swift in Sources */,
 				FBCECED2281488AE00CD558C /* Int+Extension.swift in Sources */,
 				FBCECECA2814863C00CD558C /* OptionalString+Extension.swift in Sources */,
+				D1F46EF628C8D4F40015132B /* WordBundlesView.swift in Sources */,
 				FB66A46B2890590100F9F850 /* Word+Examples.swift in Sources */,
 				FB66A43728880F5C00F9F850 /* NavigationButton.swift in Sources */,
 				FB66A43528880EF600F9F850 /* RemindersSettingView.swift in Sources */,
@@ -576,9 +586,11 @@
 				D13891C628C68459003ABBA1 /* UnsplashImageResponse.swift in Sources */,
 				FB66A44D2888B3A300F9F850 /* Word.swift in Sources */,
 				FBCECECC281486E900CD558C /* String+Extension.swift in Sources */,
+				D1F46EF428C8CF360015132B /* WordBundlePreviewItemView.swift in Sources */,
 				FB66A455288F239800F9F850 /* Language.swift in Sources */,
 				FB66A44F2888B54800F9F850 /* PartOfSpeech.swift in Sources */,
-				FBCECE992814847600CD558C /* WordBundleApp.swift in Sources */,
+				FBCECE992814847600CD558C /* Word_BundleApp.swift in Sources */,
+				D1F46EF828C8E9B40015132B /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

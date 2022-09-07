@@ -19,7 +19,7 @@ struct RemindersSettingView: View {
             titleLabel
             properties
             Spacer()
-            NavigationButton(title: Localisation.getStarted(), destination: MainView(words: words))
+            NavigationButton(title: Localisation.getStarted(), destination: MainView())
             Spacer()
         }
         .navigationTitle(Localisation.reminders())

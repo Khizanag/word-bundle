@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject var themesModel = ThemesModel()
 
-    let words: [Word]
+    let words: [Word] = [.basketball]
 
     var body: some View {
         ZStack {
@@ -18,16 +18,17 @@ struct MainView: View {
                 .ignoresSafeArea()
 
             TabView {
-                WordsView()
+                WordBundlesView()
                     .tabItem {
-                        Image(systemName: "phone.fill")
-                        Text("Calls")
+                        Image(systemName: "books.vertical.fill" )
+                        Text("Bundles")
                     }
+                
 
-                LibraryView(themesModel: themesModel)
+                ThemesView(themesModel: themesModel)
                     .tabItem {
-                        Image(systemName: "books.vertical.fill")
-                        Text("Library")
+                        Image(systemName: "paintbrush.fill")
+                        Text("Themes")
                     }
 
                 HomeView(wordBundle: .example, words: words, themesModel: themesModel)
@@ -36,13 +37,13 @@ struct MainView: View {
                         Text(Localisation.home())
                     }
 
-                HelloWorldView(text: "Message")
+                WordsView(words: words)
                     .tabItem {
-                        Image(systemName: "message.fill")
-                        Text("Contact")
+                        Image(systemName: "text.book.closed.fill")
+                        Text("Words")
                     }
 
-                SettingsView()
+                SettingsView(words: words)
                     .tabItem {
                         Image(systemName: "brain.head.profile")
                         Text("Settings")
@@ -56,6 +57,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(words: [])
+        MainView()
     }
 }
