@@ -18,16 +18,17 @@ struct MainView: View {
                 .ignoresSafeArea()
 
             TabView {
-                WordsView(words: words)
+                WordBundlesView()
                     .tabItem {
-                        Image(systemName: "phone.fill")
-                        Text("Calls")
+                        Image(systemName: "books.vertical.fill" )
+                        Text("Bundles")
                     }
+                
 
                 ThemesView(themesModel: themesModel)
                     .tabItem {
-                        Image(systemName: "books.vertical.fill")
-                        Text("Library")
+                        Image(systemName: "paintbrush.fill")
+                        Text("Themes")
                     }
 
                 HomeView(wordBundle: .example, words: words, themesModel: themesModel)
@@ -36,10 +37,10 @@ struct MainView: View {
                         Text(Localisation.home())
                     }
 
-                WordBundlesView()
+                WordsView(words: words)
                     .tabItem {
-                        Image(systemName: "message.fill")
-                        Text("Contact")
+                        Image(systemName: "text.book.closed.fill")
+                        Text("Words")
                     }
 
                 SettingsView(words: words)
