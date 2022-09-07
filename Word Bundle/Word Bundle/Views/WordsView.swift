@@ -35,7 +35,8 @@ struct WordsView: View {
                             Image(systemName: "wand.and.stars")
                             Text(words[index].word.capitalized)
                         }
-                    }.onDelete(perform: deleteRow)
+                    }
+                    .onDelete(perform: deleteRow)
                 }
         }
         .navigationTitle("Words")
