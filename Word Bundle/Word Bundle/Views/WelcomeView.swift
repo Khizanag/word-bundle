@@ -10,6 +10,7 @@ import SwiftUI
 
 struct WelcomeView: View {
     private let dictionariesRepository: DictionariesRepository = OxfordDictionariesRepository()
+    private let imageRepository: ImageRepository = UnsplashImageRepository()
     @State private var textFieldText = ""
     @State private var player: AVPlayer?
     @State private var words: [Word] = []
@@ -79,11 +80,13 @@ struct WelcomeView: View {
                         isButtonLoading = false
                     }
 
-                    guard let word = await dictionariesRepository.entries(of: textFieldText, language: .english),
+                    guard var word = await dictionariesRepository.entries(of: textFieldText, language: .english),
                           let audioFile = word.pronunciation.audioFile,
                           let url = URL(string: audioFile) else { return }
 
-                    self.words.append(word)
+                    word.imageUrl = await imageRepository.getFullUrl(of: textFieldText)
+                    
+                    words.append(word)
 
                     let playerItem = AVPlayerItem(url: url)
                     player = AVPlayer(playerItem: playerItem)

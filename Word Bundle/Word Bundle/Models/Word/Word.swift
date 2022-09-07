@@ -14,7 +14,7 @@ struct Word {
     let word: String
     let lexicalEntries: [LexicalEntry]
     let pronunciation: Pronunciation
-    let imageUrl: String?
+    var imageUrl: String?
 
     let note: String
     let isFavourited: Bool

@@ -171,7 +171,7 @@ struct RetrieveEntryResponse: Codable {
 // FIXME: codable to decodable
 
 extension Word {
-    static func make(from entity: RetrieveEntryResponse) -> Word? {
+    static func make(from entity: RetrieveEntryResponse, url: String? = nil) -> Word? {
         guard let lexicalEntries = entity.results?.first?.lexicalEntries else { return nil }
         guard let sharedLexicalEntry = lexicalEntries.first else { return nil }
         guard let sharedEntry = sharedLexicalEntry.entries?.first else { return nil }
@@ -209,7 +209,7 @@ extension Word {
                 phoneticNotation: pronunciationEntry?.phoneticNotation,
                 phoneticSpelling: pronunciationEntry?.phoneticSpelling
             ),
-            imageUrl: nil, // TODO: implement after photo service integration
+            imageUrl: url, // TODO: implement after photo service integration
             note: "",
             isFavourited: false
         )
