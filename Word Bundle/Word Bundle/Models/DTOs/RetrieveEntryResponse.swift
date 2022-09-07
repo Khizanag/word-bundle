@@ -171,7 +171,7 @@ struct RetrieveEntryResponse: Codable {
 // FIXME: codable to decodable
 
 extension Word {
-    static func make(from entity: RetrieveEntryResponse, url: String) -> Word? {
+    static func make(from entity: RetrieveEntryResponse, url: String? = nil) -> Word? {
         guard let lexicalEntries = entity.results?.first?.lexicalEntries else { return nil }
         guard let sharedLexicalEntry = lexicalEntries.first else { return nil }
         guard let sharedEntry = sharedLexicalEntry.entries?.first else { return nil }

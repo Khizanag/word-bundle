@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DictionariesRepository {
-    func entries(of word: String, language: Language) async -> RetrieveEntryResponse?
+    func entries(of word: String, language: Language) async -> Word?
 }
 
 final class OxfordDictionariesRepository: DictionariesRepository {
@@ -16,14 +16,14 @@ final class OxfordDictionariesRepository: DictionariesRepository {
     private let appId = "30c65836"
     private let appKey = "98393f76981a3549edbdde7a3226b0ed"
 
-    private let baseUrl = "https://od-api.oxforddictionaries.com:443/api"
+    private let baseUrl = "https://" + "od-api.oxforddictionaries.com" + ":443/api"
     private let version = "v2"
 
-    func entries(of word: String, language: Language) async -> RetrieveEntryResponse? {
+    func entries(of word: String, language: Language) async -> Word? {
         let endpoint = "entries"
         let wordId = word.lowercased() // FIXME: when there is space in input
 
-        let url = URL(string: "\(baseUrl)/\(version)/\(endpoint)/\(language.localizableIdentifier)/\(wordId)")!
+        guard let url = URL(string: "\(baseUrl)/\(version)/\(endpoint)/\(language.localizableIdentifier)/\(wordId)") else { return nil }
 
         var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -32,7 +32,8 @@ final class OxfordDictionariesRepository: DictionariesRepository {
 
         do {
             let (data, _) = try await URLSession.shared.data(for: request)
-            return try JSONDecoder().decode(RetrieveEntryResponse.self, from: data)
+            let response = try JSONDecoder().decode(RetrieveEntryResponse.self, from: data)
+            return .make(from: response)
         } catch {
             // Error handling in case the data couldn't be loaded
             // For now, only display the error on the console

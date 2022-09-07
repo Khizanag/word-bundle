@@ -80,15 +80,13 @@ struct WelcomeView: View {
                         isButtonLoading = false
                     }
 
-                    guard let response = await dictionariesRepository.entries(of: textFieldText, language: .english) else { return }
-
-                    print(response)
-                    let imageUrl = await imageRepository.getFullUrl(of: textFieldText).orEmpty
-                    guard let word = Word.make(from: response, url: imageUrl),
+                    guard var word = await dictionariesRepository.entries(of: textFieldText, language: .english),
                           let audioFile = word.pronunciation.audioFile,
                           let url = URL(string: audioFile) else { return }
 
-                    self.words.append(word)
+                    word.imageUrl = await imageRepository.getFullUrl(of: textFieldText)
+                    
+                    words.append(word)
 
                     let playerItem = AVPlayerItem(url: url)
                     player = AVPlayer(playerItem: playerItem)
