@@ -33,6 +33,6 @@ struct NavigationButton<DestinationType: View>: View {
 
 struct NavigationButton_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationButton(title: Localisation.getStarted(), destination: MainView(words: []))
+        NavigationButton(title: Localisation.getStarted(), destination: MainView())
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject var themesModel = ThemesModel()
 
-    let words: [Word]
+    let words: [Word] = [.basketball]
 
     var body: some View {
         ZStack {
@@ -56,6 +56,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(words: [])
+        MainView()
     }
 }

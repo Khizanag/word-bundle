@@ -28,23 +28,6 @@ struct WelcomeView: View {
                     Spacer()
                     NavigationButton(title: Localisation.getStarted(), destination: RemindersSettingView(words: words))
                     Spacer()
-
-                    TextField("Type word to search here", text: $textFieldText)
-                        .disabled(isTextFieldDisabled)
-                        .padding()
-
-                    enterButton
-                        .frame(maxWidth: .infinity)
-                        .background(DesignSystem.Color.color3().value) // FIXME: try to remove
-                        .cornerRadius(DesignSystem.Size.small())
-                        .padding()
-
-                    Button("Play last word's Sound") {
-                        Task {
-                            await player?.seek(to: .zero)
-                            player?.play()
-                        }
-                    }
                 }
                 .navigationTitle(Localisation.wordBundle())
             }
