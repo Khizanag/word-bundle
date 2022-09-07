@@ -36,7 +36,7 @@ struct MainView: View {
                         Text(Localisation.home())
                     }
 
-                HelloWorldView(text: "Message")
+                WordBundlesView()
                     .tabItem {
                         Image(systemName: "message.fill")
                         Text("Contact")
