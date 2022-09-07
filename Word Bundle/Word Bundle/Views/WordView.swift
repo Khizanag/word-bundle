@@ -9,7 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct WordView: View {
-    @Binding var word: Word
+    var word: Word
 
     var body: some View {
         VStack {
@@ -28,6 +28,6 @@ struct WordView: View {
 
 struct WordView_Previews: PreviewProvider {
     static var previews: some View {
-        WordView(word: .init(projectedValue: .constant(.basketball)))
+        WordView(word: .basketball)
     }
 }

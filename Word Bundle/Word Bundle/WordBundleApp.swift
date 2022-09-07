@@ -1,5 +1,5 @@
 //
-//  Word_BundleApp.swift
+//  WordBundleApp.swift
 //  Word Bundle
 //
 //  Created by Giga Khizanishvili on 23.04.22.
@@ -8,13 +8,11 @@
 import SwiftUI
 
 @main
-// swiftlint:disable type_name
-struct Word_BundleApp: App {
-// swiftlint:enable type_name
-
+struct WordBundleApp: App {
     var body: some Scene {
         WindowGroup {
             WelcomeView()
+                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
         }
     }
 }
