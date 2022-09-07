@@ -10,21 +10,22 @@ import SwiftUIPager
 
 struct HomeView: View {
     // MARK: - Properties
-    private var wordBundle: WordBundle
     @ObservedObject private var themesModel: ThemesModel
+
     @State private var page: Page = .first()
-    private var words: [Word]
+    @State private var activeWord: Word
     @State private var isWordDetailViewActive = false
     @State private var isWordBundleDetailViewActive = false
-    @State private var activeWord: Word
-
     @State private var isButtonShown = true
+
+    private var wordBundle: WordBundle
+    private var words: [Word]
 
     // MARK: - Init
     init(wordBundle: WordBundle, words: [Word], themesModel: ThemesModel) {
         self.wordBundle = wordBundle // TODO: undo
         self.words = words
-        self._activeWord = State(initialValue: words[0])
+        self._activeWord = State(initialValue: words[0]) // FIXME: when empty?
         self.themesModel = themesModel
     }
 

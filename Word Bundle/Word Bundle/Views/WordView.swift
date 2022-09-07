@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct WordView: View {
     @Binding var word: Word
@@ -13,10 +14,12 @@ struct WordView: View {
     var body: some View {
         VStack {
             // Color.gray
-            
-            Image(uiImage: UIImage.load(url: word.imageUrl.orEmpty)) // TODO: do caching
+
+            // For more properties: https://github.com/SDWebImage/SDWebImageSwiftUI
+            AnimatedImage(url: URL(string: word.imageUrl.orEmpty))
                 .resizable()
-                .aspectRatio(contentMode: .fit)
+                .indicator(.progress)
+                .scaledToFit()
         }
         .navigationTitle(word.word.capitalized)
         .ignoresSafeArea()

@@ -85,7 +85,7 @@ struct WelcomeView: View {
                           let url = URL(string: audioFile) else { return }
 
                     word.imageUrl = await imageRepository.getFullUrl(of: textFieldText)
-                    
+
                     words.append(word)
 
                     let playerItem = AVPlayerItem(url: url)

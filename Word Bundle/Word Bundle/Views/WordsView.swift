@@ -16,7 +16,7 @@ struct WordsView: View {
     @State private var textFieldText = ""
     @State private var isTextFieldDisabled = false
     @State private var isButtonLoading = false
-    
+
     var body: some View {
         VStack {
             TextField("Type word to search here", text: $textFieldText)
@@ -28,7 +28,7 @@ struct WordsView: View {
                 .background(DesignSystem.Color.color3().value) // FIXME: try to remove
                 .cornerRadius(8)
                 .padding()
-            
+
                 List {
                     ForEach(0..<words.count, id: \.self) { index in
                         NavigationLink(destination: WordView(word: $words[index])) {
@@ -40,7 +40,7 @@ struct WordsView: View {
         }
         .navigationTitle("Words")
     }
-    
+
     private var enterButton: some View {
         LoadingButton(
             action: {
@@ -59,7 +59,7 @@ struct WordsView: View {
                           let url = URL(string: audioFile) else { return }
 
                     word.imageUrl = await imageRepository.getFullUrl(of: textFieldText)
-                    
+
                     words.append(word)
 
                     let playerItem = AVPlayerItem(url: url)
@@ -82,7 +82,7 @@ struct WordsView: View {
             }
         )
     }
-    
+
     // MARK: - Functions
     private func deleteRow(at indexSet: IndexSet) {
          words.remove(atOffsets: indexSet)
@@ -94,4 +94,3 @@ struct WordsView_Previews: PreviewProvider {
         WordsView(words: [.basketball])
     }
 }
-
