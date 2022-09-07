@@ -35,7 +35,7 @@ struct WordsView: View {
                             Image(systemName: "wand.and.stars")
                             Text(words[index].word.capitalized)
                         }
-                    }
+                    }.onDelete(perform: deleteRow)
                 }
         }
         .navigationTitle("Words")
@@ -81,6 +81,11 @@ struct WordsView: View {
                     .foregroundColor(.white)
             }
         )
+    }
+    
+    // MARK: - Functions
+    private func deleteRow(at indexSet: IndexSet) {
+         words.remove(atOffsets: indexSet)
     }
 }
 
