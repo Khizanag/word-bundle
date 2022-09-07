@@ -14,46 +14,46 @@ struct WordView: View {
     @State private var player: AVPlayer?
     
     var body: some View {
-        ScrollView{
+        ScrollView {
             VStack (alignment: .leading) {
                 // For more properties: https://github.com/SDWebImage/SDWebImageSwiftUI
                 AnimatedImage(url: URL(string: word.imageUrl.orEmpty))
                     .resizable()
                     .indicator(.progress)
                     .scaledToFit()
-                
-                HStack {
-                    Text(word.word.capitalized)
-                        .font(.system(size: 36))
-                        .foregroundColor(Color(hex: 0x3F3F3F))
-                    Button {
-                        Task {
-                            print("Button was tapped")
-                            guard let audioFile = word.pronunciation.audioFile,
-                                  let url = URL(string: audioFile) else { return }
-                            let playerItem = AVPlayerItem(url: url)
-                            player = AVPlayer(playerItem: playerItem)
-                            await player?.seek(to: .zero)
-                            player?.play()
+                VStack (alignment: .leading) {
+                    HStack {
+                        Text(word.word.capitalized)
+                            .font(.system(size: 36))
+                            .foregroundColor(Color(hex: 0x3F3F3F))
+                        Button {
+                            Task {
+                                print("Button was tapped")
+                                guard let audioFile = word.pronunciation.audioFile,
+                                      let url = URL(string: audioFile) else { return }
+                                let playerItem = AVPlayerItem(url: url)
+                                player = AVPlayer(playerItem: playerItem)
+                                await player?.seek(to: .zero)
+                                player?.play()
+                            }
+                            
+                        } label: {
+                            Image(systemName: "speaker.wave.3")
                         }
                         
-                    } label: {
-                        Image(systemName: "speaker.wave.3")
                     }
                     
+                    if let phoneticSpelling = word.pronunciation.phoneticSpelling {
+                        Text(phoneticSpelling)
+                            .foregroundColor(Color(hex: 0x3F3F3F))
+                    }
+                    
+                    lexicalEntries
                 }
-                
-                if let phoneticSpelling = word.pronunciation.phoneticSpelling {
-                    Text(phoneticSpelling)
-                        .foregroundColor(Color(hex: 0x3F3F3F))
-                }
-                
-                lexicalEntries
-                
+                .padding()
             }
-            .padding()
-            //.ignoresSafeArea()
         }
+        .ignoresSafeArea()
     }
     
     private var lexicalEntries: some View {
@@ -66,6 +66,8 @@ struct WordView: View {
             definitions(for: index)
             examples(for: index)
             phrases(for: index)
+            synonyms(for: index)
+            antonyms(for: index)
             
             if index != word.lexicalEntries.count - 1 {
                 Divider()
@@ -106,6 +108,45 @@ struct WordView: View {
             }
         }
     }
+    
+    // MARK: - Synonyms Sub Section
+    private func synonyms(for index: Int) -> some View {
+        VStack (alignment: .leading) {
+            subSectionHeader(for: "Synonyms")
+            synonimsRows(for: index)
+            Spacer()
+        }
+    }
+    
+    private func synonimsRows(for index: Int) -> some View {
+        ForEach (0..<word.lexicalEntries[index].entries.count, id: \.self) { entriesIndex in
+            ForEach (0..<word.lexicalEntries[index].entries[entriesIndex].senses.count, id: \.self) { sensesIndex in
+                ForEach(0..<word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].synonyms.count, id: \.self) { synonymsIndex in
+                    bulletRow(for: word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].synonyms[synonymsIndex])
+                }
+            }
+        }
+    }
+    
+    // MARK: - Antonyms Sub Section
+    private func antonyms(for index: Int) -> some View {
+        VStack (alignment: .leading) {
+            subSectionHeader(for: "Antonyms")
+            antonymsRows(for: index)
+            Spacer()
+        }
+    }
+    
+    private func antonymsRows(for index: Int) -> some View {
+        ForEach (0..<word.lexicalEntries[index].entries.count, id: \.self) { entriesIndex in
+            ForEach (0..<word.lexicalEntries[index].entries[entriesIndex].senses.count, id: \.self) { sensesIndex in
+                ForEach(0..<word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].antonyms.count, id: \.self) { antonymsIndex in
+                    bulletRow(for: word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].antonyms[antonymsIndex])
+                }
+            }
+        }
+    }
+    
     
     // MARK: - Definitions Sub Section
     private func definitions(for index: Int) -> some View {
