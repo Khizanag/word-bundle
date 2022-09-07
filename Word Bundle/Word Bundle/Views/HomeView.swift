@@ -22,7 +22,7 @@ struct HomeView: View {
     private var words: [Word]
 
     // MARK: - Init
-    init(wordBundle: WordBundle, words: [Word], themesModel: ThemesModel) {
+    init(wordBundle: WordBundle, words: [Word] = [.basketball], themesModel: ThemesModel) {
         self.wordBundle = wordBundle // TODO: undo
         self.words = words
         self._activeWord = State(initialValue: words[0]) // FIXME: when empty?
