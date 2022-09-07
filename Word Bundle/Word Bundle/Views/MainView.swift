@@ -24,7 +24,7 @@ struct MainView: View {
                         Text("Calls")
                     }
 
-                LibraryView(themesModel: themesModel)
+                ThemesView(themesModel: themesModel)
                     .tabItem {
                         Image(systemName: "books.vertical.fill")
                         Text("Library")
@@ -42,7 +42,7 @@ struct MainView: View {
                         Text("Contact")
                     }
 
-                SettingsView()
+                SettingsView(words: words)
                     .tabItem {
                         Image(systemName: "brain.head.profile")
                         Text("Settings")

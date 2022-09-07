@@ -36,7 +36,7 @@
 		FB66A44D2888B3A300F9F850 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A44C2888B3A300F9F850 /* Word.swift */; };
 		FB66A44F2888B54800F9F850 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A44E2888B54800F9F850 /* PartOfSpeech.swift */; };
 		FB66A4512888B5F100F9F850 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A4502888B5F100F9F850 /* HomeView.swift */; };
-		FB66A4532888B8ED00F9F850 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A4522888B8ED00F9F850 /* LibraryView.swift */; };
+		FB66A4532888B8ED00F9F850 /* ThemesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A4522888B8ED00F9F850 /* ThemesView.swift */; };
 		FB66A455288F239800F9F850 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A454288F239700F9F850 /* Language.swift */; };
 		FB66A457288F3EBA00F9F850 /* WordBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A456288F3EB900F9F850 /* WordBundle.swift */; };
 		FB66A469289051E700F9F850 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = FB66A468289051E700F9F850 /* SwiftUIPager */; };
@@ -109,7 +109,7 @@
 		FB66A44C2888B3A300F9F850 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		FB66A44E2888B54800F9F850 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		FB66A4502888B5F100F9F850 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		FB66A4522888B8ED00F9F850 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		FB66A4522888B8ED00F9F850 /* ThemesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesView.swift; sourceTree = "<group>"; };
 		FB66A454288F239700F9F850 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		FB66A456288F3EB900F9F850 /* WordBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBundle.swift; sourceTree = "<group>"; };
 		FB66A461288FCEDA00F9F850 /* ka */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ka; path = ka.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 				FB66A439288816B700F9F850 /* MainView.swift */,
 				FB66A4282887EB7100F9F850 /* WelcomeView.swift */,
 				FB66A4502888B5F100F9F850 /* HomeView.swift */,
-				FB66A4522888B8ED00F9F850 /* LibraryView.swift */,
+				FB66A4522888B8ED00F9F850 /* ThemesView.swift */,
 				FB66A46C2890665700F9F850 /* WordView.swift */,
 				D16D1A8628A6AF5B00000984 /* AspectVGrid.swift */,
 				D17B645B28C36E6C005CB55D /* SettingsView.swift */,
@@ -549,7 +549,7 @@
 				D16D1A8928A6B03A00000984 /* ThemeView.swift in Sources */,
 				FB66A4292887EB7100F9F850 /* WelcomeView.swift in Sources */,
 				FB4190732891E91900D95C44 /* RetrieveEntryResponse.swift in Sources */,
-				FB66A4532888B8ED00F9F850 /* LibraryView.swift in Sources */,
+				FB66A4532888B8ED00F9F850 /* ThemesView.swift in Sources */,
 				FBE5450828C76D440093ABF3 /* UnsplashImageRepository.swift in Sources */,
 				FB66A46D2890665800F9F850 /* WordView.swift in Sources */,
 				FB66A43C288833A200F9F850 /* ReminderSettingItem.swift in Sources */,

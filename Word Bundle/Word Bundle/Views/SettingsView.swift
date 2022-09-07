@@ -9,15 +9,16 @@ import SwiftUI
 
 struct SettingsView: View {
     // TODO: find and fix navigation title bug
+    @State var words: [Word] = []
     var body: some View {
         List {
-            NavigationLink(destination: Text("Reminder Settings")) { // TODO: change destination
+            NavigationLink(destination: RemindersSettingView(words: words)) {
                 Image(systemName: "bell.badge")
                 Text("Reminder Settings")
             }
 //            .padding() // TODO: discuss needed or not
 
-            NavigationLink(destination: Text("Change Background Theme")) { // TODO: change destination
+            NavigationLink(destination: ThemesView(themesModel: .init())) { // TODO: store in Core Data
                 Image(systemName: "paintbrush")
                 Text("Change Background Theme")
             }
