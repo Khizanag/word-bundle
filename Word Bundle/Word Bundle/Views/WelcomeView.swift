@@ -10,6 +10,7 @@ import SwiftUI
 
 struct WelcomeView: View {
     private let dictionariesRepository: DictionariesRepository = OxfordDictionariesRepository()
+    private let imageRepository: ImageRepository = UnsplashImageRepository()
     @State private var textFieldText = ""
     @State private var player: AVPlayer?
     @State private var words: [Word] = []
@@ -82,8 +83,8 @@ struct WelcomeView: View {
                     guard let response = await dictionariesRepository.entries(of: textFieldText, language: .english) else { return }
 
                     print(response)
-
-                    guard let word = Word.make(from: response),
+                    let imageUrl = await imageRepository.getFullUrl(of: textFieldText).orEmpty
+                    guard let word = Word.make(from: response, url: imageUrl),
                           let audioFile = word.pronunciation.audioFile,
                           let url = URL(string: audioFile) else { return }
 

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct WordsView: View {
     private let dictionariesRepository: DictionariesRepository = OxfordDictionariesRepository()
+    private let imageRepository: ImageRepository = UnsplashImageRepository()
     @State private var player: AVPlayer?
     @State var words: [Word]
     @State private var textFieldText = ""
@@ -28,14 +29,14 @@ struct WordsView: View {
                 .cornerRadius(8)
                 .padding()
             
-            List {
-                ForEach(0..<words.count, id: \.self) { index in
-                    NavigationLink(destination: WordView(word: $words[index])) {
-                        Image(systemName: "wand.and.stars")
-                        Text(words[index].word.capitalizeFirstLetter())
+                List {
+                    ForEach(0..<words.count, id: \.self) { index in
+                        NavigationLink(destination: WordView(word: $words[index])) {
+                            Image(systemName: "wand.and.stars")
+                            Text(words[index].word.capitalized)
+                        }
                     }
                 }
-            }
         }
         .navigationTitle("Words")
     }
@@ -56,8 +57,8 @@ struct WordsView: View {
                     guard let response = await dictionariesRepository.entries(of: textFieldText, language: .english) else { return }
 
                     print(response)
-
-                    guard let word = Word.make(from: response),
+                    let imageUrl = await imageRepository.getFullUrl(of: textFieldText).orEmpty
+                    guard let word = Word.make(from: response, url: imageUrl),
                           let audioFile = word.pronunciation.audioFile,
                           let url = URL(string: audioFile) else { return }
 

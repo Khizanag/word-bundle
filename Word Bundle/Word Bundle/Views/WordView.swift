@@ -9,23 +9,16 @@ import SwiftUI
 
 struct WordView: View {
     @Binding var word: Word
-    @State private var imageUrl: String = ""
-    private let imageRepository: ImageRepository = UnsplashImageRepository()
 
     var body: some View {
         VStack {
             // Color.gray
-            Image(uiImage: UIImage.load(url: imageUrl))
+            
+            Image(uiImage: UIImage.load(url: word.imageUrl.orEmpty)) // TODO: do caching
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-
-            Button("Fetch Data") {
-                Task {
-                    imageUrl = await imageRepository.getFullUrl(of: word.word).orEmpty
-                }
-            }
         }
-        .navigationTitle(word.word)
+        .navigationTitle(word.word.capitalized)
         .ignoresSafeArea()
     }
 }
