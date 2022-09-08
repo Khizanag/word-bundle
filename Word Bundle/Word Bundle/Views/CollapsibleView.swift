@@ -10,9 +10,9 @@ import SwiftUI
 struct CollapsibleView<Content: View>: View {
     @State var label: () -> Text
     @State var content: () -> Content
-    
+
     @State private var collapsed: Bool = true
-    
+
     var body: some View {
         VStack (alignment: .leading) {
             Button(
@@ -29,10 +29,11 @@ struct CollapsibleView<Content: View>: View {
                 }
             )
             .buttonStyle(.automatic)
+
             VStack {
                 content()
             }
-            
+
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: collapsed ? 0 : .none)
             .transition(.flipFromTop)
             .clipped()

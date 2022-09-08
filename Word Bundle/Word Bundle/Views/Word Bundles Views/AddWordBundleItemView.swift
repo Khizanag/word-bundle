@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AddWordBundleItemView: View {
-    
     var body: some View {
         ZStack {
             Color(hex: 0x039be5) // TODO: fix this
@@ -17,9 +16,9 @@ struct AddWordBundleItemView: View {
                     .font(.headline)
                     .foregroundColor(.white)
                     .padding()
-                
+
                 Spacer()
-                
+
                 Image(systemName: "plus")
                     .foregroundColor(.white)
                     .font(.largeTitle)

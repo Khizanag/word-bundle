@@ -30,10 +30,10 @@ struct PersistenceController {
         return result
     }()
 
-    let container: NSPersistentCloudKitContainer
+    let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        container = NSPersistentCloudKitContainer(name: "Entities")
+        container = NSPersistentContainer(name: "Entities")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }

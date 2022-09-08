@@ -45,7 +45,7 @@ struct WordView: View {
                         Text(phoneticSpelling)
                             .foregroundColor(Color(hex: 0x3F3F3F))
                     }
-                    
+
                     sections
                 }
                 .padding()
@@ -57,46 +57,48 @@ struct WordView: View {
     private var sections: some View {
         ForEach (word.lexicalEntries, id: \.self) { lexicalEntry in
             Divider()
+
             Text(lexicalEntry.lexicalCategory)
                 .font(.system(size: DesignSystem.Size.xxLarge()))
                 .foregroundColor(Color(hex: 0x3F3F3F))
                 .opacity(0.7)
                 .padding(.bottom)
+
             if !lexicalEntry.phrases.isEmpty {
                 phrases(for: lexicalEntry)
                 Spacer()
             }
-            
+
             senses(for: lexicalEntry)
         }
     }
-    
+
     private func senses(for lexicalEntry: Word.LexicalEntry) -> some View {
         ForEach (lexicalEntry.entries, id: \.self) { entry in
             ForEach (entry.senses, id: \.self) { sense in
                 Divider()
                     .padding(.leading, 50)
-                
+
                 if !sense.definitions.isEmpty {
                     definitions(for: sense)
                     Spacer()
                 }
-                
+
                 if !sense.shortDefinitions.isEmpty {
                     shortDefinitions(for: sense)
                     Spacer()
                 }
-                
+
                 if !sense.examples.isEmpty {
                     examples(for: sense)
                     Spacer()
                 }
-                
+
                 if !sense.synonyms.isEmpty {
                     synonyms(for: sense)
                     Spacer()
                 }
-                
+
                 if !sense.antonyms.isEmpty {
                     antonyms(for: sense)
                     Spacer()
@@ -128,7 +130,7 @@ struct WordView: View {
             Spacer()
         }
     }
-    
+
     private func examplesRows(for sense: Word.Sense) -> some View {
         ForEach(sense.examples, id: \.self) { example in
             bulletRow(for: example)
@@ -169,8 +171,9 @@ struct WordView: View {
                  }
              )
              .frame(maxWidth: .infinity)
-             Spacer()
-         }
+
+            Spacer()
+        }
     }
 
     private func antonymsRows(for sense: Word.Sense) -> some View {
@@ -193,7 +196,7 @@ struct WordView: View {
             bulletRow(for: definition)
         }
     }
-    
+
     // MARK: - Short Definitions' Sub Section
     private func shortDefinitions(for sense: Word.Sense) -> some View {
         VStack (alignment: .leading) {
@@ -208,7 +211,7 @@ struct WordView: View {
             bulletRow(for: shortDefinition)
         }
     }
-    
+
     // MARK: - Helpers
     private func bulletRow(for text: String) -> some View {
         HStack {
