@@ -23,8 +23,8 @@ struct WordView: View {
                     .scaledToFit()
                 VStack (alignment: .leading) {
                     HStack {
-                        Text(word.word.capitalized)
-                            .font(.system(size: 36))
+                        Text(word.word.uppercased())
+                            .font(.system(size: DesignSystem.Size.xxxLarge()))
                             .foregroundColor(Color(hex: 0x3F3F3F))
                         Button {
                             Task { // TODO: make seperate method for this
@@ -55,78 +55,83 @@ struct WordView: View {
     }
 
     private var sections: some View {
-        ForEach (0..<word.lexicalEntries.count, id: \.self) { index in
+        ForEach (word.lexicalEntries, id: \.self) { lexicalEntry in
             Divider()
-            Text(word.lexicalEntries[index].lexicalCategory)
+            Text(lexicalEntry.lexicalCategory)
                 .foregroundColor(Color(hex: 0x3F3F3F))
                 .opacity(0.7)
-            phrases(for: index)
+            phrases(for: lexicalEntry)
             Spacer()
             
-            senses(for: index)  
+            senses(for: lexicalEntry)
         }
     }
     
-//    private func senses(for index: Int) -> some View {
-//        VStack {
-//            definitions(for: index)
-//            examples(for: index)
-//            phrases(for: index)
-//            synonyms(for: index)
-//            antonyms(for: index)
-//        }
-//    }
-    
-    private func senses(for index: Int) -> some View {
-        ForEach (0..<word.lexicalEntries[index].entries.count, id: \.self) { entriesIndex in
-            ForEach (0..<word.lexicalEntries[index].entries[entriesIndex].senses.count, id: \.self) { sensesIndex in
-                definitions(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
-                shortDefitinitions(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
-                examples(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
-                synonyms(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
+    private func senses(for lexicalEntry: Word.LexicalEntry) -> some View {
+        ForEach (lexicalEntry.entries, id: \.self) { entry in
+            ForEach (entry.senses, id: \.self) { sense in
+                if !sense.definitions.isEmpty {
+                    definitions(for: sense)
+                }
+                
+                if !sense.shortDefinitions.isEmpty {
+                    shortDefinitions(for: sense)
+                }
+                
+                if !sense.examples.isEmpty {
+                    examples(for: sense)
+                }
+                
+                if !sense.synonyms.isEmpty {
+                    synonyms(for: sense)
+                }
+                
+                if !sense.antonyms.isEmpty {
+                    antonyms(for: sense)
+                }
             }
         }
     }
 
     // MARK: - Phrases' Sub Section
-    private func phrases(for index: Int) -> some View {
+    private func phrases(for lexicalEntry: Word.LexicalEntry) -> some View {
         VStack (alignment: .leading) {
             subSectionHeader(for: "Phrases")
-            phrasesRows(for: index)
+            phrasesRows(for: lexicalEntry)
             Spacer()
         }
     }
 
-    private func phrasesRows(for index: Int) -> some View {
-        ForEach (0..<word.lexicalEntries[index].phrases.count, id: \.self) { phraseIndex in
-            bulletRow(for: word.lexicalEntries[index].phrases[phraseIndex])
+    private func phrasesRows(for lexicalEntry: Word.LexicalEntry) -> some View {
+        ForEach (lexicalEntry.phrases, id: \.self) { phrase in
+            bulletRow(for: phrase)
         }
     }
 
     // MARK: - Examples' Sub Section
-    private func examples(for index: Int, entriesIndex: Int, sensesIndex: Int) -> some View {
+    private func examples(for sense: Word.Sense) -> some View {
         VStack (alignment: .leading) {
             subSectionHeader(for: "Examples")
-            examplesRows(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
+            examplesRows(for: sense)
             Spacer()
         }
     }
     
-    private func examplesRows(for index: Int, entriesIndex: Int, sensesIndex: Int) -> some View {
-        ForEach(0..<word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].examples.count, id: \.self) { examplesIndex in
-            bulletRow(for: word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].examples[examplesIndex])
+    private func examplesRows(for sense: Word.Sense) -> some View {
+        ForEach(sense.examples, id: \.self) { example in
+            bulletRow(for: example)
         }
     }
 
     // MARK: - Synonyms' Sub Section
-    private func synonyms(for index: Int, entriesIndex: Int, sensesIndex: Int) -> some View {
+    private func synonyms(for sense: Word.Sense) -> some View {
         VStack (alignment: .leading) {
             CollapsibleView(
                 label: {
                     subSectionHeader(for: "Synonyms")
                 },
                 content: {
-                    synonymsRows(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
+                    synonymsRows(for: sense)
                 }
             )
             .frame(maxWidth: .infinity)
@@ -134,66 +139,62 @@ struct WordView: View {
         }
     }
 
-    private func synonymsRows(for index: Int, entriesIndex: Int, sensesIndex: Int) -> some View {
-        ForEach(0..<word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].synonyms.count, id: \.self) { synonymsIndex in
-            bulletRow(for: word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].synonyms[synonymsIndex])
+    private func synonymsRows(for sense: Word.Sense) -> some View {
+        ForEach(sense.synonyms, id: \.self) { synonym in
+            bulletRow(for: synonym)
         }
     }
 
     // MARK: - Antonyms' Sub Section
-    private func antonyms(for index: Int) -> some View {
-       VStack (alignment: .leading) {
-            CollapsibleView(
-                label: {
-                    subSectionHeader(for: "Antonyms")
-                },
-                content: {
-                    antonymsRows(for: index)
-                }
-            )
-            .frame(maxWidth: .infinity)
-            Spacer()
-        }
+    private func antonyms(for sense: Word.Sense) -> some View {
+        VStack (alignment: .leading) {
+             CollapsibleView(
+                 label: {
+                     subSectionHeader(for: "Antonyms")
+                 },
+                 content: {
+                     antonymsRows(for: sense)
+                 }
+             )
+             .frame(maxWidth: .infinity)
+             Spacer()
+         }
     }
 
-    private func antonymsRows(for index: Int) -> some View {
-        ForEach (0..<word.lexicalEntries[index].entries.count, id: \.self) { entriesIndex in
-            ForEach (0..<word.lexicalEntries[index].entries[entriesIndex].senses.count, id: \.self) { sensesIndex in
-                ForEach(0..<word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].antonyms.count, id: \.self) { antonymIndex in
-                    bulletRow(for: word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].antonyms[antonymIndex])
-                }
-            }
+    private func antonymsRows(for sense: Word.Sense) -> some View {
+        ForEach(sense.antonyms, id: \.self) { antonym in
+            bulletRow(for: antonym)
         }
     }
 
     // MARK: - Definitions' Sub Section
-    private func definitions(for index: Int, entriesIndex: Int, sensesIndex: Int) -> some View {
+    private func definitions(for sense: Word.Sense) -> some View {
         VStack (alignment: .leading) {
             subSectionHeader(for: "Definitions")
-            definitionsRows(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
+            definitionsRows(for: sense)
             Spacer()
         }
     }
 
-    private func definitionsRows(for index: Int, entriesIndex: Int, sensesIndex: Int) -> some View {
-        ForEach(0..<word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].definitions.count, id: \.self) { definitionIndex in
-            bulletRow(for: word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].definitions[definitionIndex])
+    private func definitionsRows(for sense: Word.Sense) -> some View {
+        ForEach(sense.definitions, id: \.self) { definition in
+            bulletRow(for: definition)
         }
     }
     
     
     // MARK: - Short Definitions' Sub Section
-    private func shortDefitinitions(for index: Int, entriesIndex: Int, sensesIndex: Int) -> some View {
+    private func shortDefinitions(for sense: Word.Sense) -> some View {
         VStack (alignment: .leading) {
             subSectionHeader(for: "Short Definitions")
-            definitionsRows(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
+            definitionsRows(for: sense)
             Spacer()
         }
     }
 
-    private func shortDefitinitionsRows(for index: Int, entriesIndex: Int, sensesIndex: Int) -> some View {
-        ForEach(0..<word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].definitions.count, id: \.self) { shortDefitnitionIndex in
-            bulletRow(for: word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].shortDefinitions[shortDefitnitionIndex])
+    private func shortDefinitionsRows(for sense: Word.Sense) -> some View {
+        ForEach(sense.shortDefinitions, id: \.self) { shortDefinition in
+            bulletRow(for: shortDefinition)
         }
     }
     
@@ -201,15 +202,16 @@ struct WordView: View {
     // MARK: - Helpers
     private func bulletRow(for text: String) -> some View {
         HStack {
-            Text("\u{2022} " + text)
+            Text("\u{2022} " + text.capitalized)
                 .foregroundColor(Color(hex: 0x3F3F3F))
+                .padding(.leading)
             Spacer()
         }
     }
 
     private func subSectionHeader(for title: String) -> Text {
         Text(title)
-            .font(.system(size: 24))
+            .font(.system(size: DesignSystem.Size.xLarge()))
             .bold()
             .foregroundColor(Color(hex: 0x3F3F3F))
     }

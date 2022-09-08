@@ -20,7 +20,7 @@ public struct Word: Codable {
     let isFavourited: Bool
 
     // MARK: - Lexical Entry
-    struct LexicalEntry: Codable {
+    struct LexicalEntry: Codable, Hashable {
         let entries: [Entry]
         let lexicalCategory: String
         let phrasalVerbs: [String]
@@ -36,13 +36,13 @@ public struct Word: Codable {
     }
 
     // MARK: - Entry
-    struct Entry: Codable {
+    struct Entry: Codable, Hashable {
         let etymologies: [String]
         let senses: [Sense]
     }
 
     // MARK: - Sense
-    struct Sense: Codable {
+    struct Sense: Codable, Hashable {
         let antonyms: [String]
         let definitions: [String]
         let examples: [String]
