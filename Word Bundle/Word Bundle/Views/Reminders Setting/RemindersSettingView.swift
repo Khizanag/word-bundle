@@ -12,15 +12,20 @@ struct RemindersSettingView: View {
 
     // MARK: - Body
     var body: some View {
-        VStack {
-            Spacer()
+        ScrollView {
+            VStack{
             exampleWordComponentView
-            Spacer()
+                .padding(.top, DesignSystem.Size.xxLarge())
+            
             titleLabel
-            properties
-            Spacer()
+                    .padding(.top, 64)
+            
+                properties
+                    .padding(DesignSystem.Size.xSmall())
+                
             NavigationButton(title: Localisation.getStarted(), destination: MainView())
-            Spacer()
+                .padding()
+            }
         }
         .navigationTitle(Localisation.reminders())
     }
@@ -56,7 +61,7 @@ struct RemindersSettingView: View {
 
     private var titleLabel: some View {
         Text(Localisation.remindersSettingPageTitle())
-            .font(.title3)
+            .font(.subheadline)
             .fontWeight(.regular)
             .foregroundColor(DesignSystem.Color.primaryTextDark().value)
             .multilineTextAlignment(.center)
