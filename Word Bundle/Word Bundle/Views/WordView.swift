@@ -42,6 +42,7 @@ struct WordView: View {
                             }
                         } label: {
                             Image(systemName: "speaker.wave.3")
+                                .foregroundColor(Color(hex: 0x3F3F3F))
                         }
                     }
 
