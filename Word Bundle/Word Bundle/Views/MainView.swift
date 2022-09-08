@@ -9,7 +9,9 @@ import SwiftUI
 
 struct MainView: View {
     @AppStorage(AppStorageKeys.chosenThemeId()) var chosenThemeIndex = Theme.example.id
-
+    @State var selection: TabItem = .bundles
+    
+    
     var body: some View {
         ZStack {
             let theme = Theme.themes[chosenThemeIndex]
@@ -17,12 +19,14 @@ struct MainView: View {
                 .opacity(theme.opacity)
                 .ignoresSafeArea()
 
-            TabView {
-                WordBundlesView()
+            TabView(selection: $selection) {
+                WordBundlesView(selection: $selection)
                     .tabItem {
                         Image(systemName: "books.vertical.fill" )
                         Text("Bundles")
                     }
+                    .tag(TabItem.bundles)
+
 
                 ThemesView(themes: Theme.themes)
                     .tabItem {
@@ -41,6 +45,7 @@ struct MainView: View {
                         Image(systemName: "text.book.closed.fill")
                         Text("Words")
                     }
+                    .tag(TabItem.words)
 
                 SettingsView()
                     .tabItem {
