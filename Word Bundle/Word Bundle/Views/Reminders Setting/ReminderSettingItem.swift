@@ -27,20 +27,19 @@ struct ReminderSettingItem<Value>: View {
         HStack {
             Text(title)
             Spacer()
-            
+
             minusButton
-            
+
             Text(valueDisplayer(value))
                 .frame(width: 64) // FIXME: to design system
-            
+
             plusButton
-           
         }
         .padding()
         .background(DesignSystem.Color.secondaryBackground().value)
         .cornerRadius(DesignSystem.Size.xSmall())
     }
-    
+
     private var minusButton: some View {
         Button(
             action: {
@@ -52,7 +51,7 @@ struct ReminderSettingItem<Value>: View {
             }
         )
     }
-    
+
     private var plusButton: some View {
         Button(
             action: {
