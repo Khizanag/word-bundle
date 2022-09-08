@@ -10,6 +10,7 @@ import SwiftUI
 struct Theme: Identifiable {
     let id: Int
     let color: Color
+    let opacity = 0.8
 
     static var example: Theme { themes[0] }
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D10045BD28CA45AC00A65917 /* AddWordBundleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10045BC28CA45AC00A65917 /* AddWordBundleItemView.swift */; };
 		D100617728C7746F00B027C2 /* WordBundleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D100617628C7746F00B027C2 /* WordBundleView.swift */; };
+		D106670D28CA8A1F000E5E32 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106670C28CA8A1F000E5E32 /* TabItem.swift */; };
 		D13891C628C68459003ABBA1 /* UnsplashImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13891C528C68459003ABBA1 /* UnsplashImageResponse.swift */; };
 		D16D1A8528A6AD2800000984 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D1A8428A6AD2800000984 /* Theme.swift */; };
 		D16D1A8728A6AF5B00000984 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D1A8628A6AF5B00000984 /* AspectVGrid.swift */; };
@@ -88,6 +89,7 @@
 /* Begin PBXFileReference section */
 		D10045BC28CA45AC00A65917 /* AddWordBundleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordBundleItemView.swift; sourceTree = "<group>"; };
 		D100617628C7746F00B027C2 /* WordBundleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBundleView.swift; sourceTree = "<group>"; };
+		D106670C28CA8A1F000E5E32 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		D13891C528C68459003ABBA1 /* UnsplashImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashImageResponse.swift; sourceTree = "<group>"; };
 		D16D1A8428A6AD2800000984 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		D16D1A8628A6AF5B00000984 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				FB66A456288F3EB900F9F850 /* WordBundle.swift */,
 				D16D1A8428A6AD2800000984 /* Theme.swift */,
 				FB59CBE528CA19350047619D /* AppStorageKeys.swift */,
+				D106670C28CA8A1F000E5E32 /* TabItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				D100617728C7746F00B027C2 /* WordBundleView.swift in Sources */,
 				FBCECEA22814847900CD558C /* Persistence.swift in Sources */,
 				FB66A457288F3EBA00F9F850 /* WordBundle.swift in Sources */,
+				D106670D28CA8A1F000E5E32 /* TabItem.swift in Sources */,
 				FBCECECE2814876D00CD558C /* Device+Extension.swift in Sources */,
 				FBE5450628C66E670093ABF3 /* CircleLoadingBar.swift in Sources */,
 				D16D1A8928A6B03A00000984 /* ThemeView.swift in Sources */,
