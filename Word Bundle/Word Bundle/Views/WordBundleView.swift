@@ -56,7 +56,7 @@ struct WordBundleView: View {
                         }
                     }
                 }
-                .onDelete(perform: deleteWord)
+                .onDelete(perform: deleteWords)
             }
         }
         .navigationTitle("Words") // TODO: Localization
@@ -83,14 +83,14 @@ struct WordBundleView: View {
     }
 
     // MARK: - Private functions
-    private func deleteWord(at indexSet: IndexSet) {
+    private func deleteWords(at indexSet: IndexSet) {
         indexSet.forEach { index in
-            deleteWord(id: fetchedEntities[index].id)
+            viewContext.delete(fetchedEntities[index])
         }
-    }
 
-    private func deleteWord(id: UUID) {
-        // TODO: implement
+        withAnimation {
+            saveContext()
+        }
     }
 
     private func addWord() {
@@ -110,10 +110,10 @@ struct WordBundleView: View {
 
             do {
                 let wordEntity = WordEntity(context: viewContext)
-                let encodedWord = try JSONEncoder().encode(word)
+
                 wordEntity.id = word.id
                 wordEntity.bundleId = activeWordBundleId
-                wordEntity.encodedWord = encodedWord
+                wordEntity.encodedWord = try JSONEncoder().encode(word)
 
                 withAnimation {
                     saveContext()
