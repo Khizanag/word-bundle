@@ -58,6 +58,7 @@ struct WordView: View {
     
     private var lexicalEntries: some View {
         ForEach (0..<word.lexicalEntries.count, id: \.self) { index in
+            Divider()
             Text(word.lexicalEntries[index].lexicalCategory)
                 .foregroundColor(Color(hex: 0x3F3F3F))
                 .opacity(0.7)
@@ -68,10 +69,6 @@ struct WordView: View {
             phrases(for: index)
             synonyms(for: index)
             antonyms(for: index)
-            
-            if index != word.lexicalEntries.count - 1 {
-                Divider()
-            }
         }
     }
     
@@ -112,8 +109,15 @@ struct WordView: View {
     // MARK: - Synonyms Sub Section
     private func synonyms(for index: Int) -> some View {
         VStack (alignment: .leading) {
-            subSectionHeader(for: "Synonyms")
-            synonimsRows(for: index)
+            CollapsibleView(
+                label: {
+                    subSectionHeader(for: "Synonyms")
+                },
+                content: {
+                    synonimsRows(for: index)
+                }
+            )
+            .frame(maxWidth: .infinity)
             Spacer()
         }
     }
@@ -130,9 +134,16 @@ struct WordView: View {
     
     // MARK: - Antonyms Sub Section
     private func antonyms(for index: Int) -> some View {
-        VStack (alignment: .leading) {
-            subSectionHeader(for: "Antonyms")
-            antonymsRows(for: index)
+       VStack (alignment: .leading) {
+            CollapsibleView(
+                label: {
+                    subSectionHeader(for: "Antonyms")
+                },
+                content: {
+                    antonymsRows(for: index)
+                }
+            )
+            .frame(maxWidth: .infinity)
             Spacer()
         }
     }
@@ -169,11 +180,14 @@ struct WordView: View {
     
     // MARK: - Helpers
     private func bulletRow(for text: String) -> some View {
-        Text("\u{2022} " + text)
-            .foregroundColor(Color(hex: 0x3F3F3F))
+        HStack {
+            Text("\u{2022} " + text)
+                .foregroundColor(Color(hex: 0x3F3F3F))
+            Spacer()
+        }
     }
     
-    private func subSectionHeader(for title: String) -> some View {
+    private func subSectionHeader(for title: String) -> Text {
         Text(title)
             .font(.system(size: 24))
             .bold()
