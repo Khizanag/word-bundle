@@ -10,7 +10,7 @@ import SwiftUIPager
 
 struct HomeView: View {
     // MARK: - Properties
-    @ObservedObject private var themesModel: ThemesModel
+    @AppStorage(AppStorageKeys.chosenThemeId()) var chosenThemeId = Theme.example.id
 
     @State private var page: Page = .first()
     @State private var isWordDetailViewActive = false
@@ -25,9 +25,8 @@ struct HomeView: View {
     private var entities: FetchedResults<WordEntity>
 
     // MARK: - Init
-    init(wordBundle: WordBundle, words: [Word] = [.basketball], themesModel: ThemesModel) {
-        self.wordBundle = wordBundle // TODO: undo
-        self.themesModel = themesModel
+    init(wordBundle: WordBundle, words: [Word] = [.basketball]) {
+        self.wordBundle = wordBundle
     }
 
     var body: some View {
@@ -35,7 +34,8 @@ struct HomeView: View {
             Pager(page: page, data: entities, id: \.id) { entity in
                 if let word = Word.make(from: entity) {
                     ZStack {
-                        themesModel.getSelectedTheme()?.color
+                        Theme.theme(id: chosenThemeId).color
+
                         VStack {
                             if let wordForView = Word.make(from: entities[page.index]) {
                                 NavigationLink(destination: WordView(word: wordForView), isActive: $isWordDetailViewActive) { }
@@ -104,6 +104,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(wordBundle: .example, words: [], themesModel: .init())
+        HomeView(wordBundle: .example, words: [])
     }
 }

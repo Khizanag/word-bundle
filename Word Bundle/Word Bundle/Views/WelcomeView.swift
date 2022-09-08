@@ -52,48 +52,6 @@ struct WelcomeView: View {
             .multilineTextAlignment(.center)
             .padding()
     }
-
-    private var enterButton: some View {
-        LoadingButton(
-            action: {
-                isTextFieldDisabled = true
-                isButtonLoading = true
-
-                Task {
-                    defer {
-                        textFieldText = ""
-                        isTextFieldDisabled = false
-                        isButtonLoading = false
-                    }
-
-                    guard var word = await dictionariesRepository.entries(of: textFieldText, language: .english),
-                          let audioFile = word.pronunciation.audioFile,
-                          let url = URL(string: audioFile) else { return }
-
-                    word.imageUrl = await imageRepository.getFullUrl(of: textFieldText)
-
-                    words.append(word)
-
-                    let playerItem = AVPlayerItem(url: url)
-                    player = AVPlayer(playerItem: playerItem)
-                }
-            },
-            isLoading: $isButtonLoading,
-            style: .init(
-                width: 300,
-                height: 50,
-                cornerRadius: 8,
-                backgroundColor: DesignSystem.Color.color3().value,
-                loadingColor: .clear,
-                strokeWidth: 3,
-                strokeColor: .indigo
-            ),
-            builder: { // TODO: redesign
-                Text("Add word to Dictionary")
-                    .foregroundColor(.white)
-            }
-        )
-    }
 }
 
 // MARK: - Previews

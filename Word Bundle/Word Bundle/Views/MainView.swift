@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject var themesModel = ThemesModel()
-
-    let words: [Word] = [.basketball]
+    @AppStorage(AppStorageKeys.chosenThemeId()) var chosenThemeIndex = Theme.example.id
 
     var body: some View {
         ZStack {
-            themesModel.getSelectedTheme()?.color
+            Theme.themes[chosenThemeIndex].color
                 .ignoresSafeArea()
 
             TabView {
@@ -24,13 +22,13 @@ struct MainView: View {
                         Text("Bundles")
                     }
 
-                ThemesView(themesModel: themesModel)
+                ThemesView(themes: Theme.themes)
                     .tabItem {
                         Image(systemName: "paintbrush.fill")
                         Text("Themes")
                     }
 
-                HomeView(wordBundle: .example, words: words, themesModel: themesModel)
+                HomeView(wordBundle: .example)
                     .tabItem {
                         Image(systemName: "scroll.fill")
                         Text(Localisation.home())
@@ -42,7 +40,7 @@ struct MainView: View {
                         Text("Words")
                     }
 
-                SettingsView(words: words)
+                SettingsView()
                     .tabItem {
                         Image(systemName: "gearshape.2.fill")
                         Text("Settings")

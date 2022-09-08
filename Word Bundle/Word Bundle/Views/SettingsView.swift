@@ -18,9 +18,9 @@ struct SettingsView: View {
             }
 //            .padding() // TODO: discuss needed or not
 
-            NavigationLink(destination: ThemesView(themesModel: .init())) { // TODO: store in Core Data
+            NavigationLink(destination: ThemesView(themes: Theme.themes)) {
                 Image(systemName: "paintbrush")
-                Text("Change Background Theme")
+                Text("Change Background Theme") // TODO: localization
             }
 //            .padding() // TODO: discuss needed or not
         }

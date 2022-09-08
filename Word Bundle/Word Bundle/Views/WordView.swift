@@ -10,6 +10,8 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct WordView: View {
+    private typealias Size = DesignSystem.Size
+    
     var word: Word
     @State private var player: AVPlayer?
 
@@ -21,11 +23,13 @@ struct WordView: View {
                     .resizable()
                     .indicator(.progress)
                     .scaledToFit()
+                
                 VStack (alignment: .leading) {
                     HStack {
                         Text(word.word.uppercased())
-                            .font(.system(size: DesignSystem.Size.xxxLarge()))
+                            .font(.system(size: Size.xxxLarge()))
                             .foregroundColor(Color(hex: 0x3F3F3F))
+                        
                         Button {
                             Task { // TODO: make seperate method for this
                                 print("Button was tapped")
@@ -59,14 +63,13 @@ struct WordView: View {
             Divider()
 
             Text(lexicalEntry.lexicalCategory)
-                .font(.system(size: DesignSystem.Size.xxLarge()))
+                .font(.system(size: Size.xxLarge()))
                 .foregroundColor(Color(hex: 0x3F3F3F))
                 .opacity(0.7)
-                .padding(.bottom)
-
+                .padding(.bottom, Size.xSmall())
+            
             if !lexicalEntry.phrases.isEmpty {
                 phrases(for: lexicalEntry)
-                Spacer()
             }
 
             senses(for: lexicalEntry)
@@ -81,27 +84,22 @@ struct WordView: View {
 
                 if !sense.definitions.isEmpty {
                     definitions(for: sense)
-                    Spacer()
                 }
 
                 if !sense.shortDefinitions.isEmpty {
                     shortDefinitions(for: sense)
-                    Spacer()
                 }
 
                 if !sense.examples.isEmpty {
                     examples(for: sense)
-                    Spacer()
                 }
 
                 if !sense.synonyms.isEmpty {
                     synonyms(for: sense)
-                    Spacer()
                 }
 
                 if !sense.antonyms.isEmpty {
                     antonyms(for: sense)
-                    Spacer()
                 }
             }
         }
@@ -112,8 +110,8 @@ struct WordView: View {
         VStack (alignment: .leading) {
             subSectionHeader(for: "Phrases")
             phrasesRows(for: lexicalEntry)
-            Spacer()
         }
+        .padding(.bottom, Size.xSmall())
     }
 
     private func phrasesRows(for lexicalEntry: Word.LexicalEntry) -> some View {
@@ -127,8 +125,8 @@ struct WordView: View {
         VStack (alignment: .leading) {
             subSectionHeader(for: "Examples")
             examplesRows(for: sense)
-            Spacer()
         }
+        .padding(.bottom, Size.xSmall())
     }
 
     private func examplesRows(for sense: Word.Sense) -> some View {
@@ -148,8 +146,8 @@ struct WordView: View {
                     synonymsRows(for: sense)
                 }
             )
+            .padding(.bottom, Size.xSmall())
             .frame(maxWidth: .infinity)
-            Spacer()
         }
     }
 
@@ -171,9 +169,8 @@ struct WordView: View {
                  }
              )
              .frame(maxWidth: .infinity)
-
-            Spacer()
         }
+        .padding(.bottom, Size.xSmall())
     }
 
     private func antonymsRows(for sense: Word.Sense) -> some View {
@@ -187,8 +184,8 @@ struct WordView: View {
         VStack (alignment: .leading) {
             subSectionHeader(for: "Definitions")
             definitionsRows(for: sense)
-            Spacer()
         }
+        .padding(.bottom, Size.xSmall())
     }
 
     private func definitionsRows(for sense: Word.Sense) -> some View {
@@ -202,8 +199,8 @@ struct WordView: View {
         VStack (alignment: .leading) {
             subSectionHeader(for: "Short Definitions")
             definitionsRows(for: sense)
-            Spacer()
         }
+        .padding(.bottom, Size.xSmall())
     }
 
     private func shortDefinitionsRows(for sense: Word.Sense) -> some View {
@@ -224,7 +221,7 @@ struct WordView: View {
 
     private func subSectionHeader(for title: String) -> Text {
         Text(title)
-            .font(.system(size: DesignSystem.Size.xLarge()))
+            .font(.system(size: Size.xLarge()))
             .bold()
             .foregroundColor(Color(hex: 0x3F3F3F))
     }
