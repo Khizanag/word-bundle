@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct WordBundlesView: View {
+    @Binding var selection : TabItem
+    
     var body: some View {
         VStack(spacing: 32) {
             AddWordBundleItemView()
             ForEach(WordBundle.examples.indices, id: \.self) { index in
                 WordBundlePreviewItemView(wordBundle: WordBundle.examples[index])
+                    .onTapGesture {
+                        selection = .words
+                    }
             }
 
             Spacer()
@@ -22,6 +27,6 @@ struct WordBundlesView: View {
 
 struct WordBundlesView_Previews: PreviewProvider {
     static var previews: some View {
-        WordBundlesView()
+        WordBundlesView(selection: .init(projectedValue: .constant(.words)))
     }
 }
