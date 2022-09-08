@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct WordBundlesView: View {
+    @AppStorage(AppStorageKeys.activeWordBundleId()) var activeWordBundleId: UUID = WordBundle.example.id
+
     var body: some View {
-        VStack(spacing: 32) {
+        VStack(spacing: DesignSystem.Size.xxxLarge()) {
             AddWordBundleItemView()
-            ForEach(WordBundle.examples.indices, id: \.self) { index in
-                WordBundlePreviewItemView(wordBundle: WordBundle.examples[index])
+            ForEach(WordBundle.examples, id: \.id) { wordBundle in
+                WordBundlePreviewItemView(wordBundle: wordBundle)
+                    .onTapGesture {
+                        activeWordBundleId = wordBundle.id
+                    }
             }
 
             Spacer()

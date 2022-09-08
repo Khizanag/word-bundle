@@ -18,7 +18,6 @@ struct WordView: View {
     var body: some View {
         ScrollView {
             VStack (alignment: .leading) {
-                // For more properties: https://github.com/SDWebImage/SDWebImageSwiftUI
                 AnimatedImage(url: URL(string: word.imageUrl.orEmpty))
                     .resizable()
                     .indicator(.progress)
