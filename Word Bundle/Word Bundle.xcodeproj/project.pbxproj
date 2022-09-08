@@ -43,11 +43,13 @@
 		FB66A469289051E700F9F850 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = FB66A468289051E700F9F850 /* SwiftUIPager */; };
 		FB66A46B2890590100F9F850 /* Word+Examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A46A2890590100F9F850 /* Word+Examples.swift */; };
 		FB66A46D2890665800F9F850 /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A46C2890665700F9F850 /* WordView.swift */; };
-		FBCECE992814847600CD558C /* Word_BundleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECE982814847600CD558C /* Word_BundleApp.swift */; };
+		FBBBA1F328C94D7100F64A78 /* Entities.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBBBA1F128C94D7100F64A78 /* Entities.xcdatamodeld */; };
+		FBBBA1F528C9515B00F64A78 /* Word_Bundle.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = FBBBA1F428C9515B00F64A78 /* Word_Bundle.xcdatamodel */; };
+		FBBBA1F728C952A600F64A78 /* WordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBA1F628C952A600F64A78 /* WordEntity.swift */; };
+		FBCECE992814847600CD558C /* WordBundleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECE982814847600CD558C /* WordBundleApp.swift */; };
 		FBCECE9D2814847900CD558C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCECE9C2814847900CD558C /* Assets.xcassets */; };
 		FBCECEA02814847900CD558C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCECE9F2814847900CD558C /* Preview Assets.xcassets */; };
 		FBCECEA22814847900CD558C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECEA12814847900CD558C /* Persistence.swift */; };
-		FBCECEA52814847900CD558C /* Word_Bundle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBCECEA32814847900CD558C /* Word_Bundle.xcdatamodeld */; };
 		FBCECEAF2814847A00CD558C /* Word_BundleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECEAE2814847A00CD558C /* Word_BundleTests.swift */; };
 		FBCECEB92814847A00CD558C /* Word_BundleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECEB82814847A00CD558C /* Word_BundleUITests.swift */; };
 		FBCECEBB2814847A00CD558C /* Word_BundleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECEBA2814847A00CD558C /* Word_BundleUITestsLaunchTests.swift */; };
@@ -117,12 +119,14 @@
 		FB66A461288FCEDA00F9F850 /* ka */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ka; path = ka.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FB66A46A2890590100F9F850 /* Word+Examples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Word+Examples.swift"; sourceTree = "<group>"; };
 		FB66A46C2890665700F9F850 /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
+		FBBBA1F228C94D7100F64A78 /* Entities.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Entities.xcdatamodel; sourceTree = "<group>"; };
+		FBBBA1F428C9515B00F64A78 /* Word_Bundle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Word_Bundle.xcdatamodel; sourceTree = "<group>"; };
+		FBBBA1F628C952A600F64A78 /* WordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntity.swift; sourceTree = "<group>"; };
 		FBCECE952814847600CD558C /* Word Bundle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Bundle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBCECE982814847600CD558C /* Word_BundleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_BundleApp.swift; sourceTree = "<group>"; };
+		FBCECE982814847600CD558C /* WordBundleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBundleApp.swift; sourceTree = "<group>"; };
 		FBCECE9C2814847900CD558C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBCECE9F2814847900CD558C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FBCECEA12814847900CD558C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		FBCECEA42814847900CD558C /* Word_Bundle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Word_Bundle.xcdatamodel; sourceTree = "<group>"; };
 		FBCECEAA2814847A00CD558C /* Word BundleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Word BundleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCECEAE2814847A00CD558C /* Word_BundleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_BundleTests.swift; sourceTree = "<group>"; };
 		FBCECEB42814847A00CD558C /* Word BundleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Word BundleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +190,8 @@
 			children = (
 				FB66A44C2888B3A300F9F850 /* Word.swift */,
 				FB66A46A2890590100F9F850 /* Word+Examples.swift */,
+				FBBBA1F128C94D7100F64A78 /* Entities.xcdatamodeld */,
+				FBBBA1F628C952A600F64A78 /* WordEntity.swift */,
 			);
 			path = Word;
 			sourceTree = "<group>";
@@ -310,11 +316,11 @@
 				FB0829A12884BA9D00FFFB4B /* Word Bundle.entitlements */,
 				FB08299F2884BA2B00FFFB4B /* Design System */,
 				FBCECEA12814847900CD558C /* Persistence.swift */,
-				FBCECE982814847600CD558C /* Word_BundleApp.swift */,
+				FBCECE982814847600CD558C /* WordBundleApp.swift */,
 				FBCECE9C2814847900CD558C /* Assets.xcassets */,
 				FBCECE9E2814847900CD558C /* Preview Content */,
 				FBCECEC72814862600CD558C /* Shared */,
-				FBCECEA32814847900CD558C /* Word_Bundle.xcdatamodeld */,
+				FBBBA1F428C9515B00F64A78 /* Word_Bundle.xcdatamodel */,
 				FBCECED828148CFD00CD558C /* MyPlayground.playground */,
 			);
 			path = "Word Bundle";
@@ -541,8 +547,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBBBA1F328C94D7100F64A78 /* Entities.xcdatamodeld in Sources */,
 				FBE5450128C66DE40093ABF3 /* LoadingButton.swift in Sources */,
 				D17B645C28C36E6C005CB55D /* SettingsView.swift in Sources */,
+				FBBBA1F528C9515B00F64A78 /* Word_Bundle.xcdatamodel in Sources */,
 				D100617728C7746F00B027C2 /* WordsView.swift in Sources */,
 				FBCECEA22814847900CD558C /* Persistence.swift in Sources */,
 				FB66A457288F3EBA00F9F850 /* WordBundle.swift in Sources */,
@@ -551,12 +559,12 @@
 				FBE5450628C66E670093ABF3 /* CircleLoadingBar.swift in Sources */,
 				D16D1A8928A6B03A00000984 /* ThemeView.swift in Sources */,
 				FB66A4292887EB7100F9F850 /* WelcomeView.swift in Sources */,
+				FBBBA1F728C952A600F64A78 /* WordEntity.swift in Sources */,
 				FB4190732891E91900D95C44 /* RetrieveEntryResponse.swift in Sources */,
 				FB66A4532888B8ED00F9F850 /* ThemesView.swift in Sources */,
 				FBE5450828C76D440093ABF3 /* UnsplashImageRepository.swift in Sources */,
 				FB66A46D2890665800F9F850 /* WordView.swift in Sources */,
 				FB66A43C288833A200F9F850 /* ReminderSettingItem.swift in Sources */,
-				FBCECEA52814847900CD558C /* Word_Bundle.xcdatamodeld in Sources */,
 				D16D1A8728A6AF5B00000984 /* AspectVGrid.swift in Sources */,
 				FB66A4512888B5F100F9F850 /* HomeView.swift in Sources */,
 				FBE5450328C66E190093ABF3 /* LoadingButton+Style.swift in Sources */,
@@ -980,13 +988,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		FBCECEA32814847900CD558C /* Word_Bundle.xcdatamodeld */ = {
+		FBBBA1F128C94D7100F64A78 /* Entities.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				FBCECEA42814847900CD558C /* Word_Bundle.xcdatamodel */,
+				FBBBA1F228C94D7100F64A78 /* Entities.xcdatamodel */,
 			);
-			currentVersion = FBCECEA42814847900CD558C /* Word_Bundle.xcdatamodel */;
-			path = Word_Bundle.xcdatamodeld;
+			currentVersion = FBBBA1F228C94D7100F64A78 /* Entities.xcdatamodel */;
+			path = Entities.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

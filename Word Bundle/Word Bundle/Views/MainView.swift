@@ -23,7 +23,6 @@ struct MainView: View {
                         Image(systemName: "books.vertical.fill" )
                         Text("Bundles")
                     }
-                
 
                 ThemesView(themesModel: themesModel)
                     .tabItem {
@@ -37,7 +36,7 @@ struct MainView: View {
                         Text(Localisation.home())
                     }
 
-                WordsView(words: words)
+                WordsView()
                     .tabItem {
                         Image(systemName: "text.book.closed.fill")
                         Text("Words")

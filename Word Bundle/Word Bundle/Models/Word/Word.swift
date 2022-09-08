@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Word {
+public struct Word: Codable {
     let id: UUID
     let bundleId: UUID
 
@@ -20,7 +20,7 @@ struct Word {
     let isFavourited: Bool
 
     // MARK: - Lexical Entry
-    struct LexicalEntry {
+    struct LexicalEntry: Codable {
         let entries: [Entry]
         let lexicalCategory: String
         let phrasalVerbs: [String]
@@ -28,7 +28,7 @@ struct Word {
     }
 
     // MARK: - Pronunciation
-    struct Pronunciation {
+    struct Pronunciation: Codable {
         let audioFile: String?
         let dialects: [String]?
         let phoneticNotation: String?
@@ -36,13 +36,13 @@ struct Word {
     }
 
     // MARK: - Entry
-    struct Entry {
+    struct Entry: Codable {
         let etymologies: [String]
         let senses: [Sense]
     }
 
     // MARK: - Sense
-    struct Sense {
+    struct Sense: Codable {
         let antonyms: [String]
         let definitions: [String]
         let examples: [String]
@@ -55,6 +55,7 @@ struct Word {
     }
 }
 
+// MARK: - Equatable(s)
 extension Word: Equatable { }
 extension Word.LexicalEntry: Equatable { }
 extension Word.Pronunciation: Equatable { }
