@@ -81,12 +81,13 @@ struct WordView: View {
         ForEach (0..<word.lexicalEntries[index].entries.count, id: \.self) { entriesIndex in
             ForEach (0..<word.lexicalEntries[index].entries[entriesIndex].senses.count, id: \.self) { sensesIndex in
                 definitions(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
+                shortDefitinitions(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
                 examples(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
             }
         }
     }
 
-    // MARK: - Phrases Sub Section
+    // MARK: - Phrases' Sub Section
     private func phrases(for index: Int) -> some View {
         VStack (alignment: .leading) {
             subSectionHeader(for: "Phrases")
@@ -101,7 +102,7 @@ struct WordView: View {
         }
     }
 
-    // MARK: - Examples Sub Section
+    // MARK: - Examples' Sub Section
     private func examples(for index: Int, entriesIndex: Int, sensesIndex: Int) -> some View {
         VStack (alignment: .leading) {
             subSectionHeader(for: "Examples")
@@ -116,7 +117,7 @@ struct WordView: View {
         }
     }
 
-    // MARK: - Synonyms Sub Section
+    // MARK: - Synonyms' Sub Section
     private func synonyms(for index: Int) -> some View {
         VStack (alignment: .leading) {
             CollapsibleView(
@@ -142,7 +143,7 @@ struct WordView: View {
         }
     }
 
-    // MARK: - Antonyms Sub Section
+    // MARK: - Antonyms' Sub Section
     private func antonyms(for index: Int) -> some View {
        VStack (alignment: .leading) {
             CollapsibleView(
@@ -161,14 +162,14 @@ struct WordView: View {
     private func antonymsRows(for index: Int) -> some View {
         ForEach (0..<word.lexicalEntries[index].entries.count, id: \.self) { entriesIndex in
             ForEach (0..<word.lexicalEntries[index].entries[entriesIndex].senses.count, id: \.self) { sensesIndex in
-                ForEach(0..<word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].antonyms.count, id: \.self) { antonymsIndex in
-                    bulletRow(for: word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].antonyms[antonymsIndex])
+                ForEach(0..<word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].antonyms.count, id: \.self) { antonymIndex in
+                    bulletRow(for: word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].antonyms[antonymIndex])
                 }
             }
         }
     }
 
-    // MARK: - Definitions Sub Section
+    // MARK: - Definitions' Sub Section
     private func definitions(for index: Int, entriesIndex: Int, sensesIndex: Int) -> some View {
         VStack (alignment: .leading) {
             subSectionHeader(for: "Definitions")
@@ -178,8 +179,24 @@ struct WordView: View {
     }
 
     private func definitionsRows(for index: Int, entriesIndex: Int, sensesIndex: Int) -> some View {
-        ForEach(0..<word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].definitions.count, id: \.self) { definitionsIndex in
-            bulletRow(for: word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].definitions[definitionsIndex])
+        ForEach(0..<word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].definitions.count, id: \.self) { definitionIndex in
+            bulletRow(for: word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].definitions[definitionIndex])
+        }
+    }
+    
+    
+    // MARK: - Short Definitions' Sub Section
+    private func shortDefitinitions(for index: Int, entriesIndex: Int, sensesIndex: Int) -> some View {
+        VStack (alignment: .leading) {
+            subSectionHeader(for: "Short Definitions")
+            definitionsRows(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
+            Spacer()
+        }
+    }
+
+    private func shortDefitinitionsRows(for index: Int, entriesIndex: Int, sensesIndex: Int) -> some View {
+        ForEach(0..<word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].definitions.count, id: \.self) { shortDefitnitionIndex in
+            bulletRow(for: word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].shortDefinitions[shortDefitnitionIndex])
         }
     }
     
