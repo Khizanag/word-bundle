@@ -9,7 +9,6 @@ import SwiftUI
 
 struct Theme: Identifiable {
     let id: Int
-    let isEmpty: Bool
     let color: Color
 
     static var example: Theme { themes[0] }
@@ -19,12 +18,11 @@ struct Theme: Identifiable {
     }
 
     static let themes: [Theme] = [
-        Theme(id: 0, isEmpty: true, color: .accentColor),
-        Theme(id: 1, isEmpty: false, color: .red),
-        Theme(id: 2, isEmpty: false, color: .blue),
-        Theme(id: 3, isEmpty: false, color: .brown),
-        Theme(id: 4, isEmpty: false, color: .pink),
-        Theme(id: 5, isEmpty: false, color: .purple),
-        Theme(id: 6, isEmpty: false, color: .orange)
+        Theme(id: 0, color: .orange),
+        Theme(id: 1, color: .red),
+        Theme(id: 2, color: .blue),
+        Theme(id: 3, color: .brown),
+        Theme(id: 4, color: .pink),
+        Theme(id: 5, color: .purple)
     ]
 }
