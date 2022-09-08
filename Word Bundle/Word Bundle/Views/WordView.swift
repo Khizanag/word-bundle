@@ -33,10 +33,7 @@ struct WordView: View {
                         soundSpeakerPlayer
                     }
 
-                    if let phoneticSpelling = word.pronunciation.phoneticSpelling {
-                        Text(phoneticSpelling)
-                            .foregroundColor(Color(hex: 0x3F3F3F))
-                    }
+                    phoneticSubSection
 
                     sections
                 }
@@ -75,6 +72,21 @@ struct WordView: View {
             }
 
             senses(for: lexicalEntry)
+        }
+    }
+    
+    private var phoneticSubSection: some View {
+        HStack {
+            if let phoneticSpelling = word.pronunciation.phoneticSpelling {
+                Text(phoneticSpelling)
+                    .foregroundColor(Color(hex: 0x3F3F3F))
+            }
+            
+            if let phoneticNotation = word.pronunciation.phoneticNotation {
+                Text("(\(phoneticNotation))")
+                    .foregroundColor(Color(hex: 0x3F3F3F))
+                    .opacity(0.6)
+            }
         }
     }
 

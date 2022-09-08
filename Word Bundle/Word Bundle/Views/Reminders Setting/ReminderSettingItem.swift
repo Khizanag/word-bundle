@@ -27,18 +27,42 @@ struct ReminderSettingItem<Value>: View {
         HStack {
             Text(title)
             Spacer()
-            Button("-") { // FIXME: minus icon
-                value = valueUpdater(value, -1)
-            }
+            
+            minusButton
+            
             Text(valueDisplayer(value))
                 .frame(width: 64) // FIXME: to design system
-            Button("+") { // FIXME: plus icon
-                value = valueUpdater(value, +1)
-            }
+            
+            plusButton
+           
         }
         .padding()
         .background(DesignSystem.Color.secondaryBackground().value)
         .cornerRadius(DesignSystem.Size.xSmall())
+    }
+    
+    private var minusButton: some View {
+        Button(
+            action: {
+                value = valueUpdater(value, -1)
+            },
+            label: {
+                Image(systemName: "minus")
+                    .foregroundColor(Color(hex: 0x3F3F3F))
+            }
+        )
+    }
+    
+    private var plusButton: some View {
+        Button(
+            action: {
+                value = valueUpdater(value, +1)
+            },
+            label: {
+                Image(systemName: "plus")
+                    .foregroundColor(Color(hex: 0x3F3F3F))
+            }
+        )
     }
 }
 
