@@ -21,7 +21,6 @@
 		FB0829A32884BB9000FFFB4B /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0829A22884BB9000FFFB4B /* DesignSystem.swift */; };
 		FB0829A52884BBC200FFFB4B /* DesignSystem+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0829A42884BBC200FFFB4B /* DesignSystem+Size.swift */; };
 		FB0829A72884BC2B00FFFB4B /* DesignSystem+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0829A62884BC2B00FFFB4B /* DesignSystem+Color.swift */; };
-		FB223E9428C8CF01000FD2C3 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = FB223E9328C8CF01000FD2C3 /* SDWebImage */; };
 		FB223E9728C8CF80000FD2C3 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FB223E9628C8CF80000FD2C3 /* SDWebImageSwiftUI */; };
 		FB41906E28917B6500D95C44 /* RetrieveEntryOriginalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41906D28917B6500D95C44 /* RetrieveEntryOriginalResponse.swift */; };
 		FB41907128918FAE00D95C44 /* OxfordDictionariesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41907028918FAE00D95C44 /* OxfordDictionariesRepository.swift */; };
@@ -154,7 +153,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB223E9728C8CF80000FD2C3 /* SDWebImageSwiftUI in Frameworks */,
-				FB223E9428C8CF01000FD2C3 /* SDWebImage in Frameworks */,
 				FB66A469289051E700F9F850 /* SwiftUIPager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,7 +209,6 @@
 			children = (
 				FB66A44C2888B3A300F9F850 /* Word.swift */,
 				FB66A46A2890590100F9F850 /* Word+Examples.swift */,
-				FBBBA1F128C94D7100F64A78 /* Entities.xcdatamodeld */,
 				FBBBA1F628C952A600F64A78 /* WordEntity.swift */,
 			);
 			path = Word;
@@ -340,6 +337,7 @@
 				FBCECE9E2814847900CD558C /* Preview Content */,
 				FBCECEC72814862600CD558C /* Shared */,
 				FBBBA1F428C9515B00F64A78 /* Word_Bundle.xcdatamodel */,
+				FBBBA1F128C94D7100F64A78 /* Entities.xcdatamodeld */,
 				FBCECED828148CFD00CD558C /* MyPlayground.playground */,
 			);
 			path = "Word Bundle";
@@ -421,7 +419,6 @@
 			name = "Word Bundle";
 			packageProductDependencies = (
 				FB66A468289051E700F9F850 /* SwiftUIPager */,
-				FB223E9328C8CF01000FD2C3 /* SDWebImage */,
 				FB223E9628C8CF80000FD2C3 /* SDWebImageSwiftUI */,
 			);
 			productName = "Word Bundle";
@@ -499,7 +496,6 @@
 			mainGroup = FBCECE8C2814847600CD558C;
 			packageReferences = (
 				FB66A467289051E700F9F850 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
-				FB223E9228C8CF01000FD2C3 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				FB223E9528C8CF80000FD2C3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = FBCECE962814847600CD558C /* Products */;
@@ -963,14 +959,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FB223E9228C8CF01000FD2C3 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		FB223E9528C8CF80000FD2C3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
@@ -990,11 +978,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FB223E9328C8CF01000FD2C3 /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FB223E9228C8CF01000FD2C3 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
 		FB223E9628C8CF80000FD2C3 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FB223E9528C8CF80000FD2C3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;

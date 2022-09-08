@@ -30,20 +30,7 @@ struct WordView: View {
                             .font(.system(size: Size.xxxLarge()))
                             .foregroundColor(Color(hex: 0x3F3F3F))
 
-                        Button {
-                            Task { // TODO: make seperate method for this
-                                print("Button was tapped")
-                                guard let audioFile = word.pronunciation.audioFile,
-                                      let url = URL(string: audioFile) else { return }
-                                let playerItem = AVPlayerItem(url: url)
-                                player = AVPlayer(playerItem: playerItem)
-                                await player?.seek(to: .zero)
-                                player?.play()
-                            }
-                        } label: {
-                            Image(systemName: "speaker.wave.3")
-                                .foregroundColor(Color(hex: 0x3F3F3F))
-                        }
+                        soundSpeakerPlayer
                     }
 
                     phoneticSubSection
@@ -54,6 +41,20 @@ struct WordView: View {
             }
         }
         .ignoresSafeArea()
+        .navigationBarTitle(word.word.uppercased())
+    }
+
+    private var soundSpeakerPlayer: some View {
+        Button {
+            Task {
+                await replay()
+            }
+        } label: {
+            Image(systemName: "speaker.wave.3") // TODO: move to DesignSystem
+        }
+        .onAppear {
+            setupPlayer()
+        }
     }
 
     private var sections: some View {
@@ -73,14 +74,14 @@ struct WordView: View {
             senses(for: lexicalEntry)
         }
     }
-    
+
     private var phoneticSubSection: some View {
         HStack {
             if let phoneticSpelling = word.pronunciation.phoneticSpelling {
                 Text(phoneticSpelling)
                     .foregroundColor(Color(hex: 0x3F3F3F))
             }
-            
+
             if let phoneticNotation = word.pronunciation.phoneticNotation {
                 Text("(\(phoneticNotation))")
                     .foregroundColor(Color(hex: 0x3F3F3F))
@@ -121,7 +122,7 @@ struct WordView: View {
     // MARK: - Phrases' Sub Section
     private func phrases(for lexicalEntry: Word.LexicalEntry) -> some View {
         VStack (alignment: .leading) {
-            subSectionHeader(for: "Phrases")
+            subSectionHeader(for: "Phrases") // TODO: Localization
             phrasesRows(for: lexicalEntry)
         }
         .padding(.bottom, Size.xSmall())
@@ -136,7 +137,7 @@ struct WordView: View {
     // MARK: - Examples' Sub Section
     private func examples(for sense: Word.Sense) -> some View {
         VStack (alignment: .leading) {
-            subSectionHeader(for: "Examples")
+            subSectionHeader(for: "Examples") // TODO: Localization
             examplesRows(for: sense)
         }
         .padding(.bottom, Size.xSmall())
@@ -153,7 +154,7 @@ struct WordView: View {
         VStack (alignment: .leading) {
             CollapsibleView(
                 label: {
-                    subSectionHeader(for: "Synonyms")
+                    subSectionHeader(for: "Synonyms") // TODO: Localization
                 },
                 content: {
                     synonymsRows(for: sense)
@@ -175,7 +176,7 @@ struct WordView: View {
         VStack (alignment: .leading) {
              CollapsibleView(
                  label: {
-                     subSectionHeader(for: "Antonyms")
+                     subSectionHeader(for: "Antonyms") // TODO: Localization
                  },
                  content: {
                      antonymsRows(for: sense)
@@ -195,7 +196,7 @@ struct WordView: View {
     // MARK: - Definitions' Sub Section
     private func definitions(for sense: Word.Sense) -> some View {
         VStack (alignment: .leading) {
-            subSectionHeader(for: "Definitions")
+            subSectionHeader(for: "Definitions") // TODO: Localization
             definitionsRows(for: sense)
         }
         .padding(.bottom, Size.xSmall())
@@ -210,7 +211,7 @@ struct WordView: View {
     // MARK: - Short Definitions' Sub Section
     private func shortDefinitions(for sense: Word.Sense) -> some View {
         VStack (alignment: .leading) {
-            subSectionHeader(for: "Short Definitions")
+            subSectionHeader(for: "Short Definitions") // TODO: Localization
             definitionsRows(for: sense)
         }
         .padding(.bottom, Size.xSmall())
@@ -237,6 +238,19 @@ struct WordView: View {
             .font(.system(size: Size.xLarge()))
             .bold()
             .foregroundColor(Color(hex: 0x3F3F3F))
+    }
+
+    private func setupPlayer() {
+        guard let audioFile = word.pronunciation.audioFile,
+              let url = URL(string: audioFile) else { return }
+
+        let playerItem = AVPlayerItem(url: url)
+        player = AVPlayer(playerItem: playerItem)
+    }
+
+    private func replay() async {
+        await player?.seek(to: .zero)
+        await player?.play()
     }
 }
 
