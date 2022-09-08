@@ -42,7 +42,7 @@ struct MainView: View {
 
                 SettingsView()
                     .tabItem {
-                        Image(systemName: "brain.head.profile")
+                        Image(systemName: "gearshape.2.fill")
                         Text("Settings")
                     }
             }
