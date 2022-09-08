@@ -8,20 +8,16 @@
 import SwiftUI
 
 struct ThemesView: View {
-    @ObservedObject var themesModel: ThemesModel
+    @AppStorage(AppStorageKeys.chosenThemeId()) var chosenThemeId = Theme.example.id
+
+    @State var themes: [Theme]
 
     var body: some View {
-        ZStack {
-            themesView
-        }
-    }
-
-    private var themesView: some View {
-        AspectVGrid(items: themesModel.themes, aspectRatio: 2/3) { theme in
-            ThemeView(theme: theme)
+        AspectVGrid(items: themes, aspectRatio: 2/3) { theme in
+            ThemeView(theme: theme, chosenThemeId: $chosenThemeId)
                 .padding(DesignSystem.Size.small())
                 .onTapGesture {
-                    themesModel.selectTheme(theme: theme)
+                    chosenThemeId = theme.id
                 }
         }
     }
@@ -29,6 +25,6 @@ struct ThemesView: View {
 
 struct ThemesView_Previews: PreviewProvider {
     static var previews: some View {
-        ThemesView(themesModel: .init())
+        ThemesView(themes: Theme.themes)
     }
 }

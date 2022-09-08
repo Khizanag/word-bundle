@@ -9,7 +9,10 @@ import SwiftUI
 
 struct ThemeView: View {
     private typealias Size = DesignSystem.Size
-    var theme: Theme
+
+    let theme: Theme
+//    @State var isSelected: Bool // FIXME: using isSelected and without chosenThemeId binding
+    @Binding var chosenThemeId: Int
 
     var body: some View {
         ZStack {
@@ -18,13 +21,13 @@ struct ThemeView: View {
                 rect.stroke(.black)
                 VStack {
                     Spacer()
-                    Text("+ New Theme")
+                    Text("+ New Theme") // TODO: Localization
                         .font(.system(size: Size.large()))
                         .padding(Size.xSmall())
                 }
             } else {
                 rect.fill(theme.color)
-                if theme.isSelected {
+                if chosenThemeId == theme.id {
                     VStack {
                         HStack {
                             Spacer()

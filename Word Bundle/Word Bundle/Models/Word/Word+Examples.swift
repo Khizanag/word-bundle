@@ -211,5 +211,4 @@ extension Word {
         note: "",
         isFavourited: false
     )
-    // TODO: add more example words
 }
