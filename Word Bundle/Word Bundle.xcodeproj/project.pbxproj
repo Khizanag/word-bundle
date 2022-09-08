@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D10045BD28CA45AC00A65917 /* AddWordBundleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10045BC28CA45AC00A65917 /* AddWordBundleItemView.swift */; };
 		D100617728C7746F00B027C2 /* WordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D100617628C7746F00B027C2 /* WordsView.swift */; };
 		D13891C628C68459003ABBA1 /* UnsplashImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13891C528C68459003ABBA1 /* UnsplashImageResponse.swift */; };
 		D16D1A8528A6AD2800000984 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D1A8428A6AD2800000984 /* Theme.swift */; };
@@ -84,6 +85,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D10045BC28CA45AC00A65917 /* AddWordBundleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordBundleItemView.swift; sourceTree = "<group>"; };
 		D100617628C7746F00B027C2 /* WordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsView.swift; sourceTree = "<group>"; };
 		D13891C528C68459003ABBA1 /* UnsplashImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashImageResponse.swift; sourceTree = "<group>"; };
 		D16D1A8428A6AD2800000984 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -174,6 +176,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D10045BB28CA456100A65917 /* Word Bundles Views */ = {
+			isa = PBXGroup;
+			children = (
+				D1F46EF528C8D4F40015132B /* WordBundlesView.swift */,
+				D1F46EF328C8CF360015132B /* WordBundlePreviewItemView.swift */,
+				D10045BC28CA45AC00A65917 /* AddWordBundleItemView.swift */,
+			);
+			path = "Word Bundles Views";
+			sourceTree = "<group>";
+		};
 		FB08299F2884BA2B00FFFB4B /* Design System */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +247,7 @@
 		FB66A43328880EBE00F9F850 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D10045BB28CA456100A65917 /* Word Bundles Views */,
 				FB66A462289006BA00F9F850 /* Reminders Setting */,
 				FB66A4382888157E00F9F850 /* Components */,
 				FB66A439288816B700F9F850 /* MainView.swift */,
@@ -245,8 +258,6 @@
 				D16D1A8628A6AF5B00000984 /* AspectVGrid.swift */,
 				D17B645B28C36E6C005CB55D /* SettingsView.swift */,
 				D100617628C7746F00B027C2 /* WordsView.swift */,
-				D1F46EF328C8CF360015132B /* WordBundlePreviewItemView.swift */,
-				D1F46EF528C8D4F40015132B /* WordBundlesView.swift */,
 				D1F46EF928C9B9960015132B /* CollapsibleView.swift */,
 			);
 			path = Views;
@@ -566,6 +577,7 @@
 				FB66A46D2890665800F9F850 /* WordView.swift in Sources */,
 				FB66A43C288833A200F9F850 /* ReminderSettingItem.swift in Sources */,
 				D16D1A8728A6AF5B00000984 /* AspectVGrid.swift in Sources */,
+				D10045BD28CA45AC00A65917 /* AddWordBundleItemView.swift in Sources */,
 				FB66A4512888B5F100F9F850 /* HomeView.swift in Sources */,
 				FBE5450328C66E190093ABF3 /* LoadingButton+Style.swift in Sources */,
 				FBCECED2281488AE00CD558C /* Int+Extension.swift in Sources */,
