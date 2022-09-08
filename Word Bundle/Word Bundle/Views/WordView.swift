@@ -194,7 +194,6 @@ struct WordView: View {
         }
     }
     
-    
     // MARK: - Short Definitions' Sub Section
     private func shortDefinitions(for sense: Word.Sense) -> some View {
         VStack (alignment: .leading) {
@@ -210,7 +209,6 @@ struct WordView: View {
         }
     }
     
-
     // MARK: - Helpers
     private func bulletRow(for text: String) -> some View {
         HStack {
