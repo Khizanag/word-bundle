@@ -58,10 +58,14 @@ struct WordView: View {
         ForEach (word.lexicalEntries, id: \.self) { lexicalEntry in
             Divider()
             Text(lexicalEntry.lexicalCategory)
+                .font(.system(size: DesignSystem.Size.xxLarge()))
                 .foregroundColor(Color(hex: 0x3F3F3F))
                 .opacity(0.7)
-            phrases(for: lexicalEntry)
-            Spacer()
+                .padding(.bottom)
+            if !lexicalEntry.phrases.isEmpty {
+                phrases(for: lexicalEntry)
+                Spacer()
+            }
             
             senses(for: lexicalEntry)
         }
@@ -70,24 +74,32 @@ struct WordView: View {
     private func senses(for lexicalEntry: Word.LexicalEntry) -> some View {
         ForEach (lexicalEntry.entries, id: \.self) { entry in
             ForEach (entry.senses, id: \.self) { sense in
+                Divider()
+                    .padding(.leading, 50)
+                
                 if !sense.definitions.isEmpty {
                     definitions(for: sense)
+                    Spacer()
                 }
                 
                 if !sense.shortDefinitions.isEmpty {
                     shortDefinitions(for: sense)
+                    Spacer()
                 }
                 
                 if !sense.examples.isEmpty {
                     examples(for: sense)
+                    Spacer()
                 }
                 
                 if !sense.synonyms.isEmpty {
                     synonyms(for: sense)
+                    Spacer()
                 }
                 
                 if !sense.antonyms.isEmpty {
                     antonyms(for: sense)
+                    Spacer()
                 }
             }
         }
