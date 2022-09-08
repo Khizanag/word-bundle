@@ -22,7 +22,7 @@ struct CollapsibleView<Content: View>: View {
                 label: {
                     HStack {
                         label()
-                        Image(systemName: collapsed ? "chevron.down" : "chevron.up")
+                        Image(systemName: collapsed ? "chevron.right" : "chevron.down")
                     }
                     .padding(.bottom, 1)
                     .background(Color.white.opacity(0.1))
