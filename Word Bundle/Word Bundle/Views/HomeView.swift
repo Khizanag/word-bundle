@@ -34,7 +34,9 @@ struct HomeView: View {
             Pager(page: page, data: entities, id: \.id) { entity in
                 if let word = Word.make(from: entity) {
                     ZStack {
-                        Theme.theme(id: chosenThemeId).color
+                        let theme = Theme.theme(id: chosenThemeId)
+                        theme.color
+                            .opacity(theme.opacity)
 
                         VStack {
                             if let wordForView = Word.make(from: entities[page.index]) {

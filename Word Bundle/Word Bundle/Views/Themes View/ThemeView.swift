@@ -18,6 +18,9 @@ struct ThemeView: View {
         ZStack {
             let rect = RoundedRectangle(cornerRadius: Size.medium())
             rect.fill(theme.color)
+                .opacity(0.8)
+            rect
+                .stroke(theme.color, lineWidth: 2)
 
             if chosenThemeId == theme.id {
                 VStack {
