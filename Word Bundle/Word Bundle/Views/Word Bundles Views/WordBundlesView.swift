@@ -10,6 +10,7 @@ import SwiftUI
 struct WordBundlesView: View {
     var body: some View {
         VStack(spacing: 32) {
+            AddWordBundleItemView()
             ForEach(WordBundle.examples.indices, id: \.self) { index in
                 WordBundlePreviewItemView(wordBundle: WordBundle.examples[index])
             }
