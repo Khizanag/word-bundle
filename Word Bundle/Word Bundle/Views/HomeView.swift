@@ -11,27 +11,29 @@ import SwiftUIPager
 struct HomeView: View {
     // MARK: - Properties
     @AppStorage(AppStorageKeys.chosenThemeId()) var chosenThemeId = Theme.example.id
+    @AppStorage(AppStorageKeys.activeWordBundleId()) var activeWordBundleId = WordBundle.example.id
 
     @State private var page: Page = .first()
     @State private var isWordDetailViewActive = false
     @State private var isWordBundleDetailViewActive = false
     @State private var isButtonShown = true
 
-    private var wordBundle: WordBundle
-
     @Environment(\.managedObjectContext) private var viewContext
 
-    @FetchRequest(entity: WordEntity.entity(), sortDescriptors: [])
-    private var entities: FetchedResults<WordEntity>
+    @FetchRequest private var fetchedEntities: FetchedResults<WordEntity>
 
     // MARK: - Init
-    init(wordBundle: WordBundle, words: [Word] = [.basketball]) {
-        self.wordBundle = wordBundle
+    init(activeWordBundleId: UUID) {
+        _fetchedEntities = FetchRequest<WordEntity>(
+            sortDescriptors: [],
+            predicate: NSPredicate(format: "bundleId == %@", activeWordBundleId as CVarArg),
+            animation: .default // TODO: try others too
+        )
     }
 
     var body: some View {
         VStack {
-            Pager(page: page, data: entities, id: \.id) { entity in
+            Pager(page: page, data: fetchedEntities, id: \.id) { entity in
                 if let word = Word.make(from: entity) {
                     ZStack {
                         let theme = Theme.theme(id: chosenThemeId)
@@ -39,7 +41,7 @@ struct HomeView: View {
                             .opacity(theme.opacity)
 
                         VStack {
-                            if let wordForView = Word.make(from: entities[page.index]) {
+                            if let wordForView = Word.make(from: fetchedEntities[page.index]) {
                                 NavigationLink(destination: WordView(word: wordForView), isActive: $isWordDetailViewActive) { }
                             }
 
@@ -106,6 +108,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(wordBundle: .example, words: [])
+        HomeView(activeWordBundleId: WordBundle.example.id)
     }
 }

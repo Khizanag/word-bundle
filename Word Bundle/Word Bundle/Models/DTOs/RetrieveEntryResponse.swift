@@ -171,7 +171,7 @@ struct RetrieveEntryResponse: Codable {
 // FIXME: codable to decodable
 
 extension Word {
-    static func make(from entity: RetrieveEntryResponse, url: String? = nil) -> Word? {
+    static func make(from entity: RetrieveEntryResponse, bundleId: UUID, url: String? = nil) -> Word? {
         guard let lexicalEntries = entity.results?.first?.lexicalEntries else { return nil }
         guard let sharedLexicalEntry = lexicalEntries.first else { return nil }
         guard let sharedEntry = sharedLexicalEntry.entries?.first else { return nil }
@@ -180,7 +180,7 @@ extension Word {
 
         return Word(
             id: UUID(),
-            bundleId: UUID(), // TODO: change to real bundleId
+            bundleId: bundleId,
             word: sharedLexicalEntry.text,
             lexicalEntries: lexicalEntries.map { lexicalEntry in
                 Word.LexicalEntry(
@@ -197,10 +197,10 @@ extension Word {
                                 )
                             } ?? []
                         )
-                    } ?? [], // TODO:  lexicalEntry.entries.map { rame in
+                    } ?? [],
                     lexicalCategory: lexicalEntry.lexicalCategory.text,
-                    phrasalVerbs: lexicalEntry.phrasalVerbs?.compactMap { $0.text } ?? [], // FIXME: refactor using keyPath
-                    phrases: lexicalEntry.phrases?.compactMap { $0.text } ?? [] // FIXME: refactor using keyPath
+                    phrasalVerbs: lexicalEntry.phrasalVerbs?.map { $0.text } ?? [], // FIXME: refactor using keyPath
+                    phrases: lexicalEntry.phrases?.map { $0.text } ?? [] // FIXME: refactor using keyPath
                 )
             },
             pronunciation: .init(

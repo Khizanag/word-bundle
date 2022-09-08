@@ -9,9 +9,10 @@ import SwiftUI
 
 struct MainView: View {
     @AppStorage(AppStorageKeys.chosenThemeId()) var chosenThemeIndex = Theme.example.id
+    @AppStorage(AppStorageKeys.activeWordBundleId()) var activeWordBundleId = WordBundle.example.id
+
     @State var selection: TabItem = .bundles
-    
-    
+
     var body: some View {
         ZStack {
             let theme = Theme.themes[chosenThemeIndex]
@@ -27,20 +28,19 @@ struct MainView: View {
                     }
                     .tag(TabItem.bundles)
 
-
                 ThemesView(themes: Theme.themes)
                     .tabItem {
                         Image(systemName: "paintbrush.fill")
                         Text("Themes")
                     }
 
-                HomeView(wordBundle: .example)
+                HomeView(activeWordBundleId: activeWordBundleId)
                     .tabItem {
                         Image(systemName: "scroll.fill")
                         Text(Localisation.home())
                     }
 
-                WordsView()
+                WordBundleView(activeBundleId: activeWordBundleId)
                     .tabItem {
                         Image(systemName: "text.book.closed.fill")
                         Text("Words")
