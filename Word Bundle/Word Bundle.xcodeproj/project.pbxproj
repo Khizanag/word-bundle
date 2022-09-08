@@ -12,7 +12,6 @@
 		D16D1A8528A6AD2800000984 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D1A8428A6AD2800000984 /* Theme.swift */; };
 		D16D1A8728A6AF5B00000984 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D1A8628A6AF5B00000984 /* AspectVGrid.swift */; };
 		D16D1A8928A6B03A00000984 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D1A8828A6B03A00000984 /* ThemeView.swift */; };
-		D16D1A8B28A6CF7200000984 /* ThemesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D1A8A28A6CF7200000984 /* ThemesModel.swift */; };
 		D17B645C28C36E6C005CB55D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B645B28C36E6C005CB55D /* SettingsView.swift */; };
 		D1F46EF428C8CF360015132B /* WordBundlePreviewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F46EF328C8CF360015132B /* WordBundlePreviewItemView.swift */; };
 		D1F46EF628C8D4F40015132B /* WordBundlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F46EF528C8D4F40015132B /* WordBundlesView.swift */; };
@@ -25,6 +24,7 @@
 		FB41906E28917B6500D95C44 /* RetrieveEntryOriginalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41906D28917B6500D95C44 /* RetrieveEntryOriginalResponse.swift */; };
 		FB41907128918FAE00D95C44 /* OxfordDictionariesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41907028918FAE00D95C44 /* OxfordDictionariesRepository.swift */; };
 		FB4190732891E91900D95C44 /* RetrieveEntryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4190722891E91900D95C44 /* RetrieveEntryResponse.swift */; };
+		FB59CBE628CA19350047619D /* AppStorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59CBE528CA19350047619D /* AppStorageKeys.swift */; };
 		FB66A4292887EB7100F9F850 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A4282887EB7100F9F850 /* WelcomeView.swift */; };
 		FB66A42C2887FAD000F9F850 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB66A42E2887FAD000F9F850 /* Localizable.strings */; };
 		FB66A430288804E400F9F850 /* Localisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A42F288804E400F9F850 /* Localisation.swift */; };
@@ -88,7 +88,6 @@
 		D16D1A8428A6AD2800000984 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		D16D1A8628A6AF5B00000984 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
 		D16D1A8828A6B03A00000984 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
-		D16D1A8A28A6CF7200000984 /* ThemesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesModel.swift; sourceTree = "<group>"; };
 		D17B645B28C36E6C005CB55D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D1F46EF328C8CF360015132B /* WordBundlePreviewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBundlePreviewItemView.swift; sourceTree = "<group>"; };
 		D1F46EF528C8D4F40015132B /* WordBundlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBundlesView.swift; sourceTree = "<group>"; };
@@ -100,6 +99,7 @@
 		FB41906D28917B6500D95C44 /* RetrieveEntryOriginalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveEntryOriginalResponse.swift; sourceTree = "<group>"; };
 		FB41907028918FAE00D95C44 /* OxfordDictionariesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxfordDictionariesRepository.swift; sourceTree = "<group>"; };
 		FB4190722891E91900D95C44 /* RetrieveEntryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveEntryResponse.swift; sourceTree = "<group>"; };
+		FB59CBE528CA19350047619D /* AppStorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageKeys.swift; sourceTree = "<group>"; };
 		FB66A4282887EB7100F9F850 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		FB66A42D2887FAD000F9F850 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FB66A42F288804E400F9F850 /* Localisation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localisation.swift; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 				FB66A454288F239700F9F850 /* Language.swift */,
 				FB66A456288F3EB900F9F850 /* WordBundle.swift */,
 				D16D1A8428A6AD2800000984 /* Theme.swift */,
-				D16D1A8A28A6CF7200000984 /* ThemesModel.swift */,
+				FB59CBE528CA19350047619D /* AppStorageKeys.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -552,9 +552,9 @@
 				FBCECEA22814847900CD558C /* Persistence.swift in Sources */,
 				FB66A457288F3EBA00F9F850 /* WordBundle.swift in Sources */,
 				FBCECECE2814876D00CD558C /* Device+Extension.swift in Sources */,
-				D16D1A8B28A6CF7200000984 /* ThemesModel.swift in Sources */,
 				FBE5450628C66E670093ABF3 /* CircleLoadingBar.swift in Sources */,
 				D16D1A8928A6B03A00000984 /* ThemeView.swift in Sources */,
+				FB59CBE628CA19350047619D /* AppStorageKeys.swift in Sources */,
 				FB66A4292887EB7100F9F850 /* WelcomeView.swift in Sources */,
 				FBBBA1F728C952A600F64A78 /* WordEntity.swift in Sources */,
 				FB4190732891E91900D95C44 /* RetrieveEntryResponse.swift in Sources */,
@@ -589,7 +589,7 @@
 				D1F46EF428C8CF360015132B /* WordBundlePreviewItemView.swift in Sources */,
 				FB66A455288F239800F9F850 /* Language.swift in Sources */,
 				FB66A44F2888B54800F9F850 /* PartOfSpeech.swift in Sources */,
-				FBCECE992814847600CD558C /* Word_BundleApp.swift in Sources */,
+				FBCECE992814847600CD558C /* WordBundleApp.swift in Sources */,
 				D1F46EF828C8E9B40015132B /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
