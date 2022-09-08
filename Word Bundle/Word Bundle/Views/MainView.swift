@@ -12,7 +12,7 @@ struct MainView: View {
     @AppStorage(AppStorageKeys.activeWordBundleId()) var activeWordBundleId = WordBundle.example.id
 
     @State var selection: TabItem = .bundles
-    
+
     var body: some View {
         ZStack {
             let theme = Theme.themes[chosenThemeIndex]
@@ -27,7 +27,6 @@ struct MainView: View {
                         Text("Bundles")
                     }
                     .tag(TabItem.bundles)
-
 
                 ThemesView(themes: Theme.themes)
                     .tabItem {

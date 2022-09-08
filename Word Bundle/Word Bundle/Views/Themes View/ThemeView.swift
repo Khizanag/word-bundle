@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ThemeView: View {
     private typealias Size = DesignSystem.Size
-    
+
     let theme: Theme
     //    @State var isSelected: Bool // FIXME: using isSelected and without chosenThemeId binding
     @Binding var chosenThemeId: Int
-    
+
     var body: some View {
         ZStack {
             let rect = RoundedRectangle(cornerRadius: Size.medium())
@@ -21,7 +21,7 @@ struct ThemeView: View {
                 .opacity(0.8)
             rect
                 .stroke(theme.color, lineWidth: 2)
-            
+
             if chosenThemeId == theme.id {
                 VStack {
                     HStack {
