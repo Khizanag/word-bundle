@@ -11,7 +11,7 @@ import SDWebImageSwiftUI
 
 struct WordView: View {
     private typealias Size = DesignSystem.Size
-    
+
     var word: Word
     @State private var player: AVPlayer?
 
@@ -23,13 +23,13 @@ struct WordView: View {
                     .resizable()
                     .indicator(.progress)
                     .scaledToFit()
-                
+
                 VStack (alignment: .leading) {
                     HStack {
                         Text(word.word.uppercased())
                             .font(.system(size: Size.xxxLarge()))
                             .foregroundColor(Color(hex: 0x3F3F3F))
-                        
+
                         Button {
                             Task { // TODO: make seperate method for this
                                 print("Button was tapped")
@@ -67,7 +67,7 @@ struct WordView: View {
                 .foregroundColor(Color(hex: 0x3F3F3F))
                 .opacity(0.7)
                 .padding(.bottom, Size.xSmall())
-            
+
             if !lexicalEntry.phrases.isEmpty {
                 phrases(for: lexicalEntry)
             }
