@@ -83,6 +83,7 @@ struct WordView: View {
                 definitions(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
                 shortDefitinitions(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
                 examples(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
+                synonyms(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
             }
         }
     }
@@ -118,14 +119,14 @@ struct WordView: View {
     }
 
     // MARK: - Synonyms' Sub Section
-    private func synonyms(for index: Int) -> some View {
+    private func synonyms(for index: Int, entriesIndex: Int, sensesIndex: Int) -> some View {
         VStack (alignment: .leading) {
             CollapsibleView(
                 label: {
                     subSectionHeader(for: "Synonyms")
                 },
                 content: {
-                    synonymsRows(for: index)
+                    synonymsRows(for: index, entriesIndex: entriesIndex, sensesIndex: sensesIndex)
                 }
             )
             .frame(maxWidth: .infinity)
@@ -133,13 +134,9 @@ struct WordView: View {
         }
     }
 
-    private func synonymsRows(for index: Int) -> some View {
-        ForEach (0..<word.lexicalEntries[index].entries.count, id: \.self) { entriesIndex in
-            ForEach (0..<word.lexicalEntries[index].entries[entriesIndex].senses.count, id: \.self) { sensesIndex in
-                ForEach(0..<word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].synonyms.count, id: \.self) { synonymsIndex in
-                    bulletRow(for: word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].synonyms[synonymsIndex])
-                }
-            }
+    private func synonymsRows(for index: Int, entriesIndex: Int, sensesIndex: Int) -> some View {
+        ForEach(0..<word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].synonyms.count, id: \.self) { synonymsIndex in
+            bulletRow(for: word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].synonyms[synonymsIndex])
         }
     }
 
