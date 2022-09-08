@@ -12,7 +12,9 @@ struct MainView: View {
 
     var body: some View {
         ZStack {
-            Theme.themes[chosenThemeIndex].color
+            let theme = Theme.themes[chosenThemeIndex]
+            theme.color
+                .opacity(theme.opacity)
                 .ignoresSafeArea()
 
             TabView {
