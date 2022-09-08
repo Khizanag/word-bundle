@@ -186,6 +186,15 @@
 			path = "Word Bundles Views";
 			sourceTree = "<group>";
 		};
+		D106670B28CA5565000E5E32 /* Themes View */ = {
+			isa = PBXGroup;
+			children = (
+				FB66A4522888B8ED00F9F850 /* ThemesView.swift */,
+				D16D1A8828A6B03A00000984 /* ThemeView.swift */,
+			);
+			path = "Themes View";
+			sourceTree = "<group>";
+		};
 		FB08299F2884BA2B00FFFB4B /* Design System */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,13 +256,13 @@
 		FB66A43328880EBE00F9F850 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D106670B28CA5565000E5E32 /* Themes View */,
 				D10045BB28CA456100A65917 /* Word Bundles Views */,
 				FB66A462289006BA00F9F850 /* Reminders Setting */,
 				FB66A4382888157E00F9F850 /* Components */,
 				FB66A439288816B700F9F850 /* MainView.swift */,
 				FB66A4282887EB7100F9F850 /* WelcomeView.swift */,
 				FB66A4502888B5F100F9F850 /* HomeView.swift */,
-				FB66A4522888B8ED00F9F850 /* ThemesView.swift */,
 				FB66A46C2890665700F9F850 /* WordView.swift */,
 				D16D1A8628A6AF5B00000984 /* AspectVGrid.swift */,
 				D17B645B28C36E6C005CB55D /* SettingsView.swift */,
@@ -267,7 +276,6 @@
 			isa = PBXGroup;
 			children = (
 				FBE544FF28C66DCF0093ABF3 /* LoadingButton */,
-				D16D1A8828A6B03A00000984 /* ThemeView.swift */,
 				FB66A43628880F5C00F9F850 /* NavigationButton.swift */,
 				FB66A4492888A8E300F9F850 /* HelloWorldView.swift */,
 			);
