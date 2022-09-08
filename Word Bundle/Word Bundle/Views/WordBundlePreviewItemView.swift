@@ -9,29 +9,28 @@ import SwiftUI
 
 struct WordBundlePreviewItemView: View {
     let wordBundle: WordBundle
-    
+
     var body: some View {
-        ZStack () {
+        ZStack {
             Color(hex: 0x039be5) // TODO: fix this
             HStack (alignment: .center) {
                 VStack (alignment: .leading, spacing: 6) {
                     Text(wordBundle.name)
                         .font(.headline)
                         .foregroundColor(.white)
-                    
+
                     Text("\(wordBundle.words.count) Words")
                         .font(.subheadline)
                         .bold()
                         .foregroundColor(.white)
                 }
                 .padding()
-                
+
                 Spacer()
-                
+
                 wordBundle.icon
                     .frame(width: 36, height: 44, alignment: .center)
                     .padding()
-                
             }
         }
         .frame(height: 96)
@@ -40,10 +39,8 @@ struct WordBundlePreviewItemView: View {
     }
 }
 
-
 struct WordBundleView_Previews: PreviewProvider {
     static var previews: some View {
         WordBundlePreviewItemView(wordBundle: WordBundle.example2)
     }
 }
-

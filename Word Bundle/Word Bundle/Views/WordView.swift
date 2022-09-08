@@ -10,9 +10,9 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct WordView: View {
-    @Binding var word: Word
+    var word: Word
     @State private var player: AVPlayer?
-    
+
     var body: some View {
         ScrollView {
             VStack (alignment: .leading) {
@@ -36,18 +36,16 @@ struct WordView: View {
                                 await player?.seek(to: .zero)
                                 player?.play()
                             }
-                            
                         } label: {
                             Image(systemName: "speaker.wave.3")
                         }
-                        
                     }
-                    
+
                     if let phoneticSpelling = word.pronunciation.phoneticSpelling {
                         Text(phoneticSpelling)
                             .foregroundColor(Color(hex: 0x3F3F3F))
                     }
-                    
+
                     lexicalEntries
                 }
                 .padding()
@@ -55,26 +53,27 @@ struct WordView: View {
         }
         .ignoresSafeArea()
     }
-    
+
     private var lexicalEntries: some View {
         ForEach (0..<word.lexicalEntries.count, id: \.self) { index in
             Text(word.lexicalEntries[index].lexicalCategory)
                 .foregroundColor(Color(hex: 0x3F3F3F))
                 .opacity(0.7)
+
             Spacer()
-           
+
             definitions(for: index)
             examples(for: index)
             phrases(for: index)
             synonyms(for: index)
             antonyms(for: index)
-            
-            if index != word.lexicalEntries.count - 1 {
+
+            if index != word.lexicalEntries.indices.last {
                 Divider()
             }
         }
     }
-    
+
     // MARK: - Phrases Sub Section
     private func phrases(for index: Int) -> some View {
         VStack (alignment: .leading) {
@@ -83,13 +82,13 @@ struct WordView: View {
             Spacer()
         }
     }
-    
+
     private func phrasesRows(for index: Int) -> some View {
         ForEach (0..<word.lexicalEntries[index].phrases.count, id: \.self) { phraseIndex in
             bulletRow(for: word.lexicalEntries[index].phrases[phraseIndex])
         }
     }
-    
+
     // MARK: - Examples Sub Section
     private func examples(for index: Int) -> some View {
         VStack (alignment: .leading) {
@@ -98,7 +97,6 @@ struct WordView: View {
             Spacer()
         }
     }
-    
     private func examplesRows(for index: Int) -> some View {
         ForEach (0..<word.lexicalEntries[index].entries.count, id: \.self) { entriesIndex in
             ForEach (0..<word.lexicalEntries[index].entries[entriesIndex].senses.count, id: \.self) { sensesIndex in
@@ -108,17 +106,17 @@ struct WordView: View {
             }
         }
     }
-    
+
     // MARK: - Synonyms Sub Section
     private func synonyms(for index: Int) -> some View {
         VStack (alignment: .leading) {
             subSectionHeader(for: "Synonyms")
-            synonimsRows(for: index)
+            synonymsRows(for: index)
             Spacer()
         }
     }
-    
-    private func synonimsRows(for index: Int) -> some View {
+
+    private func synonymsRows(for index: Int) -> some View {
         ForEach (0..<word.lexicalEntries[index].entries.count, id: \.self) { entriesIndex in
             ForEach (0..<word.lexicalEntries[index].entries[entriesIndex].senses.count, id: \.self) { sensesIndex in
                 ForEach(0..<word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].synonyms.count, id: \.self) { synonymsIndex in
@@ -127,7 +125,7 @@ struct WordView: View {
             }
         }
     }
-    
+
     // MARK: - Antonyms Sub Section
     private func antonyms(for index: Int) -> some View {
         VStack (alignment: .leading) {
@@ -136,7 +134,7 @@ struct WordView: View {
             Spacer()
         }
     }
-    
+
     private func antonymsRows(for index: Int) -> some View {
         ForEach (0..<word.lexicalEntries[index].entries.count, id: \.self) { entriesIndex in
             ForEach (0..<word.lexicalEntries[index].entries[entriesIndex].senses.count, id: \.self) { sensesIndex in
@@ -146,8 +144,7 @@ struct WordView: View {
             }
         }
     }
-    
-    
+
     // MARK: - Definitions Sub Section
     private func definitions(for index: Int) -> some View {
         VStack (alignment: .leading) {
@@ -156,23 +153,23 @@ struct WordView: View {
             Spacer()
         }
     }
-    
+
     private func definitionsRows(for index: Int) -> some View {
         ForEach (0..<word.lexicalEntries[index].entries.count, id: \.self) { entriesIndex in
             ForEach (0..<word.lexicalEntries[index].entries[entriesIndex].senses.count, id: \.self) { sensesIndex in
                 ForEach(0..<word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].definitions.count, id: \.self) { definitionsIndex in
-                    bulletRow(for:  word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].definitions[definitionsIndex])
+                    bulletRow(for: word.lexicalEntries[index].entries[entriesIndex].senses[sensesIndex].definitions[definitionsIndex])
                 }
             }
         }
     }
-    
+
     // MARK: - Helpers
     private func bulletRow(for text: String) -> some View {
         Text("\u{2022} " + text)
             .foregroundColor(Color(hex: 0x3F3F3F))
     }
-    
+
     private func subSectionHeader(for title: String) -> some View {
         Text(title)
             .font(.system(size: 24))
@@ -183,8 +180,6 @@ struct WordView: View {
 
 struct WordView_Previews: PreviewProvider {
     static var previews: some View {
-        WordView(word: .init(projectedValue: .constant(.basketball)))
+        WordView(word: .basketball)
     }
 }
-
-

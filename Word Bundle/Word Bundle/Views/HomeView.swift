@@ -13,83 +13,87 @@ struct HomeView: View {
     @ObservedObject private var themesModel: ThemesModel
 
     @State private var page: Page = .first()
-    @State private var activeWord: Word
     @State private var isWordDetailViewActive = false
     @State private var isWordBundleDetailViewActive = false
     @State private var isButtonShown = true
 
     private var wordBundle: WordBundle
-    private var words: [Word]
+
+    @Environment(\.managedObjectContext) private var viewContext
+
+    @FetchRequest(entity: WordEntity.entity(), sortDescriptors: [])
+    private var entities: FetchedResults<WordEntity>
 
     // MARK: - Init
     init(wordBundle: WordBundle, words: [Word] = [.basketball], themesModel: ThemesModel) {
         self.wordBundle = wordBundle // TODO: undo
-        self.words = words
-        self._activeWord = State(initialValue: words[0]) // FIXME: when empty?
         self.themesModel = themesModel
     }
 
     var body: some View {
         VStack {
-            NavigationLink(destination: WordView(word: $activeWord), isActive: $isWordDetailViewActive) { }
-            Pager(page: page, data: words, id: \.id) { word in
-                ZStack {
-                    themesModel.getSelectedTheme()?.color
-                    VStack {
-                        Text(word.word)
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                            .foregroundColor(DesignSystem.Color.primaryTextLight()())
-                            .multilineTextAlignment(.center)
-                            .padding()
-
-                        let lexicalCategory = word.lexicalEntries.first?.lexicalCategory ?? ""
-                        let definition = word.lexicalEntries.first?.entries.first?.senses.first?.definitions.first ?? ""
-                        Text("(\(lexicalCategory)) \(definition)")// FIXME: second part
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .foregroundColor(DesignSystem.Color.secondaryTextLight()())
-                            .multilineTextAlignment(.center)
-                            .padding()
-
+            Pager(page: page, data: entities, id: \.id) { entity in
+                if let word = Word.make(from: entity) {
+                    ZStack {
+                        themesModel.getSelectedTheme()?.color
                         VStack {
-                            let examples = word.lexicalEntries.first?.entries.first?.senses.first?.examples ?? ["No Example..."]
-                            ForEach(examples, id: \.self) { example in
-                                Text(example)
-                                    .font(.footnote)
-                                    .fontWeight(.light)
-                                    .foregroundColor(DesignSystem.Color.secondaryTextLight()())
-                                    .multilineTextAlignment(.center)
-                                    .padding(.top, DesignSystem.Size.xxxSmall())
+                            if let wordForView = Word.make(from: entities[page.index]) {
+                                NavigationLink(destination: WordView(word: wordForView), isActive: $isWordDetailViewActive) { }
                             }
+
+                            Text(word.word)
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .foregroundColor(DesignSystem.Color.primaryTextLight()())
+                                .multilineTextAlignment(.center)
+                                .padding()
+
+                            let lexicalCategory = word.lexicalEntries.first?.lexicalCategory ?? ""
+                            let definition = word.lexicalEntries.first?.entries.first?.senses.first?.definitions.first ?? ""
+                            Text("(\(lexicalCategory)) \(definition)")// FIXME: second part
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(DesignSystem.Color.secondaryTextLight()())
+                                .multilineTextAlignment(.center)
+                                .padding()
+
+                            VStack {
+                                let examples = word.lexicalEntries.first?.entries.first?.senses.first?.examples ?? ["No Example..."]
+                                ForEach(examples, id: \.self) { example in
+                                    Text(example)
+                                        .font(.footnote)
+                                        .fontWeight(.light)
+                                        .foregroundColor(DesignSystem.Color.secondaryTextLight()())
+                                        .multilineTextAlignment(.center)
+                                        .padding(.top, DesignSystem.Size.xxxSmall())
+                                }
+                            }
+                            .padding(.top, DesignSystem.Size.xxxLarge())
                         }
-                        .padding(.top, DesignSystem.Size.xxxLarge())
+                        .padding()
                     }
-                    .padding()
-                }
-                .gesture(
-                    DragGesture(minimumDistance: 3.0, coordinateSpace: .local)
-                        .onEnded { value in
-                            print(value.translation)
-                            switch(value.translation.width, value.translation.height) {
-                            case (...0, -50...50):
-                                isWordDetailViewActive = true
-                            case (0..., -50...50):
-                                isWordBundleDetailViewActive = true
-                            case (-100...100, ...0):
-                                withAnimation {
-                                    page.update(.next)
-                                    activeWord = words[page.index]
+                    .gesture(
+                        DragGesture(minimumDistance: 3.0, coordinateSpace: .local)
+                            .onEnded { value in
+                                print(value.translation)
+                                switch(value.translation.width, value.translation.height) {
+                                case (...0, -50...50):
+                                    isWordDetailViewActive = true
+                                case (0..., -50...50):
+                                    isWordBundleDetailViewActive = true
+                                case (-100...100, ...0):
+                                    withAnimation {
+                                        page.update(.next)
+                                    }
+                                case (-100...100, 0...):
+                                    withAnimation {
+                                        page.update(.previous)
+                                    }
+                                default: break
                                 }
-                            case (-100...100, 0...):
-                                withAnimation {
-                                    page.update(.previous)
-                                    activeWord = words[page.index]
-                                }
-                            default: break
                             }
-                        }
-                )
+                    )
+                }
             }
             .sensitivity(.low)
             .vertical()
