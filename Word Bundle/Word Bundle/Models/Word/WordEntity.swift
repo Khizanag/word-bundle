@@ -9,8 +9,7 @@ import CoreData
 import SwiftUI
 
 @objc(WordEntity)
-public class WordEntity: NSManagedObject {
-}
+public class WordEntity: NSManagedObject { }
 
 public extension WordEntity {
     @nonobjc class func fetchRequest() -> NSFetchRequest<WordEntity> {
@@ -20,8 +19,7 @@ public extension WordEntity {
     @NSManaged var encodedWord: Data?
 }
 
-extension WordEntity: Identifiable {
-}
+extension WordEntity: Identifiable { }
 
 // MARK: - Word.init
 extension Word {

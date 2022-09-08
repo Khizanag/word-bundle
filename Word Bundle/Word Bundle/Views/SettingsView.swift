@@ -8,23 +8,20 @@
 import SwiftUI
 
 struct SettingsView: View {
-    // TODO: find and fix navigation title bug
     @State var words: [Word] = []
     var body: some View {
         List {
-            NavigationLink(destination: RemindersSettingView(words: words)) {
-                Image(systemName: "bell.badge")
-                Text("Reminder Settings")
+            NavigationLink(destination: RemindersSettingView()) {
+                Image(systemName: "bell.badge") // TODO: move to DesignSystem
+                Text("Reminder Settings") // TODO: Localization
             }
-//            .padding() // TODO: discuss needed or not
 
             NavigationLink(destination: ThemesView(themes: Theme.themes)) {
-                Image(systemName: "paintbrush")
+                Image(systemName: "paintbrush") // TODO: move to DesignSystem
                 Text("Change Background Theme") // TODO: localization
             }
-//            .padding() // TODO: discuss needed or not
         }
-        .navigationTitle("Settings")
+        .navigationTitle("Settings") // TODO: Localization
     }
 }
 

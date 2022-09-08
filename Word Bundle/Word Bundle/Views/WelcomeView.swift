@@ -26,7 +26,7 @@ struct WelcomeView: View {
                     titleLabel
                     descriptionLabel
                     Spacer()
-                    NavigationButton(title: Localisation.getStarted(), destination: RemindersSettingView(words: words))
+                    NavigationButton(title: Localisation.getStarted(), destination: RemindersSettingView())
                     Spacer()
                 }
                 .navigationTitle(Localisation.wordBundle())
@@ -47,7 +47,6 @@ struct WelcomeView: View {
 
     private var descriptionLabel: some View {
         Text(Localisation.welcomePageDescription())
-            .foregroundColor(DesignSystem.Color.secondaryTextDark().value)
             .foregroundColor(DesignSystem.Color.secondaryTextDark().value)
             .multilineTextAlignment(.center)
             .padding()

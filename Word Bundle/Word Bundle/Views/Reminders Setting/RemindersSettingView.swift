@@ -8,23 +8,21 @@
 import SwiftUI
 
 struct RemindersSettingView: View {
-    let words: [Word]
-
     // MARK: - Body
     var body: some View {
         ScrollView {
-            VStack{
-            exampleWordComponentView
-                .padding(.top, DesignSystem.Size.xxLarge())
-            
-            titleLabel
+            VStack {
+                exampleWordComponentView
+                    .padding(.top, DesignSystem.Size.xxLarge())
+
+                titleLabel
                     .padding(.top, 64)
-            
+
                 properties
                     .padding(DesignSystem.Size.xSmall())
-                
-            NavigationButton(title: Localisation.getStarted(), destination: MainView())
-                .padding()
+
+                NavigationButton(title: Localisation.getStarted(), destination: MainView())
+                    .padding()
             }
         }
         .navigationTitle(Localisation.reminders())
@@ -91,6 +89,6 @@ struct RemindersSettingView: View {
 // MARK: - Previews
 struct RemindersSettingView_Previews: PreviewProvider {
     static var previews: some View {
-        RemindersSettingView(words: [])
+        RemindersSettingView()
     }
 }
