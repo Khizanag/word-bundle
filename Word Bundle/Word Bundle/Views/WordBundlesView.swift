@@ -13,16 +13,14 @@ struct WordBundlesView: View {
             ForEach(WordBundle.examples.indices, id: \.self) { index in
                 WordBundlePreviewItemView(wordBundle: WordBundle.examples[index])
             }
-            
+
             Spacer()
         }
     }
 }
-
 
 struct WordBundlesView_Previews: PreviewProvider {
     static var previews: some View {
         WordBundlesView()
     }
 }
-
