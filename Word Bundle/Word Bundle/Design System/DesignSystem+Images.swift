@@ -21,6 +21,7 @@ public extension DesignSystem {
         case speakerWave3 = "speaker.wave.3"
         case bellBadge = "bell.badge"
         case paintbrush
+        case textJustifyLeft = "text.justify.left"
 
         func callAsFunction(isSystemName: Bool = true) -> SwiftUI.Image {
             if isSystemName {
