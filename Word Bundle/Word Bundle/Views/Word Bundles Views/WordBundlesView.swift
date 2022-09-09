@@ -19,7 +19,7 @@ struct WordBundlesView: View {
                 AddWordBundleItemView()
             }
             ForEach(WordBundle.examples, id: \.id) { wordBundle in
-                WordBundlePreviewItemView(wordBundle: wordBundle)
+                WordBundlePreviewItemView(wordBundle: wordBundle, activeWordBundleId: $activeWordBundleId)
                     .onTapGesture {
                         selection = .words
                         activeWordBundleId = wordBundle.id
