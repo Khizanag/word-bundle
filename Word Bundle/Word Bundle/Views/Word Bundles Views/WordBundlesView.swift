@@ -15,7 +15,9 @@ struct WordBundlesView: View {
 
     var body: some View {
         VStack(spacing: DesignSystem.Size.xxxLarge()) {
-            AddWordBundleItemView()
+            NavigationLink(destination: LanguagesView()) {
+                AddWordBundleItemView()
+            }
             ForEach(WordBundle.examples, id: \.id) { wordBundle in
                 WordBundlePreviewItemView(wordBundle: wordBundle)
                     .onTapGesture {

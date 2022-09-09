@@ -17,7 +17,9 @@ struct CollapsibleView<Content: View>: View {
         VStack (alignment: .leading) {
             Button(
                 action: {
-                    collapsed.toggle()
+                    withAnimation {
+                        collapsed.toggle()
+                    }
                 },
                 label: {
                     HStack {
