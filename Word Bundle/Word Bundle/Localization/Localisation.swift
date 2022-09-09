@@ -24,40 +24,64 @@ public enum Localisation: String {
     case endAt
     case getStarted
     case home
+    case bundles
+    case themes
+    case words
+    case settings
     case howMany
     case startAt
     case wordBundle
 
     // MARK: - Languages
-    case armenian
-    case azerbaijani
-    case bengali
-    case czech
-    case dutch
-    case egyptianArabic
     case english
     case french
-    case georgian
-    case german
-    case greek
+    case gujarati
     case hindi
-    case hungarian
-    case iranianPersian
-    case italian
-    case japanese
-    case kazakh
-    case korean
-    case mandarinChinese
-    case nepali
-    case polish
-    case portuguese
+    case latvian
     case romanian
     case spanish
-    case thai
-    case turkish
-    case ukrainian
-    case vietnamese
-
+    case swahili
+    case tamil
+    case georgian
+    
+    // MARK: - CreateWordBundleView
+    case language
+    case title
+    case keepGoing
+    case createBundle
+    case backToLanguagePage
+    case chooseLanguage
+    case addBundleTitle
+    case typeBundleTitle
+    
+    // MARK: - WordBundlesView
+    case delete
+    case bundleDeleteActionSheetTitle
+    case bundleDeleteActionSheetMessage
+    
+    // MARK: - WordView
+    case phrases
+    case examples
+    case synonyms
+    case antonyms
+    case definitions
+    case shortDefinitions
+    case bullet
+    
+    // MARK: - SettingsView
+    case reminderSettings
+    case changeBackgroundTheme
+    
+    // MARK: - WordBundleView
+    case textFieldMessage
+    case addWord
+    
+    // MARK: - HomeView
+    case examplesNotFound
+    
+    // MARK: - AddWordBundleItemView
+    case addNewBundle
+    
     private var key: String { rawValue }
 
     private var localized: String {

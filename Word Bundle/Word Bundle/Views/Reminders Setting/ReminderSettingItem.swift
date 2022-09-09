@@ -46,7 +46,7 @@ struct ReminderSettingItem<Value>: View {
                 value = valueUpdater(value, -1)
             },
             label: {
-                Image(systemName: "minus")
+                Image(systemName: "minus") // TODO: move to DesignSystem
                     .foregroundColor(Color(hex: 0x3F3F3F))
             }
         )
@@ -58,7 +58,7 @@ struct ReminderSettingItem<Value>: View {
                 value = valueUpdater(value, +1)
             },
             label: {
-                Image(systemName: "plus")
+                Image(systemName: "plus") // TODO: move to DesignSystem
                     .foregroundColor(Color(hex: 0x3F3F3F))
             }
         )

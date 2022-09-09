@@ -13,12 +13,12 @@ struct SettingsView: View {
         List {
             NavigationLink(destination: RemindersSettingView()) {
                 Image(systemName: "bell.badge") // TODO: move to DesignSystem
-                Text("Reminder Settings") // TODO: Localization
+                Text(Localisation.reminderSettings())
             }
 
             NavigationLink(destination: ThemesView(themes: Theme.themes)) {
                 Image(systemName: "paintbrush") // TODO: move to DesignSystem
-                Text("Change Background Theme") // TODO: localization
+                Text(Localisation.changeBackgroundTheme())
             }
         }
         .navigationBarHidden(true)

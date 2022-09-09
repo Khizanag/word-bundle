@@ -18,6 +18,10 @@
 "endAt" = "როდემდე";
 "getStarted" = "დავიწყოთ";
 "home" = "მთავარი";
+"bundles" = "სიტყვის კონები";
+"themes" = "თემები";
+"words" = "სიტყვები";
+"settings" = "პარამეტრები";
 "howMany" = "რამდენი";
 "startAt" = "როდიდან";
 "wordBundle" = "სიტყვის კონა";
@@ -27,31 +31,51 @@
 "wordSalubriousDefinition" = "Something that is benefitial to your mind. ";
 
 // MARK: - Languages
-"armenian" = "სომხური";
-"azerbaijani" = "აზერნაიჯანული";
-"bengali" = "ბენგალიური";
-"czech" = "ჩეხური";
-"dutch" = "ჰოლანდიური";
-"egyptianArabic" = "ეგვიპტური არაბული";
 "english" = "ინგლისური";
 "french" = "ფრანგული";
-"georgian" = "ქართული";
-"german" = "გერმანული";
-"greek" = "ბერძნული";
+"gujarati" = "გუჯარატი";
 "hindi" = "ჰინდი";
-"hungarian" = "უნგრული";
-"iranianPersian" = "ირანული სპარსული";
-"italian" = "იტალიური";
-"japanese" = "იაპონური";
-"kazakh" = "ყაზახური";
-"korean" = "კორეული";
-"mandarinChinese" = "ჩინური მანდარინი";
-"nepali" = "ნეპალი";
-"polish" = "პოლონური";
-"portuguese" = "პორტუგალიური";
+"latvian" = "ლატვიური";
 "romanian" = "რუმინული";
 "spanish" = "ესპანური";
-"thai" = "ტაილანდური";
-"turkish" = "თურქული";
-"ukrainian" = "უკრაიკული";
-"vietnamese" = "ვიეტნამური";
+"swahili" = "სუაჰილი";
+"tamil" = "ტამილური";
+"georgian" = "ქართული";
+
+// MARK: - CreateWordBundleView
+"language" = "ენა";
+"title" = "სათაური";
+"keepGoing" = "განაგრძე";
+"createBundle" = "შექმენი კონა";
+"backToLanguagePage" = "დაბრუნდი ენების გვერდზე";
+"chooseLanguage" = "აირჩიე ენა";
+"addBundleTitle" = "დაამატე კონის სათაური";
+"typeBundleTitle" =  "შეიყვანე კონის სათაური";
+
+// MARK: - WordBundlesView
+"delete" = "წაშლა";
+"bundleDeleteActionSheetTitle" = "შენ მიერ არჩეული `სიტყვის კონა` წაიშლება";
+"bundleDeleteActionSheetMessage" = "დარწმუნებული ხარ?";
+
+// MARK: - WordView
+"phrases" = "ფრაზები";
+"examples" = "მაგალითები";
+"synonyms" = "სინონიმები";
+"antonyms" = "ანტონიმები";
+"definitions" = "განმარტებები";
+"shortDefinitions" = "მოკლე განმარტებები";
+"bullet" = "\u{2022} ";
+
+// MARK: - SettingsView
+"reminderSettings" = "შემხსენებლების პარამეტრები";
+"changeBackgroundTheme" = "შეცვალე ფონი";
+
+// MARK: - WordBundleView
+"textFieldMessage" = "მოსაძებნად შეიყვანე სიტყვა";
+"addWord" = "დაამატე სიტყვა სიტყვის კონაში";
+
+// MARK: - HomeView
+"examplesNotFound" = "მაგალითები ვერ მოიძებნა...";
+
+// MARK: - AddWordBundleItemView
+"addNewBundle" = "დაამატე ახალი სიტყვის კონა";

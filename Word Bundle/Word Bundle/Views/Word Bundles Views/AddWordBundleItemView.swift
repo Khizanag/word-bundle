@@ -13,14 +13,14 @@ struct AddWordBundleItemView: View {
             Color(hex: 0x039be5) // TODO: fix this
                 .opacity(0.6)
             HStack (alignment: .center) {
-                Text("Add New Bundle")
+                Text(Localisation.addNewBundle())
                     .font(.headline)
                     .foregroundColor(.white)
                     .padding()
 
                 Spacer()
 
-                Image(systemName: "plus")
+                Image(systemName: "plus") // TODO: move to DesignSystem
                     .foregroundColor(.white)
                     .font(.largeTitle)
                     .padding()

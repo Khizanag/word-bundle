@@ -25,14 +25,14 @@ struct MainView: View {
                 WordBundlesView(selection: $selection)
                     .tabItem {
                         Image(systemName: "books.vertical.fill" )
-                        Text("Bundles")
+                        Text(Localisation.bundles())
                     }
                     .tag(TabItem.bundles)
 
                 ThemesView(themes: Theme.themes)
                     .tabItem {
                         Image(systemName: "paintbrush.fill")
-                        Text("Themes")
+                        Text(Localisation.themes())
                     }
 
                 HomeView(activeWordBundleId: activeWordBundleId)
@@ -44,14 +44,14 @@ struct MainView: View {
                 WordBundleView(activeBundleId: activeWordBundleId)
                     .tabItem {
                         Image(systemName: "text.book.closed.fill")
-                        Text("Words")
+                        Text(Localisation.words())
                     }
                     .tag(TabItem.words)
 
                 SettingsView()
                     .tabItem {
                         Image(systemName: "gearshape.2.fill")
-                        Text("Settings")
+                        Text(Localisation.settings())
                     }
             }
         }

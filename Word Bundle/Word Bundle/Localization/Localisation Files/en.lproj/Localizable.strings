@@ -18,6 +18,10 @@
 "endAt" = "End at";
 "getStarted" = "Get Started";
 "home" = "Home";
+"bundles" = "Bundles";
+"themes" = "Themes";
+"words" = "Words";
+"settings" = "Settings";
 "howMany" = "How many";
 "startAt" = "Start at";
 "wordBundle" = "Word bundle";
@@ -27,31 +31,51 @@
 "wordSalubriousDefinition" = "Something that is benefitial to your mind. ";
 
 // MARK: - Languages
-"armenian" = "Armenian";
-"azerbaijani" = "Azerbaijani";
-"bengali" = "Bengali";
-"czech" = "Czech";
-"dutch" = "Dutch";
-"egyptianArabic" = "Egyptian Arabic";
 "english" = "English";
 "french" = "French";
-"georgian" = "Georgian";
-"german" = "German";
-"greek" = "Greek";
+"gujarati" = "Gujarati";
 "hindi" = "Hindi";
-"hungarian" = "Hungarian";
-"iranianPersian" = "Iranian Persian";
-"italian" = "Italian";
-"japanese" = "Japanese";
-"kazakh" = "Kazakh";
-"korean" = "Korean";
-"mandarinChinese" = "Mandarin Chinese";
-"nepali" = "Nepali";
-"polish" = "Polish";
-"portuguese" = "Portuguese";
+"latvian" = "Latvian";
 "romanian" = "Romanian";
 "spanish" = "Spanish";
-"thai" = "Thai";
-"turkish" = "Turkish";
-"ukrainian" = "Ukrainian";
-"vietnamese" = "Vietnamese";
+"swahili" = "Swahili";
+"tamil" = "Tamil";
+"georgian" = "Georgian";
+
+// MARK: - CreateWordBundleView
+"language" = "Language";
+"title" = "Title";
+"keepGoing" = "Keep Going";
+"createBundle" = "Create Bundle";
+"backToLanguagePage" = "BACK TO LANGUAGE PAGE";
+"chooseLanguage" = "Choose Language";
+"addBundleTitle" = "Add bundle title";
+"typeBundleTitle" =  "Type Bundle Title";
+
+// MARK: - WordBundlesView
+"delete" = "Delete";
+"bundleDeleteActionSheetTitle" = "You are going to delete selected `Word Bundle`";
+"bundleDeleteActionSheetMessage" = "Are you sure?";
+
+// MARK: - WordView
+"phrases" = "Phrases";
+"examples" = "Examples";
+"synonyms" = "Synonyms";
+"antonyms" = "Antonyms";
+"definitions" = "Definitions";
+"shortDefinitions" = "Short Definitions";
+"bullet" = "\u{2022} ";
+
+// MARK: - SettingsView
+"reminderSettings" = "Reminder Settings";
+"changeBackgroundTheme" = "Change Background Theme";
+
+// MARK: - WordBundleView
+"textFieldMessage" = "Type word to search here";
+"addWord" = "Add word to Dictionary";
+
+// MARK: - HomeView
+"examplesNotFound" = "No Example...";
+
+// MARK: - AddWordBundleItemView
+"addNewBundle" = "Add New Bundle";
