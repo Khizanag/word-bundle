@@ -40,6 +40,9 @@ struct WordBundleView: View {
             TextField("Type word to search here", text: $textFieldText) // TODO: Localization
                 .disabled(isTextFieldDisabled)
                 .padding()
+                .onSubmit {
+                    addWord()
+                }
 
             enterButton
                 .frame(maxWidth: .infinity)
