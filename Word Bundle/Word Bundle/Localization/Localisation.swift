@@ -73,6 +73,15 @@ public enum Localisation: String {
     case bundleDeleteActionSheetTitle
     case bundleDeleteActionSheetMessage
     
+    // MARK: - WordView
+    case phrases
+    case examples
+    case synonyms
+    case antonyms
+    case definitions
+    case shortDefinitions
+    case bullet
+    
     private var key: String { rawValue }
 
     private var localized: String {

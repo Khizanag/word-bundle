@@ -70,3 +70,12 @@
 "delete" = "Delete";
 "bundleDeleteActionSheetTitle" = "You are going to delete selected `Word Bundle`";
 "bundleDeleteActionSheetMessage" = "Are you sure?";
+
+// MARK: - WordView
+"phrases" = "Phrases";
+"examples" = "Examples";
+"synonyms" = "Synonyms";
+"antonyms" = "Antonyms";
+"definitions" = "Definitions";
+"shortDefinitions" = "Short Definitions";
+"bullet" = "\u{2022} ";

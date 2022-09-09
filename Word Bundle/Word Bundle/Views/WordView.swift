@@ -127,7 +127,7 @@ struct WordView: View {
         VStack (alignment: .leading) {
             CollapsibleView(
                 label: {
-                    subSectionHeader(for: "Phrases") // TODO: Localization
+                    subSectionHeader(for: Localisation.phrases())
                 },
                 content: {
                     ForEach (phrases, id: \.self) { phrase in
@@ -144,7 +144,7 @@ struct WordView: View {
     // MARK: - Examples
     private func section(examples: [String]) -> some View {
         VStack (alignment: .leading) {
-            subSectionHeader(for: "Examples") // TODO: Localization
+            subSectionHeader(for: Localisation.examples())
             ForEach(examples, id: \.self) { example in
                 bulletRow(for: example)
             }
@@ -157,7 +157,7 @@ struct WordView: View {
         VStack (alignment: .leading) {
             CollapsibleView(
                 label: {
-                    subSectionHeader(for: "Synonyms") // TODO: Localization
+                    subSectionHeader(for: Localisation.synonyms())
                 },
                 content: {
                     ForEach(synonyms, id: \.self) { synonym in
@@ -175,7 +175,7 @@ struct WordView: View {
         VStack (alignment: .leading) {
              CollapsibleView(
                  label: {
-                     subSectionHeader(for: "Antonyms") // TODO: Localization
+                     subSectionHeader(for: Localisation.antonyms())
                  },
                  content: {
                      ForEach(antonyms, id: \.self) { antonym in
@@ -191,7 +191,7 @@ struct WordView: View {
     // MARK: - Definitions
     private func section(definitions: [String]) -> some View {
         VStack (alignment: .leading) {
-            subSectionHeader(for: "Definitions") // TODO: Localization
+            subSectionHeader(for: Localisation.definitions())
             ForEach(definitions, id: \.self) { definition in
                 bulletRow(for: definition)
             }
@@ -202,7 +202,7 @@ struct WordView: View {
     // MARK: - Short Definitions
     private func section(shortDefinitions: [String]) -> some View {
         VStack (alignment: .leading) {
-            subSectionHeader(for: "Short Definitions") // TODO: Localization
+            subSectionHeader(for: Localisation.shortDefinitions())
             ForEach(shortDefinitions, id: \.self) { shortDefinition in
                 bulletRow(for: shortDefinition)
             }
@@ -213,7 +213,7 @@ struct WordView: View {
     // MARK: - Helpers
     private func bulletRow(for text: String) -> some View {
         HStack {
-            Text("\u{2022} " + text.capitalized)
+            Text(Localisation.bullet() + text.capitalized)
                 .foregroundColor(Color(hex: 0x3F3F3F))
                 .padding(.leading)
             Spacer()

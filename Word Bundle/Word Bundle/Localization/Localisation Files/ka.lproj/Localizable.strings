@@ -70,3 +70,12 @@
 "delete" = "წაშლა";
 "bundleDeleteActionSheetTitle" = "შენ მიერ არჩეული `სიტყვის კონა` წაიშლება";
 "bundleDeleteActionSheetMessage" = "დარწმუნებული ხარ?";
+
+// MARK: - WordView
+"phrases" = "ფრაზები";
+"examples" = "მაგალითები";
+"synonyms" = "სინონიმები";
+"antonyms" = "ანტონიმები";
+"definitions" = "განმარტებები";
+"shortDefinitions" = "მოკლე განმარტებები";
+"bullet" = "\u{2022} ";
