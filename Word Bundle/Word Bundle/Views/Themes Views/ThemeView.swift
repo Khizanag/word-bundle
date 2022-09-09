@@ -26,7 +26,7 @@ struct ThemeView: View {
                 VStack {
                     HStack {
                         Spacer()
-                        Image(systemName: "checkmark.square.fill") // TODO: move to DesignSystem
+                        DesignSystem.Image.checkmarkSquareFill()
                             .font(.title3)
                             .foregroundColor(.white)
                             .padding(Size.small())
