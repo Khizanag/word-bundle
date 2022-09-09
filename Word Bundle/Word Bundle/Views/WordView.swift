@@ -18,17 +18,11 @@ struct WordView: View {
     var body: some View {
         ScrollView {
             VStack (alignment: .leading) {
-                if let imageUrl = word.imageUrl,
-                    let url = URL(string: imageUrl) {
-                    AnimatedImage(url: url)
-                        .resizable()
-                        .indicator(.progress)
-                        .scaledToFit()
-                } else {
-                    Image("placeholder")
-                        .resizable()
-                        .scaledToFit()
-                }
+                AnimatedImage(url: URL(string: word.imageUrl.orEmpty))
+                    .resizable()
+                    .indicator(Indicator.progress(style: .bar))
+                    .transition(.fade)
+                    .scaledToFit()
 
                 VStack (alignment: .leading) {
                     HStack {
