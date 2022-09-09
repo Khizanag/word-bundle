@@ -31,34 +31,16 @@
 "wordSalubriousDefinition" = "Something that is benefitial to your mind. ";
 
 // MARK: - Languages
-"armenian" = "Armenian";
-"azerbaijani" = "Azerbaijani";
-"bengali" = "Bengali";
-"czech" = "Czech";
-"dutch" = "Dutch";
-"egyptianArabic" = "Egyptian Arabic";
 "english" = "English";
 "french" = "French";
-"georgian" = "Georgian";
-"german" = "German";
-"greek" = "Greek";
+"gujarati" = "Gujarati";
 "hindi" = "Hindi";
-"hungarian" = "Hungarian";
-"iranianPersian" = "Iranian Persian";
-"italian" = "Italian";
-"japanese" = "Japanese";
-"kazakh" = "Kazakh";
-"korean" = "Korean";
-"mandarinChinese" = "Mandarin Chinese";
-"nepali" = "Nepali";
-"polish" = "Polish";
-"portuguese" = "Portuguese";
+"latvian" = "Latvian";
 "romanian" = "Romanian";
 "spanish" = "Spanish";
-"thai" = "Thai";
-"turkish" = "Turkish";
-"ukrainian" = "Ukrainian";
-"vietnamese" = "Vietnamese";
+"swahili" = "Swahili";
+"tamil" = "Tamil";
+"georgian" = "Georgian";
 
 // MARK: - CreateWordBundleView
 "language" = "Language";

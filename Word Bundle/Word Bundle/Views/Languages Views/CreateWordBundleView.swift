@@ -19,8 +19,8 @@ struct CreateWordBundleView: View {
     @State private var bundleTitle: String = ""
 
     private static let items = [
-        Item(title: Localisation.language(), image: Image(systemName: "circle")), // TODO: Design System
-        Item(title: Localisation.title(), image: Image(systemName: "textformat")) // TODO: Design System
+        Item(title: Localisation.language(), image: Image(systemName: "circle")), // TODO: move to DesignSystem
+        Item(title: Localisation.title(), image: Image(systemName: "textformat")) // TODO: move to DesignSystem
     ]
 
     var body: some View {

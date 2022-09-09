@@ -33,34 +33,16 @@ public enum Localisation: String {
     case wordBundle
 
     // MARK: - Languages
-    case armenian
-    case azerbaijani
-    case bengali
-    case czech
-    case dutch
-    case egyptianArabic
     case english
     case french
-    case georgian
-    case german
-    case greek
+    case gujarati
     case hindi
-    case hungarian
-    case iranianPersian
-    case italian
-    case japanese
-    case kazakh
-    case korean
-    case mandarinChinese
-    case nepali
-    case polish
-    case portuguese
+    case latvian
     case romanian
     case spanish
-    case thai
-    case turkish
-    case ukrainian
-    case vietnamese
+    case swahili
+    case tamil
+    case georgian
     
     // MARK: - CreateWordBundleView
     case language

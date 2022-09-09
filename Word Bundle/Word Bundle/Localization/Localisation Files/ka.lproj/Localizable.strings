@@ -31,34 +31,16 @@
 "wordSalubriousDefinition" = "Something that is benefitial to your mind. ";
 
 // MARK: - Languages
-"armenian" = "სომხური";
-"azerbaijani" = "აზერნაიჯანული";
-"bengali" = "ბენგალიური";
-"czech" = "ჩეხური";
-"dutch" = "ჰოლანდიური";
-"egyptianArabic" = "ეგვიპტური არაბული";
 "english" = "ინგლისური";
 "french" = "ფრანგული";
-"georgian" = "ქართული";
-"german" = "გერმანული";
-"greek" = "ბერძნული";
+"gujarati" = "გუჯარატი";
 "hindi" = "ჰინდი";
-"hungarian" = "უნგრული";
-"iranianPersian" = "ირანული სპარსული";
-"italian" = "იტალიური";
-"japanese" = "იაპონური";
-"kazakh" = "ყაზახური";
-"korean" = "კორეული";
-"mandarinChinese" = "ჩინური მანდარინი";
-"nepali" = "ნეპალი";
-"polish" = "პოლონური";
-"portuguese" = "პორტუგალიური";
+"latvian" = "ლატვიური";
 "romanian" = "რუმინული";
 "spanish" = "ესპანური";
-"thai" = "ტაილანდური";
-"turkish" = "თურქული";
-"ukrainian" = "უკრაიკული";
-"vietnamese" = "ვიეტნამური";
+"swahili" = "სუაჰილი";
+"tamil" = "ტამილური";
+"georgian" = "ქართული";
 
 // MARK: - CreateWordBundleView
 "language" = "ენა";
