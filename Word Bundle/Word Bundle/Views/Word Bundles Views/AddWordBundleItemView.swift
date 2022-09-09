@@ -11,6 +11,7 @@ struct AddWordBundleItemView: View {
     var body: some View {
         ZStack {
             Color(hex: 0x039be5) // TODO: fix this
+                .opacity(0.6)
             HStack (alignment: .center) {
                 Text("Add New Bundle")
                     .font(.headline)
