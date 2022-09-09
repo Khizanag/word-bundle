@@ -15,12 +15,9 @@ struct LanguageView: View {
         HStack (alignment: .center) {
             language.image
                 .resizable()
-                .foregroundColor(.black)
                 .frame(width: 44, height: 30)
                 .cornerRadius(30)
                 .font(.headline)
-                .aspectRatio(contentMode: .fit)
-                .scaledToFit()
                 .padding(.leading)
             
             Text(language.name)
