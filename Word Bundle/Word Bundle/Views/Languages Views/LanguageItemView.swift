@@ -27,7 +27,7 @@ struct LanguageItemView: View {
             Spacer()
 
             if chosenLanguage == language {
-                Image(systemName: "checkmark.square.fill") // TODO: move to DesignSystem
+                DesignSystem.Image.checkmarkSquareFill()
                     .font(.title3)
                     .foregroundColor(Color(hex: 0x039be5))
                     .padding(.trailing)

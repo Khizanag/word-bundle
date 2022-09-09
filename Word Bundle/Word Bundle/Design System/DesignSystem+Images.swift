@@ -15,6 +15,7 @@ public extension DesignSystem {
         case textformat
         case docPlaintext = "doc.plaintext"
         case chevronBackward = "chevron.backward"
+        case checkmarkSquareFill = "checkmark.square.fill"
 
         func callAsFunction(isSystemName: Bool = true) -> SwiftUI.Image {
             if isSystemName {
