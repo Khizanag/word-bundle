@@ -8,41 +8,60 @@
 import SwiftUI
 
 struct WordBundlesView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+
     @AppStorage(AppStorageKeys.activeWordBundleId()) var activeWordBundleId: UUID = WordBundle.example.id
 
     @Binding var selection: TabItem
     @State private var isActionSheetPresented = false
 
+    @FetchRequest(entity: WordBundleEntity.entity(), sortDescriptors: [])
+    private var wordBundleEntities: FetchedResults<WordBundleEntity>
+
     var body: some View {
-        VStack(spacing: DesignSystem.Size.xxxLarge()) {
-            NavigationLink(destination: LanguagesView()) {
-                AddWordBundleItemView()
-            }
-            ForEach(WordBundle.examples, id: \.id) { wordBundle in
-                WordBundlePreviewItemView(wordBundle: wordBundle, activeWordBundleId: $activeWordBundleId)
-                    .onTapGesture {
-                        selection = .words
-                        activeWordBundleId = wordBundle.id
-                    }
-                    .onLongPressGesture {
-                        isActionSheetPresented = true
-                    }
-                    .actionSheet(isPresented: $isActionSheetPresented) {
-                        let deleteButton = ActionSheet.Button.destructive(Text("Delete")) {
-                            print("Delete button was pressed")
-                            // TODO: Delete Bundle
+        ScrollView {
+            VStack(spacing: DesignSystem.Size.xxxLarge()) {
+                NavigationLink(destination: CreateWordBundleView()) {
+                    AddWordBundleItemView()
+                }
+
+                ForEach(wordBundleEntities, id: \.id) { wordBundleEntity in
+                    WordBundlePreviewItemView(wordBundle: .make(from: wordBundleEntity), activeWordBundleId: $activeWordBundleId)
+                        .onTapGesture {
+                            activeWordBundleId = wordBundleEntity.id
                         }
+                        .onLongPressGesture {
+                            isActionSheetPresented = true
+                        }
+                        .actionSheet(isPresented: $isActionSheetPresented) {
+                            let deleteButton = ActionSheet.Button.destructive(Text("Delete")) { // TODO: Localization
+                                viewContext.delete(wordBundleEntity)
+                                withAnimation {
+                                    saveContext()
+                                }
+                            }
 
-                        let cancelButton = ActionSheet.Button.cancel()
+                            let cancelButton = ActionSheet.Button.cancel()
 
-                        return .init(
-                            title: Text("You are goind to Delete Selected Word Bundle"),
-                            message: Text("Are you sure?"),
-                            buttons: [deleteButton, cancelButton]
-                        )
-                    }
+                            return .init(
+                                title: Text("You are going to delete selected `Word Bundle`"), // TODO: Localization
+                                message: Text("Are you sure?"), // TODO: Localization
+                                buttons: [deleteButton, cancelButton]
+                            )
+                        }
+                }
+                Spacer()
             }
-            Spacer()
+        }
+        .navigationBarHidden(true)
+    }
+
+    private func saveContext() {
+        do {
+            try viewContext.save()
+        } catch {
+            let error = error as NSError
+            fatalError("An error occured: \(error)")
         }
     }
 }

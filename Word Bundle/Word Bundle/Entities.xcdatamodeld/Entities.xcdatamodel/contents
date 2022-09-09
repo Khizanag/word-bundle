@@ -14,7 +14,7 @@
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="WordEntity" positionX="-63" positionY="-18" width="128" height="74"/>
         <element name="WordBundleEntity" positionX="-63" positionY="9" width="128" height="119"/>
+        <element name="WordEntity" positionX="-63" positionY="-18" width="128" height="74"/>
     </elements>
 </model>

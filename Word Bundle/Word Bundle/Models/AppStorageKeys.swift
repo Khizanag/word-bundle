@@ -10,6 +10,7 @@ import Foundation
 enum AppStorageKeys: String {
     case chosenThemeId
     case activeWordBundleId
+    case isFirstRun
 
     func callAsFunction() -> RawValue {
         rawValue

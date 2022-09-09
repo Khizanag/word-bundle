@@ -41,13 +41,10 @@ struct WordBundlePreviewItemView: View {
                     .padding()
             }
         }
-        .overlay(activeWordBundleId == wordBundle.id ?
-                 RoundedRectangle(cornerRadius: DesignSystem.Size.xxLarge())
-            .stroke(Color(hex: 0x039be5), lineWidth: 7)
-            .opacity(1) :
-                    RoundedRectangle(cornerRadius: DesignSystem.Size.xxLarge())
-            .stroke(.clear, lineWidth: 5)
-            .opacity(0)
+        .overlay(
+            RoundedRectangle(cornerRadius: DesignSystem.Size.xxLarge())
+                    .stroke(Color(hex: 0x039be5), lineWidth: 7)
+                    .opacity(activeWordBundleId == wordBundle.id ? 1 : 0)
         )
         .frame(height: 96)
         .cornerRadius(DesignSystem.Size.xxLarge())

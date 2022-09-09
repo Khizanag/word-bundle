@@ -21,7 +21,7 @@ struct SettingsView: View {
                 Text("Change Background Theme") // TODO: localization
             }
         }
-        .navigationTitle("Settings") // TODO: Localization
+        .navigationBarHidden(true)
     }
 }
 

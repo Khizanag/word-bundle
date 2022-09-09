@@ -36,8 +36,8 @@ extension Language {
         case .georgian: return "en"
         }
     }
-    
+
     var name: String { rawValue.capitalized }
-    
+
     var image: Image { Image(rawValue) }
 }
