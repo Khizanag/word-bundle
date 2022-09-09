@@ -26,9 +26,8 @@ struct WordBundlesView: View {
                 }
 
                 ForEach(wordBundleEntities, id: \.id) { wordBundleEntity in
-                    WordBundlePreviewItemView(wordBundle: .make(from: wordBundleEntity))
+                    WordBundlePreviewItemView(wordBundle: .make(from: wordBundleEntity), activeWordBundleId: $activeWordBundleId)
                         .onTapGesture {
-                            selection = .words
                             activeWordBundleId = wordBundleEntity.id
                         }
                         .onLongPressGesture {
