@@ -66,6 +66,9 @@ struct LanguagesView: View {
                     .opacity(0.85)
                     .textInputAutocapitalization(.never)
                     .disableAutocorrection(true)
+                    .onSubmit {
+                        print("Help") // TODO: finish this
+                    }
             }
             .frame(height: 36)
             
