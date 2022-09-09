@@ -18,10 +18,18 @@ struct WordView: View {
     var body: some View {
         ScrollView {
             VStack (alignment: .leading) {
-                AnimatedImage(url: URL(string: word.imageUrl.orEmpty))
-                    .resizable()
-                    .indicator(.progress)
-                    .scaledToFit()
+                if let imageUrl = word.imageUrl,
+                    let url = URL(string: imageUrl)
+                {
+                    AnimatedImage(url: url)
+                        .resizable()
+                        .indicator(.progress)
+                        .scaledToFit()
+                } else {
+                    Image("placeholder")
+                        .resizable()
+                        .scaledToFit()
+                }
 
                 VStack (alignment: .leading) {
                     HStack {
@@ -49,7 +57,8 @@ struct WordView: View {
                 await replay()
             }
         } label: {
-            Image(systemName: "speaker.wave.3") // TODO: move to DesignSystem
+            Image(systemName: "speaker.wave.3")  // TODO: move to DesignSystem
+                .foregroundColor(player == nil ? .clear : Color(hex: 0x3F3F3F))
         }
         .onAppear {
             setupPlayer()
