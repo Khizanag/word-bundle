@@ -82,6 +82,10 @@ public enum Localisation: String {
     case shortDefinitions
     case bullet
     
+    // MARK: - SettingsView
+    case reminderSettings
+    case changeBackgroundTheme
+    
     private var key: String { rawValue }
 
     private var localized: String {

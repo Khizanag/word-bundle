@@ -79,3 +79,7 @@
 "definitions" = "Definitions";
 "shortDefinitions" = "Short Definitions";
 "bullet" = "\u{2022} ";
+
+// MARK: - SettingsView
+"reminderSettings" = "Reminder Settings";
+"changeBackgroundTheme" = "Change Background Theme";

@@ -79,3 +79,8 @@
 "definitions" = "განმარტებები";
 "shortDefinitions" = "მოკლე განმარტებები";
 "bullet" = "\u{2022} ";
+
+// MARK: - SettingsView
+"reminderSettings" = "შემხსენებლების პარამეტრები";
+"changeBackgroundTheme" = "შეცვალე ფონი";
+
