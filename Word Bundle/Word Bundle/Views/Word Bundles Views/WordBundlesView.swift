@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import swiftui_search_field_shell_line
 
 struct WordBundlesView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -14,13 +15,26 @@ struct WordBundlesView: View {
 
     @Binding var selection: TabItem
     @State private var isActionSheetPresented = false
+    @State private var searchFieldText = ""
 
-    @FetchRequest(entity: WordBundleEntity.entity(), sortDescriptors: [])
+    @FetchRequest(
+        entity: WordBundleEntity.entity(),
+        sortDescriptors: [],
+        predicate: NSPredicate(format: "name CONTAINS %@", ""),
+        animation: .default)
     private var wordBundleEntities: FetchedResults<WordBundleEntity>
 
     var body: some View {
         ScrollView {
             VStack(spacing: DesignSystem.Size.xxxLarge()) {
+
+                SearchFieldShell(text: $searchFieldText, size: .init(36))
+                    .font(.body)
+                    .padding([.leading, .trailing, .top])
+
+                Divider()
+//                    .padding(.bottom)
+
                 NavigationLink(destination: CreateWordBundleView()) {
                     AddWordBundleItemView()
                 }

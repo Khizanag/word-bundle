@@ -37,6 +37,15 @@
       }
     },
     {
+      "identity" : "swiftui-search-field-shell-line",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/The-Igor/swiftui-search-field-shell-line",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d13ba60cdc90e8973d81bdad76fef17baac07117"
+      }
+    },
+    {
       "identity" : "swiftuipager",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/fermoya/SwiftUIPager",
