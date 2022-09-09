@@ -119,7 +119,8 @@ struct WordBundleView: View {
                 }
             }
 
-            guard var word = await dictionariesRepository.entries(of: textFieldText, language: .english, wordBundleId: activeWordBundleId) else { return }
+            guard let language = wordBundleEntities.first?.language,
+                    var word = await dictionariesRepository.entries(of: textFieldText, language: language, wordBundleId: activeWordBundleId) else { return }
 
             word.imageUrl = await imageRepository.getFullUrl(of: textFieldText)
 
