@@ -213,7 +213,7 @@ struct WordView: View {
     // MARK: - Helpers
     private func bulletRow(for text: String) -> some View {
         HStack {
-            Text(Localisation.bullet() + text.capitalized)
+            Text("\u{2022} " + text.capitalized)
                 .foregroundColor(Color(hex: 0x3F3F3F))
                 .padding(.leading)
             Spacer()

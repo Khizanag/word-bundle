@@ -13,14 +13,16 @@ public extension DesignSystem {
         case booksAndMobile
         case circle
         case textformat
-        case docPlaintext = "doc.plaintext"
-        case chevronBackward = "chevron.backward"
-        case checkmarkSquareFill = "checkmark.square.fill"
         case plus
         case minus
+        case paintbrush
+        case docPlaintext = "doc.plaintext"
+        case chevronBackward = "chevron.backward"
+        case chevronRight = "chevron.right"
+        case chevronDown = "chevron.down"
+        case checkmarkSquareFill = "checkmark.square.fill"
         case speakerWave3 = "speaker.wave.3"
         case bellBadge = "bell.badge"
-        case paintbrush
         case textJustifyLeft = "text.justify.left"
         case booksVerticalFill = "books.vertical.fill"
         case paintbrushFill = "paintbrush.fill"

@@ -66,7 +66,6 @@ public enum Localisation: String {
     case antonyms
     case definitions
     case shortDefinitions
-    case bullet
     
     // MARK: - SettingsView
     case reminderSettings
