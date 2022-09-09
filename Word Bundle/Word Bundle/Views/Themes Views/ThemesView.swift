@@ -17,7 +17,9 @@ struct ThemesView: View {
             ThemeView(theme: theme, chosenThemeId: $chosenThemeId)
                 .padding(DesignSystem.Size.small())
                 .onTapGesture {
-                    chosenThemeId = theme.id
+                    withAnimation {
+                        chosenThemeId = theme.id
+                    }
                 }
         }
     }

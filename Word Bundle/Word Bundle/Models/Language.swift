@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum Language: String, CaseIterable {
     case armenian
@@ -70,5 +71,17 @@ extension Language {
         case .ukrainian: return "en"
         case .vietnamese: return "en"
         }
+    }
+    
+    var name: String { rawValue.capitalized }
+    
+    var image: Image {
+        switch self {
+        case .english: return Image("eng")
+        case .georgian: return Image("geo")
+        case .spanish: return Image("spn")
+        default: return Image(systemName: "flag.fill")
+        }
+        
     }
 }

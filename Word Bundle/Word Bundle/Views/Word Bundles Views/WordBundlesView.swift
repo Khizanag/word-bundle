@@ -13,7 +13,10 @@ struct WordBundlesView: View {
     
     var body: some View {
         VStack(spacing: 32) {
-            AddWordBundleItemView()
+            NavigationLink(destination: LanguagesView()) {
+                AddWordBundleItemView()
+            }
+            
             ForEach(WordBundle.examples.indices, id: \.self) { index in
                 WordBundlePreviewItemView(wordBundle: WordBundle.examples[index])
                     .onTapGesture {

@@ -10,6 +10,9 @@
 		D10045BD28CA45AC00A65917 /* AddWordBundleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10045BC28CA45AC00A65917 /* AddWordBundleItemView.swift */; };
 		D100617728C7746F00B027C2 /* WordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D100617628C7746F00B027C2 /* WordsView.swift */; };
 		D106670D28CA8A1F000E5E32 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106670C28CA8A1F000E5E32 /* TabItem.swift */; };
+		D106670F28CA990F000E5E32 /* LanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106670E28CA990F000E5E32 /* LanguagesView.swift */; };
+		D106671228CA99A1000E5E32 /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D106671128CA99A1000E5E32 /* LanguageView.swift */; };
+		D106671B28CAAA8B000E5E32 /* Steps in Frameworks */ = {isa = PBXBuildFile; productRef = D106671A28CAAA8B000E5E32 /* Steps */; };
 		D13891C628C68459003ABBA1 /* UnsplashImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13891C528C68459003ABBA1 /* UnsplashImageResponse.swift */; };
 		D16D1A8528A6AD2800000984 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D1A8428A6AD2800000984 /* Theme.swift */; };
 		D16D1A8728A6AF5B00000984 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16D1A8628A6AF5B00000984 /* AspectVGrid.swift */; };
@@ -88,6 +91,8 @@
 		D10045BC28CA45AC00A65917 /* AddWordBundleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordBundleItemView.swift; sourceTree = "<group>"; };
 		D100617628C7746F00B027C2 /* WordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsView.swift; sourceTree = "<group>"; };
 		D106670C28CA8A1F000E5E32 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		D106670E28CA990F000E5E32 /* LanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesView.swift; sourceTree = "<group>"; };
+		D106671128CA99A1000E5E32 /* LanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageView.swift; sourceTree = "<group>"; };
 		D13891C528C68459003ABBA1 /* UnsplashImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashImageResponse.swift; sourceTree = "<group>"; };
 		D16D1A8428A6AD2800000984 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		D16D1A8628A6AF5B00000984 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
@@ -154,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D106671B28CAAA8B000E5E32 /* Steps in Frameworks */,
 				FB223E9728C8CF80000FD2C3 /* SDWebImageSwiftUI in Frameworks */,
 				FB66A469289051E700F9F850 /* SwiftUIPager in Frameworks */,
 			);
@@ -186,13 +192,22 @@
 			path = "Word Bundles Views";
 			sourceTree = "<group>";
 		};
-		D106670B28CA5565000E5E32 /* Themes View */ = {
+		D106670B28CA5565000E5E32 /* Themes Views */ = {
 			isa = PBXGroup;
 			children = (
 				FB66A4522888B8ED00F9F850 /* ThemesView.swift */,
 				D16D1A8828A6B03A00000984 /* ThemeView.swift */,
 			);
-			path = "Themes View";
+			path = "Themes Views";
+			sourceTree = "<group>";
+		};
+		D106671028CA998E000E5E32 /* Languages Views */ = {
+			isa = PBXGroup;
+			children = (
+				D106670E28CA990F000E5E32 /* LanguagesView.swift */,
+				D106671128CA99A1000E5E32 /* LanguageView.swift */,
+			);
+			path = "Languages Views";
 			sourceTree = "<group>";
 		};
 		FB08299F2884BA2B00FFFB4B /* Design System */ = {
@@ -255,7 +270,8 @@
 		FB66A43328880EBE00F9F850 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D106670B28CA5565000E5E32 /* Themes View */,
+				D106671028CA998E000E5E32 /* Languages Views */,
+				D106670B28CA5565000E5E32 /* Themes Views */,
 				D10045BB28CA456100A65917 /* Word Bundles Views */,
 				FB66A462289006BA00F9F850 /* Reminders Setting */,
 				FB66A4382888157E00F9F850 /* Components */,
@@ -423,6 +439,7 @@
 			packageProductDependencies = (
 				FB66A468289051E700F9F850 /* SwiftUIPager */,
 				FB223E9628C8CF80000FD2C3 /* SDWebImageSwiftUI */,
+				D106671A28CAAA8B000E5E32 /* Steps */,
 			);
 			productName = "Word Bundle";
 			productReference = FBCECE952814847600CD558C /* Word Bundle.app */;
@@ -500,6 +517,7 @@
 			packageReferences = (
 				FB66A467289051E700F9F850 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
 				FB223E9528C8CF80000FD2C3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				D106671928CAAA8B000E5E32 /* XCRemoteSwiftPackageReference "Steps" */,
 			);
 			productRefGroup = FBCECE962814847600CD558C /* Products */;
 			projectDirPath = "";
@@ -565,6 +583,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D106670F28CA990F000E5E32 /* LanguagesView.swift in Sources */,
 				FBBBA1F328C94D7100F64A78 /* Entities.xcdatamodeld in Sources */,
 				FBE5450128C66DE40093ABF3 /* LoadingButton.swift in Sources */,
 				D17B645C28C36E6C005CB55D /* SettingsView.swift in Sources */,
@@ -592,6 +611,7 @@
 				FBCECECA2814863C00CD558C /* OptionalString+Extension.swift in Sources */,
 				D1F46EF628C8D4F40015132B /* WordBundlesView.swift in Sources */,
 				FB66A46B2890590100F9F850 /* Word+Examples.swift in Sources */,
+				D106671228CA99A1000E5E32 /* LanguageView.swift in Sources */,
 				FB66A43728880F5C00F9F850 /* NavigationButton.swift in Sources */,
 				FB66A43528880EF600F9F850 /* RemindersSettingView.swift in Sources */,
 				FB0829A52884BBC200FFFB4B /* DesignSystem+Size.swift in Sources */,
@@ -963,6 +983,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D106671928CAAA8B000E5E32 /* XCRemoteSwiftPackageReference "Steps" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/asam139/Steps";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.7;
+			};
+		};
 		FB223E9528C8CF80000FD2C3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
@@ -982,6 +1010,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D106671A28CAAA8B000E5E32 /* Steps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D106671928CAAA8B000E5E32 /* XCRemoteSwiftPackageReference "Steps" */;
+			productName = Steps;
+		};
 		FB223E9628C8CF80000FD2C3 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FB223E9528C8CF80000FD2C3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
