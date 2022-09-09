@@ -22,12 +22,13 @@ struct WordBundlePreviewItemView: View {
                         .font(.headline)
                         .foregroundColor(.white)
 
-                    if let words = wordBundle.words {
-                        Text("\(words.count) Words")
-                            .font(.subheadline)
-                            .bold()
-                            .foregroundColor(.white)
-                    }
+//                    TODO: count number of words using other way
+//                    if let words = wordBundle.words {
+//                        Text("\(words.count) Words")
+//                            .font(.subheadline)
+//                            .bold()
+//                            .foregroundColor(.white)
+//                    }
                 }
                 .padding()
 

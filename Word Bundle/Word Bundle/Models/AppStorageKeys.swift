@@ -11,6 +11,7 @@ enum AppStorageKeys: String {
     case chosenThemeId
     case activeWordBundleId
     case isFirstRun
+    case hasCompletedOnboarding
 
     func callAsFunction() -> RawValue {
         rawValue
