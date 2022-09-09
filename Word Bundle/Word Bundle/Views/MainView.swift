@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
-    @AppStorage(AppStorageKeys.chosenThemeId()) var chosenThemeIndex = Theme.example.id
-    @AppStorage(AppStorageKeys.activeWordBundleId()) var activeWordBundleId = WordBundle.example.id
+    @AppStorage(AppStorageKeys.chosenThemeId()) private var chosenThemeIndex = Theme.example.id
+    @AppStorage(AppStorageKeys.activeWordBundleId()) private var activeWordBundleId = WordBundle.example.id
+    @AppStorage(AppStorageKeys.hasCompletedOnboarding()) private var hasCompletedOnboarding = false
 
     @State var selection: TabItem = .bundles
 
@@ -53,6 +54,9 @@ struct MainView: View {
                         Text("Settings")
                     }
             }
+        }
+        .onAppear {
+            hasCompletedOnboarding = true
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)

@@ -69,12 +69,14 @@ struct WordView: View {
                 .padding(.bottom, Size.xSmall())
 
             if !lexicalEntry.phrases.isEmpty {
-                phrases(for: lexicalEntry)
+                section(phrases: lexicalEntry.phrases)
             }
 
             senses(for: lexicalEntry)
         }
     }
+
+    // TODO: show phrasal verbs
 
     private var phoneticSubSection: some View {
         HStack {
@@ -98,67 +100,69 @@ struct WordView: View {
                     .padding(.leading, 50)
 
                 if !sense.definitions.isEmpty {
-                    definitions(for: sense)
+                    section(definitions: sense.definitions)
                 }
 
                 if !sense.shortDefinitions.isEmpty {
-                    shortDefinitions(for: sense)
+                    section(shortDefinitions: sense.shortDefinitions)
                 }
 
                 if !sense.examples.isEmpty {
-                    examples(for: sense)
+                    section(examples: sense.examples)
                 }
 
                 if !sense.synonyms.isEmpty {
-                    synonyms(for: sense)
+                    section(synonyms: sense.synonyms)
                 }
 
                 if !sense.antonyms.isEmpty {
-                    antonyms(for: sense)
+                    section(antonyms: sense.antonyms)
                 }
             }
         }
     }
 
     // MARK: - Phrases' Sub Section
-    private func phrases(for lexicalEntry: Word.LexicalEntry) -> some View {
+    private func section(phrases: [String]) -> some View {
         VStack (alignment: .leading) {
-            subSectionHeader(for: "Phrases") // TODO: Localization
-            phrasesRows(for: lexicalEntry)
+            CollapsibleView(
+                label: {
+                    subSectionHeader(for: "Phrases") // TODO: Localization
+                },
+                content: {
+                    ForEach (phrases, id: \.self) { phrase in
+                        bulletRow(for: phrase)
+                    }
+                }
+            )
+            .padding(.bottom, Size.xSmall())
+            .frame(maxWidth: .infinity)
         }
         .padding(.bottom, Size.xSmall())
     }
 
-    private func phrasesRows(for lexicalEntry: Word.LexicalEntry) -> some View {
-        ForEach (lexicalEntry.phrases, id: \.self) { phrase in
-            bulletRow(for: phrase)
-        }
-    }
-
-    // MARK: - Examples' Sub Section
-    private func examples(for sense: Word.Sense) -> some View {
+    // MARK: - Examples
+    private func section(examples: [String]) -> some View {
         VStack (alignment: .leading) {
             subSectionHeader(for: "Examples") // TODO: Localization
-            examplesRows(for: sense)
+            ForEach(examples, id: \.self) { example in
+                bulletRow(for: example)
+            }
         }
         .padding(.bottom, Size.xSmall())
     }
 
-    private func examplesRows(for sense: Word.Sense) -> some View {
-        ForEach(sense.examples, id: \.self) { example in
-            bulletRow(for: example)
-        }
-    }
-
-    // MARK: - Synonyms' Sub Section
-    private func synonyms(for sense: Word.Sense) -> some View {
+    // MARK: - Synonyms
+    private func section(synonyms: [String]) -> some View {
         VStack (alignment: .leading) {
             CollapsibleView(
                 label: {
                     subSectionHeader(for: "Synonyms") // TODO: Localization
                 },
                 content: {
-                    synonymsRows(for: sense)
+                    ForEach(synonyms, id: \.self) { synonym in
+                        bulletRow(for: synonym)
+                    }
                 }
             )
             .padding(.bottom, Size.xSmall())
@@ -166,21 +170,17 @@ struct WordView: View {
         }
     }
 
-    private func synonymsRows(for sense: Word.Sense) -> some View {
-        ForEach(sense.synonyms, id: \.self) { synonym in
-            bulletRow(for: synonym)
-        }
-    }
-
     // MARK: - Antonyms' Sub Section
-    private func antonyms(for sense: Word.Sense) -> some View {
+    private func section(antonyms: [String]) -> some View {
         VStack (alignment: .leading) {
              CollapsibleView(
                  label: {
                      subSectionHeader(for: "Antonyms") // TODO: Localization
                  },
                  content: {
-                     antonymsRows(for: sense)
+                     ForEach(antonyms, id: \.self) { antonym in
+                         bulletRow(for: antonym)
+                     }
                  }
              )
              .frame(maxWidth: .infinity)
@@ -188,40 +188,26 @@ struct WordView: View {
         .padding(.bottom, Size.xSmall())
     }
 
-    private func antonymsRows(for sense: Word.Sense) -> some View {
-        ForEach(sense.antonyms, id: \.self) { antonym in
-            bulletRow(for: antonym)
-        }
-    }
-
-    // MARK: - Definitions' Sub Section
-    private func definitions(for sense: Word.Sense) -> some View {
+    // MARK: - Definitions
+    private func section(definitions: [String]) -> some View {
         VStack (alignment: .leading) {
             subSectionHeader(for: "Definitions") // TODO: Localization
-            definitionsRows(for: sense)
+            ForEach(definitions, id: \.self) { definition in
+                bulletRow(for: definition)
+            }
         }
         .padding(.bottom, Size.xSmall())
     }
 
-    private func definitionsRows(for sense: Word.Sense) -> some View {
-        ForEach(sense.definitions, id: \.self) { definition in
-            bulletRow(for: definition)
-        }
-    }
-
-    // MARK: - Short Definitions' Sub Section
-    private func shortDefinitions(for sense: Word.Sense) -> some View {
+    // MARK: - Short Definitions
+    private func section(shortDefinitions: [String]) -> some View {
         VStack (alignment: .leading) {
             subSectionHeader(for: "Short Definitions") // TODO: Localization
-            definitionsRows(for: sense)
+            ForEach(shortDefinitions, id: \.self) { shortDefinition in
+                bulletRow(for: shortDefinition)
+            }
         }
         .padding(.bottom, Size.xSmall())
-    }
-
-    private func shortDefinitionsRows(for sense: Word.Sense) -> some View {
-        ForEach(sense.shortDefinitions, id: \.self) { shortDefinition in
-            bulletRow(for: shortDefinition)
-        }
     }
 
     // MARK: - Helpers

@@ -13,7 +13,6 @@ struct WelcomeView: View {
     @AppStorage(AppStorageKeys.isFirstRun()) private var isFirstRun = true
 
     var body: some View {
-        NavigationView {
             ScrollView {
                 VStack(alignment: .center) {
                     DesignSystem.Image.booksAndMobile()
@@ -33,7 +32,6 @@ struct WelcomeView: View {
                 }
             }
             .padding(.bottom)
-        }
     }
 
     private var titleLabel: some View {

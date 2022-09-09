@@ -33,6 +33,7 @@ struct LanguageItemView: View {
                     .padding(.trailing)
             }
         }
+        .contentShape(Rectangle()) // scales tappable area
         .frame(height: 36)
         .padding()
     }
