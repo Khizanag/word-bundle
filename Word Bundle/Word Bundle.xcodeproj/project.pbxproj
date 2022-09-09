@@ -41,7 +41,6 @@
 		FB66A43728880F5C00F9F850 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A43628880F5C00F9F850 /* NavigationButton.swift */; };
 		FB66A43A288816B700F9F850 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A439288816B700F9F850 /* MainView.swift */; };
 		FB66A43C288833A200F9F850 /* ReminderSettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A43B288833A200F9F850 /* ReminderSettingItem.swift */; };
-		FB66A44A2888A8E300F9F850 /* HelloWorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A4492888A8E300F9F850 /* HelloWorldView.swift */; };
 		FB66A44D2888B3A300F9F850 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A44C2888B3A300F9F850 /* Word.swift */; };
 		FB66A44F2888B54800F9F850 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A44E2888B54800F9F850 /* PartOfSpeech.swift */; };
 		FB66A4512888B5F100F9F850 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A4502888B5F100F9F850 /* HomeView.swift */; };
@@ -125,7 +124,6 @@
 		FB66A43628880F5C00F9F850 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		FB66A439288816B700F9F850 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FB66A43B288833A200F9F850 /* ReminderSettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderSettingItem.swift; sourceTree = "<group>"; };
-		FB66A4492888A8E300F9F850 /* HelloWorldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldView.swift; sourceTree = "<group>"; };
 		FB66A44C2888B3A300F9F850 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		FB66A44E2888B54800F9F850 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
 		FB66A4502888B5F100F9F850 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -311,7 +309,6 @@
 			children = (
 				FBE544FF28C66DCF0093ABF3 /* LoadingButton */,
 				FB66A43628880F5C00F9F850 /* NavigationButton.swift */,
-				FB66A4492888A8E300F9F850 /* HelloWorldView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -643,7 +640,6 @@
 				FB66A43A288816B700F9F850 /* MainView.swift in Sources */,
 				FBE5450B28C7894E0093ABF3 /* Dictionary+Extension.swift in Sources */,
 				FBF4646F2884CED000B4A96B /* DesignSystem+Images.swift in Sources */,
-				FB66A44A2888A8E300F9F850 /* HelloWorldView.swift in Sources */,
 				FB66A430288804E400F9F850 /* Localisation.swift in Sources */,
 				FB41906E28917B6500D95C44 /* RetrieveEntryOriginalResponse.swift in Sources */,
 				D16D1A8528A6AD2800000984 /* Theme.swift in Sources */,

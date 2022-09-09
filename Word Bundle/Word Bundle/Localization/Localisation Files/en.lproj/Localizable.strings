@@ -94,3 +94,6 @@
 
 // MARK: - HomeView
 "examplesNotFound" = "No Example...";
+
+// MARK: - AddWordBundleItemView
+"addNewBundle" = "Add New Bundle";

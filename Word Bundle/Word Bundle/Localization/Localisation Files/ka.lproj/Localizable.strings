@@ -94,3 +94,6 @@
 
 // MARK: - HomeView
 "examplesNotFound" = "მაგალითები ვერ მოიძებნა...";
+
+// MARK: - AddWordBundleItemView
+"addNewBundle" = "დაამატე ახალი სიტყვის კონა";
