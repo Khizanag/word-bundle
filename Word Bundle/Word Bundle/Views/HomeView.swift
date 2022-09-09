@@ -79,7 +79,6 @@ struct HomeView: View {
                     .gesture(
                         DragGesture(minimumDistance: 3.0, coordinateSpace: .local)
                             .onEnded { value in
-                                print(value.translation)
                                 switch(value.translation.width, value.translation.height) {
                                 case (...0, -50...50):
                                     isWordDetailViewActive = true
@@ -103,6 +102,7 @@ struct HomeView: View {
             .vertical()
             .ignoresSafeArea()
         }
+        .navigationBarHidden(true)
     }
 }
 

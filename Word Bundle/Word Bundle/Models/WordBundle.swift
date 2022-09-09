@@ -50,3 +50,18 @@ struct WordBundle {
 
     static let examples = [example, example2, example3]
 }
+
+extension WordBundle {
+    static func make(from entity: WordBundleEntity) -> WordBundle {
+        .init(
+            id: entity.id,
+            name: entity.name,
+            language: entity.language,
+            icon: nil, // TODO: change
+            words: nil, // TODO: change
+            creationDate: entity.creationDate,
+            note: entity.note,
+            isFavourited: entity.isFavourited
+        )
+    }
+}

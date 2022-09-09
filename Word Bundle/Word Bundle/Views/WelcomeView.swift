@@ -5,17 +5,12 @@
 //  Created by Giga Khizanishvili on 20.07.22.
 //
 
-import AVFoundation
 import SwiftUI
 
 struct WelcomeView: View {
-    private let dictionariesRepository: DictionariesRepository = OxfordDictionariesRepository()
-    private let imageRepository: ImageRepository = UnsplashImageRepository()
-    @State private var textFieldText = ""
-    @State private var player: AVPlayer?
-    @State private var words: [Word] = []
-    @State private var isButtonLoading = false
-    @State private var isTextFieldDisabled = false
+    @Environment(\.managedObjectContext) private var viewContext
+
+    @AppStorage(AppStorageKeys.isFirstRun()) private var isFirstRun = true
 
     var body: some View {
         NavigationView {
@@ -30,6 +25,12 @@ struct WelcomeView: View {
                     Spacer()
                 }
                 .navigationTitle(Localisation.wordBundle())
+            }
+            .onAppear { // isFirstRun
+                if isFirstRun {
+                    saveExampleWordBundle()
+                    isFirstRun = false
+                }
             }
             .padding(.bottom)
         }
@@ -50,6 +51,32 @@ struct WelcomeView: View {
             .foregroundColor(DesignSystem.Color.secondaryTextDark().value)
             .multilineTextAlignment(.center)
             .padding()
+    }
+
+    // MARK: - Functions
+    private func saveExampleWordBundle() {
+        let exampleWordBundle = WordBundle.example
+        let entity = WordBundleEntity(context: viewContext)
+
+        entity.id = exampleWordBundle.id
+        entity.name = exampleWordBundle.name
+        entity.language = exampleWordBundle.language
+        entity.creationDate = exampleWordBundle.creationDate
+        entity.note = exampleWordBundle.note
+        entity.isFavourited = exampleWordBundle.isFavourited
+
+        withAnimation {
+            saveContext()
+        }
+    }
+
+    private func saveContext() {
+        do {
+            try viewContext.save()
+        } catch {
+            let error = error as NSError
+            fatalError("An error occured: \(error)")
+        }
     }
 }
 

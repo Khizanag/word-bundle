@@ -35,12 +35,14 @@ struct MainView: View {
                     }
 
                 HomeView(activeWordBundleId: activeWordBundleId)
+                    .navigationViewStyle(.stack) // … or this, but not both!
                     .tabItem {
                         Image(systemName: "scroll.fill")
                         Text(Localisation.home())
                     }
 
                 WordBundleView(activeBundleId: activeWordBundleId)
+                    .navigationViewStyle(.stack) // … or this, but not both!
                     .tabItem {
                         Image(systemName: "text.book.closed.fill")
                         Text("Words")

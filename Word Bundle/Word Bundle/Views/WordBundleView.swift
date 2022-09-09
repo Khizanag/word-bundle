@@ -21,6 +21,7 @@ struct WordBundleView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest private var fetchedEntities: FetchedResults<WordEntity>
+    @FetchRequest private var wordBundleEntities: FetchedResults<WordBundleEntity>
 
     // MARK: - Init
     init(activeBundleId: UUID) {
@@ -29,14 +30,25 @@ struct WordBundleView: View {
             predicate: NSPredicate(format: "bundleId == %@", activeBundleId as CVarArg),
             animation: .default // TODO: try others too
         )
-    }
 
-    private func refresh() {
-        // TODO: update fetchedEntities
+        _wordBundleEntities = FetchRequest<WordBundleEntity>(
+            sortDescriptors: [],
+            predicate: NSPredicate(format: "id == %@", activeBundleId as CVarArg)
+        )
     }
 
     var body: some View {
         VStack {
+            HStack {
+                Text(wordBundleEntities.first?.name ?? "Word Bundle") // TODO: Localization
+                    .font(.title)
+                    .fontWeight(.heavy)
+                    .multilineTextAlignment(.leading)
+                    .padding([.leading, .bottom])
+
+                Spacer()
+            }
+
             TextField("Type word to search here", text: $textFieldText) // TODO: Localization
                 .disabled(isTextFieldDisabled)
                 .padding()
@@ -59,7 +71,7 @@ struct WordBundleView: View {
                 .onDelete(perform: deleteWords)
             }
         }
-        .navigationTitle("Words") // TODO: Localization
+        .navigationBarHidden(true)
     }
 
     private func reset() {

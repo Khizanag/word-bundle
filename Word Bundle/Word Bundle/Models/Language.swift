@@ -72,9 +72,9 @@ extension Language {
         case .vietnamese: return "en"
         }
     }
-    
+
     var name: String { rawValue.capitalized }
-    
+
     var image: Image {
         switch self {
         case .english: return Image("eng")
@@ -82,6 +82,5 @@ extension Language {
         case .spanish: return Image("spn")
         default: return Image(systemName: "flag.fill")
         }
-        
     }
 }
