@@ -74,7 +74,6 @@ struct WordBundleView: View {
                 .onDelete(perform: deleteWords)
             }
         }
-        .navigationBarHidden(true)
     }
 
     private func reset() {

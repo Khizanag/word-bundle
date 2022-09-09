@@ -32,7 +32,7 @@
 		FB59CBE628CA19350047619D /* AppStorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59CBE528CA19350047619D /* AppStorageKeys.swift */; };
 		FB59CBF228CA8A980047619D /* WordBundleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59CBF128CA8A980047619D /* WordBundleEntity.swift */; };
 		FB59CBF428CA8C840047619D /* UUID+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59CBF328CA8C840047619D /* UUID+Extension.swift */; };
-		FB59CBF628CB04D60047619D /* ZerothView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59CBF528CB04D60047619D /* ZerothView.swift */; };
+		FB59CBF628CB04D60047619D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59CBF528CB04D60047619D /* RootView.swift */; };
 		FB59CBF828CB06560047619D /* WordBundle+Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59CBF728CB06560047619D /* WordBundle+Example.swift */; };
 		FB66A4292887EB7100F9F850 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A4282887EB7100F9F850 /* WelcomeView.swift */; };
 		FB66A42C2887FAD000F9F850 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB66A42E2887FAD000F9F850 /* Localizable.strings */; };
@@ -116,7 +116,7 @@
 		FB59CBE528CA19350047619D /* AppStorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageKeys.swift; sourceTree = "<group>"; };
 		FB59CBF128CA8A980047619D /* WordBundleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBundleEntity.swift; sourceTree = "<group>"; };
 		FB59CBF328CA8C840047619D /* UUID+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID+Extension.swift"; sourceTree = "<group>"; };
-		FB59CBF528CB04D60047619D /* ZerothView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZerothView.swift; sourceTree = "<group>"; };
+		FB59CBF528CB04D60047619D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		FB59CBF728CB06560047619D /* WordBundle+Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WordBundle+Example.swift"; sourceTree = "<group>"; };
 		FB66A4282887EB7100F9F850 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		FB66A42D2887FAD000F9F850 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -301,7 +301,7 @@
 				D17B645B28C36E6C005CB55D /* SettingsView.swift */,
 				D100617628C7746F00B027C2 /* WordBundleView.swift */,
 				D1F46EF928C9B9960015132B /* CollapsibleView.swift */,
-				FB59CBF528CB04D60047619D /* ZerothView.swift */,
+				FB59CBF528CB04D60047619D /* RootView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -649,7 +649,7 @@
 				D16D1A8528A6AD2800000984 /* Theme.swift in Sources */,
 				FBCECED02814883F00CD558C /* Numeric+Extension.swift in Sources */,
 				D13891C628C68459003ABBA1 /* UnsplashImageResponse.swift in Sources */,
-				FB59CBF628CB04D60047619D /* ZerothView.swift in Sources */,
+				FB59CBF628CB04D60047619D /* RootView.swift in Sources */,
 				FB66A44D2888B3A300F9F850 /* Word.swift in Sources */,
 				FBCECECC281486E900CD558C /* String+Extension.swift in Sources */,
 				D1F46EF428C8CF360015132B /* WordBundlePreviewItemView.swift in Sources */,

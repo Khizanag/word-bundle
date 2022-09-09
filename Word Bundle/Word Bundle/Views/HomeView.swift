@@ -100,9 +100,11 @@ struct HomeView: View {
             }
             .sensitivity(.low)
             .vertical()
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.automatic)
             .ignoresSafeArea()
         }
-        .navigationBarHidden(true)
+//        .navigationBarHidden(true)
     }
 }
 

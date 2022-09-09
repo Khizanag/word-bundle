@@ -23,6 +23,8 @@ struct MainView: View {
 
             TabView(selection: $selection) {
                 WordBundlesView(selection: $selection)
+                    .navigationViewStyle(.stack)
+
                     .tabItem {
                         Image(systemName: "books.vertical.fill" )
                         Text("Bundles")
@@ -30,18 +32,24 @@ struct MainView: View {
                     .tag(TabItem.bundles)
 
                 ThemesView(themes: Theme.themes)
+                    .navigationViewStyle(.stack)
+
                     .tabItem {
                         Image(systemName: "paintbrush.fill")
                         Text("Themes")
                     }
 
                 HomeView(activeWordBundleId: activeWordBundleId)
+                    .navigationViewStyle(.stack)
+
                     .tabItem {
                         Image(systemName: "scroll.fill")
                         Text(Localisation.home())
                     }
 
                 WordBundleView(activeBundleId: activeWordBundleId)
+                    .navigationViewStyle(.stack)
+
                     .tabItem {
                         Image(systemName: "text.book.closed.fill")
                         Text("Words")
@@ -49,6 +57,8 @@ struct MainView: View {
                     .tag(TabItem.words)
 
                 SettingsView()
+                    .navigationViewStyle(.stack)
+
                     .tabItem {
                         Image(systemName: "gearshape.2.fill")
                         Text("Settings")
@@ -58,8 +68,6 @@ struct MainView: View {
         .onAppear {
             hasCompletedOnboarding = true
         }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
     }
 }
 

@@ -22,6 +22,7 @@ struct ThemesView: View {
                     }
                 }
         }
+        .navigationTitle("Themes")
     }
 }
 

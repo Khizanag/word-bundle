@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ZerothView: View {
+struct RootView: View {
     @AppStorage(AppStorageKeys.hasCompletedOnboarding()) private var hasCompletedOnboarding = false
 
     var body: some View {
@@ -23,6 +23,6 @@ struct ZerothView: View {
 
 struct ZerothView_Previews: PreviewProvider {
     static var previews: some View {
-        ZerothView()
+        RootView()
     }
 }
