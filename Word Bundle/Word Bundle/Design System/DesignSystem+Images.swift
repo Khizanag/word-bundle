@@ -22,6 +22,11 @@ public extension DesignSystem {
         case bellBadge = "bell.badge"
         case paintbrush
         case textJustifyLeft = "text.justify.left"
+        case booksVerticalFill = "books.vertical.fill"
+        case paintbrushFill = "paintbrush.fill"
+        case scrollFill = "scroll.fill"
+        case textBookClosedFill = "text.book.closed.fill"
+        case gearshape2Fill = "gearshape.2.fill"
 
         func callAsFunction(isSystemName: Bool = true) -> SwiftUI.Image {
             if isSystemName {
