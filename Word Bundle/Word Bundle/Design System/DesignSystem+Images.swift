@@ -19,6 +19,8 @@ public extension DesignSystem {
         case plus
         case minus
         case speakerWave3 = "speaker.wave.3"
+        case bellBadge = "bell.badge"
+        case paintbrush
 
         func callAsFunction(isSystemName: Bool = true) -> SwiftUI.Image {
             if isSystemName {

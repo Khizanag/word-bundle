@@ -12,12 +12,12 @@ struct SettingsView: View {
     var body: some View {
         List {
             NavigationLink(destination: RemindersSettingView()) {
-                Image(systemName: "bell.badge") // TODO: move to DesignSystem
+                DesignSystem.Image.bellBadge()
                 Text(Localisation.reminderSettings())
             }
 
             NavigationLink(destination: ThemesView(themes: Theme.themes)) {
-                Image(systemName: "paintbrush") // TODO: move to DesignSystem
+                DesignSystem.Image.paintbrush()
                 Text(Localisation.changeBackgroundTheme())
             }
         }
