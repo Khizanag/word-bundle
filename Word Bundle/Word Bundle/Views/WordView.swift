@@ -19,8 +19,7 @@ struct WordView: View {
         ScrollView {
             VStack (alignment: .leading) {
                 if let imageUrl = word.imageUrl,
-                    let url = URL(string: imageUrl)
-                {
+                    let url = URL(string: imageUrl) {
                     AnimatedImage(url: url)
                         .resizable()
                         .indicator(.progress)
