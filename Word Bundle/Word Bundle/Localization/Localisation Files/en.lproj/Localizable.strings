@@ -83,3 +83,7 @@
 // MARK: - SettingsView
 "reminderSettings" = "Reminder Settings";
 "changeBackgroundTheme" = "Change Background Theme";
+
+// MARK: - WordBundleView
+"textFieldMessage" = "Type word to search here";
+"addWord" = "Add word to Dictionary";

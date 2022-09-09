@@ -86,6 +86,10 @@ public enum Localisation: String {
     case reminderSettings
     case changeBackgroundTheme
     
+    // MARK: - WordBundleView
+    case textFieldMessage
+    case addWord
+    
     private var key: String { rawValue }
 
     private var localized: String {

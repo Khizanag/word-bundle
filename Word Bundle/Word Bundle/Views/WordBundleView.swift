@@ -40,7 +40,7 @@ struct WordBundleView: View {
     var body: some View {
         VStack {
             HStack {
-                Text(wordBundleEntities.first?.name ?? "Word Bundle") // TODO: Localization
+                Text(wordBundleEntities.first?.name ?? Localisation.wordBundle())
                     .font(.title)
                     .fontWeight(.heavy)
                     .multilineTextAlignment(.leading)
@@ -49,7 +49,7 @@ struct WordBundleView: View {
                 Spacer()
             }
 
-            TextField("Type word to search here", text: $textFieldText) // TODO: Localization
+            TextField(Localisation.textFieldMessage(), text: $textFieldText)
                 .disabled(isTextFieldDisabled)
                 .padding()
                 .onSubmit {
@@ -91,7 +91,7 @@ struct WordBundleView: View {
             isLoading: $isButtonLoading,
             style: .init(backgroundColor: DesignSystem.Color.color3().value),
             builder: {
-                Text("Add word to Dictionary") // TODO: Localization
+                Text(Localisation.addWord())
                     .foregroundColor(.white)
             }
         )

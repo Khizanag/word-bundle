@@ -84,3 +84,7 @@
 "reminderSettings" = "შემხსენებლების პარამეტრები";
 "changeBackgroundTheme" = "შეცვალე ფონი";
 
+// MARK: - WordBundleView
+"textFieldMessage" = "მოსაძებნად შეიყვანე სიტყვა";
+"addWord" = "დაამატე სიტყვა სიტყვის კონაში";
+
