@@ -50,7 +50,7 @@ struct WordView: View {
                 await replay()
             }
         } label: {
-            Image(systemName: "speaker.wave.3")  // TODO: move to DesignSystem
+            DesignSystem.Image.speakerWave3()
                 .foregroundColor(player == nil ? .clear : Color(hex: 0x3F3F3F))
         }
         .onAppear {

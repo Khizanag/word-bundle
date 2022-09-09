@@ -18,6 +18,7 @@ public extension DesignSystem {
         case checkmarkSquareFill = "checkmark.square.fill"
         case plus
         case minus
+        case speakerWave3 = "speaker.wave.3"
 
         func callAsFunction(isSystemName: Bool = true) -> SwiftUI.Image {
             if isSystemName {
