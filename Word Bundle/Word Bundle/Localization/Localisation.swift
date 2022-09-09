@@ -57,6 +57,17 @@ public enum Localisation: String {
     case turkish
     case ukrainian
     case vietnamese
+    
+    // MARK: - CreateWordBundleView
+    case language
+    case title
+    case keepGoing
+    case createBundle
+    case backToLanguagePage
+    case chooseLanguage
+    case addBundleTitle
+    case typeBundleTitle
+    
 
     private var key: String { rawValue }
 

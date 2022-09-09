@@ -19,8 +19,8 @@ struct CreateWordBundleView: View {
     @State private var bundleTitle: String = ""
 
     private static let items = [
-        Item(title: "Language", image: Image(systemName: "circle")), // TODO: localization
-        Item(title: "Title", image: Image(systemName: "textformat")) // TODO: localization
+        Item(title: Localisation.language(), image: Image(systemName: "circle")), // TODO: Design System
+        Item(title: Localisation.title(), image: Image(systemName: "textformat")) // TODO: Design System
     ]
 
     var body: some View {
@@ -37,22 +37,22 @@ struct CreateWordBundleView: View {
             if isLanguagePage {
                 chooseLanguageView
                 Divider()
-                nextButton(title: "Keep Going") // TODO: localization
+                nextButton(title: Localisation.keepGoing())
             } else {
                 chooseTitleView
                     .padding(.bottom, 48)
-                nextButton(title: "Create Bundle") {
+                nextButton(title: Localisation.createBundle()) {
                     saveNewWordBundle()
                     withAnimation {
                         presentationMode.wrappedValue.dismiss()
                     }
                 }
-                backButton(titled: "BACK TO LANGUAGE PAGE") // TODO: localization
+                backButton(titled: Localisation.backToLanguagePage())
                 Spacer()
             }
         }
         .navigationBarBackButtonHidden(!isLanguagePage)
-        .navigationBarTitle(isLanguagePage ? "Choose Language" : "Add bundle title") // TODO: localization
+        .navigationBarTitle(isLanguagePage ? Localisation.chooseLanguage() : Localisation.addBundleTitle())
     }
 
     private var isLanguagePage: Bool {
@@ -68,7 +68,7 @@ struct CreateWordBundleView: View {
                     .opacity(0.7)
                     .padding(.leading)
 
-                TextField("Type Bundle Title", text: $bundleTitle) // TODO: localization
+                TextField(Localisation.typeBundleTitle(), text: $bundleTitle)
                     .opacity(0.85)
                     .textInputAutocapitalization(.never)
                     .disableAutocorrection(true)

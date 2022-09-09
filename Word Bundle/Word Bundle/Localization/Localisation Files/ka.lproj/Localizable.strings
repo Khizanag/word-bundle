@@ -55,3 +55,12 @@
 "turkish" = "თურქული";
 "ukrainian" = "უკრაიკული";
 "vietnamese" = "ვიეტნამური";
+
+"language" = "ენა";
+"title" = "სათაური";
+"keepGoing" = "განაგრძე";
+"createBundle" = "შექმენი კონა";
+"backToLanguagePage" = "დაბრუნდი ენების გვერდზე";
+"chooseLanguage" = "აირჩიე ენა";
+"addBundleTitle" = "დაამატე კონის სათაური";
+"typeBundleTitle" =  "შეიყვანე კონის სათაური";

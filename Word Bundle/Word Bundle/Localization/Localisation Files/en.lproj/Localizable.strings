@@ -55,3 +55,12 @@
 "turkish" = "Turkish";
 "ukrainian" = "Ukrainian";
 "vietnamese" = "Vietnamese";
+
+"language" = "Language";
+"title" = "Title";
+"keepGoing" = "Keep Going";
+"createBundle" = "Create Bundle";
+"backToLanguagePage" = "BACK TO LANGUAGE PAGE";
+"chooseLanguage" = "Choose Language";
+"addBundleTitle" = "Add bundle title";
+"typeBundleTitle" =  "Type Bundle Title";
