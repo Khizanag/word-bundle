@@ -9,10 +9,12 @@ import SwiftUI
 
 struct WordBundlePreviewItemView: View {
     let wordBundle: WordBundle
+    @Binding var activeWordBundleId: UUID
 
     var body: some View {
         ZStack {
-            Color(hex: 0x039be5) // TODO: fix this
+            Color(hex: 0x039be5)
+                .opacity(activeWordBundleId == wordBundle.id ? 0.8 : 0.6)
 
             HStack (alignment: .center) {
                 VStack (alignment: .leading, spacing: 6) {
@@ -36,6 +38,14 @@ struct WordBundlePreviewItemView: View {
                     .padding()
             }
         }
+        .overlay(activeWordBundleId == wordBundle.id ?
+                 RoundedRectangle(cornerRadius: DesignSystem.Size.xxLarge())
+            .stroke(Color(hex: 0x039be5), lineWidth: 7)
+            .opacity(1) :
+                    RoundedRectangle(cornerRadius: DesignSystem.Size.xxLarge())
+            .stroke(.clear, lineWidth: 5)
+            .opacity(0)
+        )
         .frame(height: 96)
         .cornerRadius(DesignSystem.Size.xxLarge())
         .padding(.horizontal, 32)
@@ -44,6 +54,6 @@ struct WordBundlePreviewItemView: View {
 
 struct WordBundleView_Previews: PreviewProvider {
     static var previews: some View {
-        WordBundlePreviewItemView(wordBundle: WordBundle.example2)
+        WordBundlePreviewItemView(wordBundle: WordBundle.example2, activeWordBundleId: .init(projectedValue: .constant(UUID())))
     }
 }
