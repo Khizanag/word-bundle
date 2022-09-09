@@ -20,7 +20,7 @@ struct AddWordBundleItemView: View {
 
                 Spacer()
 
-                Image(systemName: "plus") // TODO: move to DesignSystem
+                DesignSystem.Image.plus()
                     .foregroundColor(.white)
                     .font(.largeTitle)
                     .padding()

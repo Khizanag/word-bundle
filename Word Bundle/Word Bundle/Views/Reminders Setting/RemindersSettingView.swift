@@ -31,7 +31,7 @@ struct RemindersSettingView: View {
     private var exampleWordComponentView: some View {
         HStack {
             // FIXME: icon should be lefter
-            DesignSystem.Image.bell()
+            DesignSystem.Image.bell(isSystemName: false)
                 .padding()
             VStack(alignment: .leading) {
                 HStack {

@@ -66,7 +66,7 @@ struct WordBundleView: View {
                 ForEach(fetchedEntities) { entity in
                     if let word = Word.make(from: entity) {
                         NavigationLink(destination: WordView(word: word)) {
-                            Image(systemName: "text.justify.left") // TODO: move to DesignSystem
+                            DesignSystem.Image.textJustifyLeft()
                             Text(word.word.capitalized)
                         }
                     }

@@ -19,8 +19,8 @@ struct CreateWordBundleView: View {
     @State private var bundleTitle: String = ""
 
     private static let items = [
-        Item(title: Localisation.language(), image: Image(systemName: "circle")), // TODO: move to DesignSystem
-        Item(title: Localisation.title(), image: Image(systemName: "textformat")) // TODO: move to DesignSystem
+        Item(title: Localisation.language(), image: DesignSystem.Image.circle()),
+        Item(title: Localisation.title(), image: DesignSystem.Image.textformat())
     ]
 
     var body: some View {
@@ -62,7 +62,7 @@ struct CreateWordBundleView: View {
     private var chooseTitleView: some View {
         VStack {
             HStack(alignment: .center) {
-                Image(systemName: "doc.plaintext") // TODO: move to DesignSystem
+                DesignSystem.Image.docPlaintext()
                     .font(.headline)
                     .foregroundColor(.black)
                     .opacity(0.7)
@@ -135,7 +135,7 @@ struct CreateWordBundleView: View {
             },
             label: {
                 HStack {
-                    Image(systemName: "chevron.backward") // TODO: move to DesignSystem
+                    DesignSystem.Image.chevronBackward()
 
                     Text(titled)
                 }
