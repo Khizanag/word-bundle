@@ -24,6 +24,10 @@ public enum Localisation: String {
     case endAt
     case getStarted
     case home
+    case bundles
+    case themes
+    case words
+    case settings
     case howMany
     case startAt
     case wordBundle

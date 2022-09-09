@@ -18,6 +18,10 @@
 "endAt" = "როდემდე";
 "getStarted" = "დავიწყოთ";
 "home" = "მთავარი";
+"bundles" = "სიტყვის კონები";
+"themes" = "თემები";
+"words" = "სიტყვები";
+"settings" = "პარამეტრები";
 "howMany" = "რამდენი";
 "startAt" = "როდიდან";
 "wordBundle" = "სიტყვის კონა";
@@ -87,4 +91,3 @@
 // MARK: - WordBundleView
 "textFieldMessage" = "მოსაძებნად შეიყვანე სიტყვა";
 "addWord" = "დაამატე სიტყვა სიტყვის კონაში";
-

@@ -18,6 +18,10 @@
 "endAt" = "End at";
 "getStarted" = "Get Started";
 "home" = "Home";
+"bundles" = "Bundles";
+"themes" = "Themes";
+"words" = "Words";
+"settings" = "Settings";
 "howMany" = "How many";
 "startAt" = "Start at";
 "wordBundle" = "Word bundle";
