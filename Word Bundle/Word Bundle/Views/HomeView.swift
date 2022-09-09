@@ -62,7 +62,7 @@ struct HomeView: View {
                                 .padding()
 
                             VStack {
-                                let examples = word.lexicalEntries.first?.entries.first?.senses.first?.examples ?? ["No Example..."]
+                                let examples = word.lexicalEntries.first?.entries.first?.senses.first?.examples ?? [Localisation.examplesNotFound()]
                                 ForEach(examples, id: \.self) { example in
                                     Text(example)
                                         .font(.footnote)

@@ -93,6 +93,8 @@ public enum Localisation: String {
     // MARK: - WordBundleView
     case textFieldMessage
     case addWord
+    // MARK: - HomeView
+    case examplesNotFound
     
     private var key: String { rawValue }
 

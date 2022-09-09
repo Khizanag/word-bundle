@@ -91,3 +91,6 @@
 // MARK: - WordBundleView
 "textFieldMessage" = "Type word to search here";
 "addWord" = "Add word to Dictionary";
+
+// MARK: - HomeView
+"examplesNotFound" = "No Example...";

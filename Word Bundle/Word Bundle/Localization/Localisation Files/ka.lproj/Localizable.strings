@@ -91,3 +91,6 @@
 // MARK: - WordBundleView
 "textFieldMessage" = "მოსაძებნად შეიყვანე სიტყვა";
 "addWord" = "დაამატე სიტყვა სიტყვის კონაში";
+
+// MARK: - HomeView
+"examplesNotFound" = "მაგალითები ვერ მოიძებნა...";
