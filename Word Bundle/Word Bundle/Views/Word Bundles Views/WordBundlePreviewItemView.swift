@@ -13,16 +13,19 @@ struct WordBundlePreviewItemView: View {
     var body: some View {
         ZStack {
             Color(hex: 0x039be5) // TODO: fix this
+
             HStack (alignment: .center) {
                 VStack (alignment: .leading, spacing: 6) {
                     Text(wordBundle.name)
                         .font(.headline)
                         .foregroundColor(.white)
 
-                    Text("\(wordBundle.words.count) Words")
-                        .font(.subheadline)
-                        .bold()
-                        .foregroundColor(.white)
+                    if let words = wordBundle.words {
+                        Text("\(words.count) Words")
+                            .font(.subheadline)
+                            .bold()
+                            .foregroundColor(.white)
+                    }
                 }
                 .padding()
 

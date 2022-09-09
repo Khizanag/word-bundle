@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DictionariesRepository {
-    func entries(of word: String, language: Language) async -> Word?
+    func entries(of word: String, language: Language, wordBundleId: UUID) async -> Word?
 }
 
 final class OxfordDictionariesRepository: DictionariesRepository {
@@ -19,7 +19,7 @@ final class OxfordDictionariesRepository: DictionariesRepository {
     private let baseUrl = "https://" + "od-api.oxforddictionaries.com" + ":443/api"
     private let version = "v2"
 
-    func entries(of word: String, language: Language) async -> Word? {
+    func entries(of word: String, language: Language, wordBundleId: UUID) async -> Word? {
         let endpoint = "entries"
         let wordId = word.lowercased() // FIXME: when there is space in input
 
@@ -33,7 +33,7 @@ final class OxfordDictionariesRepository: DictionariesRepository {
         do {
             let (data, _) = try await URLSession.shared.data(for: request)
             let response = try JSONDecoder().decode(RetrieveEntryResponse.self, from: data)
-            return .make(from: response)
+            return .make(from: response, bundleId: wordBundleId)
         } catch {
             // Error handling in case the data couldn't be loaded
             // For now, only display the error on the console

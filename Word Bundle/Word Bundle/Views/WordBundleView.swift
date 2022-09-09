@@ -8,7 +8,9 @@
 import AVFoundation
 import SwiftUI
 
-struct WordsView: View {
+struct WordBundleView: View {
+    @AppStorage(AppStorageKeys.activeWordBundleId()) var activeWordBundleId = WordBundle.example.id
+
     private let dictionariesRepository: DictionariesRepository = OxfordDictionariesRepository()
     private let imageRepository: ImageRepository = UnsplashImageRepository()
 
@@ -18,8 +20,20 @@ struct WordsView: View {
 
     @Environment(\.managedObjectContext) private var viewContext
 
-    @FetchRequest(entity: WordEntity.entity(), sortDescriptors: [])
-    private var entities: FetchedResults<WordEntity>
+    @FetchRequest private var fetchedEntities: FetchedResults<WordEntity>
+
+    // MARK: - Init
+    init(activeBundleId: UUID) {
+        _fetchedEntities = FetchRequest<WordEntity>(
+            sortDescriptors: [],
+            predicate: NSPredicate(format: "bundleId == %@", activeBundleId as CVarArg),
+            animation: .default // TODO: try others too
+        )
+    }
+
+    private func refresh() {
+        // TODO: update fetchedEntities
+    }
 
     var body: some View {
         VStack {
@@ -34,7 +48,7 @@ struct WordsView: View {
                 .padding()
 
             List {
-                ForEach(entities) { entity in
+                ForEach(fetchedEntities) { entity in
                     if let word = Word.make(from: entity) {
                         NavigationLink(destination: WordView(word: word)) {
                             Image(systemName: "text.justify.left") // TODO: move to DesignSystem
@@ -42,7 +56,7 @@ struct WordsView: View {
                         }
                     }
                 }
-                .onDelete(perform: deleteRow)
+                .onDelete(perform: deleteWords)
             }
         }
         .navigationTitle("Words") // TODO: Localization
@@ -69,8 +83,14 @@ struct WordsView: View {
     }
 
     // MARK: - Private functions
-    private func deleteRow(at indexSet: IndexSet) {
-        // TODO: implement
+    private func deleteWords(at indexSet: IndexSet) {
+        indexSet.forEach { index in
+            viewContext.delete(fetchedEntities[index])
+        }
+
+        withAnimation {
+            saveContext()
+        }
     }
 
     private func addWord() {
@@ -84,14 +104,16 @@ struct WordsView: View {
                 }
             }
 
-            guard var word = await dictionariesRepository.entries(of: textFieldText, language: .english) else { return }
+            guard var word = await dictionariesRepository.entries(of: textFieldText, language: .english, wordBundleId: activeWordBundleId) else { return }
 
             word.imageUrl = await imageRepository.getFullUrl(of: textFieldText)
 
             do {
                 let wordEntity = WordEntity(context: viewContext)
-                let encodedWord = try JSONEncoder().encode(word)
-                wordEntity.encodedWord = encodedWord
+
+                wordEntity.id = word.id
+                wordEntity.bundleId = activeWordBundleId
+                wordEntity.encodedWord = try JSONEncoder().encode(word)
 
                 withAnimation {
                     saveContext()
@@ -114,6 +136,6 @@ struct WordsView: View {
 
 struct WordsView_Previews: PreviewProvider {
     static var previews: some View {
-        WordsView()
+        WordBundleView(activeBundleId: WordBundle.example.id)
     }
 }

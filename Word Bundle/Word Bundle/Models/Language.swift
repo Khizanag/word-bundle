@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum Language: String, CaseIterable {
+public enum Language: String, CaseIterable {
     case armenian
     case azerbaijani
     case bengali
