@@ -11,9 +11,17 @@ public extension DesignSystem {
     enum Image: String {
         case bell
         case booksAndMobile
+        case circle
+        case textformat
+        case docPlaintext = "doc.plaintext"
+        case chevronBackward = "chevron.backward"
 
-        func callAsFunction() -> SwiftUI.Image {
-            SwiftUI.Image(rawValue)
+        func callAsFunction(isSystemName: Bool = true) -> SwiftUI.Image {
+            if isSystemName {
+                return SwiftUI.Image(systemName: rawValue)
+            }
+            return SwiftUI.Image(rawValue)
         }
     }
+    
 }
