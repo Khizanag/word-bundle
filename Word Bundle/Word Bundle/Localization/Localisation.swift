@@ -68,7 +68,11 @@ public enum Localisation: String {
     case addBundleTitle
     case typeBundleTitle
     
-
+    // MARK: - WordBundlesView
+    case delete
+    case bundleDeleteActionSheetTitle
+    case bundleDeleteActionSheetMessage
+    
     private var key: String { rawValue }
 
     private var localized: String {

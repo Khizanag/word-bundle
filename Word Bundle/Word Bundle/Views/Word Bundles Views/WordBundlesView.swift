@@ -34,7 +34,7 @@ struct WordBundlesView: View {
                             isActionSheetPresented = true
                         }
                         .actionSheet(isPresented: $isActionSheetPresented) {
-                            let deleteButton = ActionSheet.Button.destructive(Text("Delete")) { // TODO: Localization
+                            let deleteButton = ActionSheet.Button.destructive(Text(Localisation.delete())) {
                                 viewContext.delete(wordBundleEntity)
                                 withAnimation {
                                     saveContext()
@@ -44,8 +44,8 @@ struct WordBundlesView: View {
                             let cancelButton = ActionSheet.Button.cancel()
 
                             return .init(
-                                title: Text("You are going to delete selected `Word Bundle`"), // TODO: Localization
-                                message: Text("Are you sure?"), // TODO: Localization
+                                title: Text(Localisation.bundleDeleteActionSheetTitle()),
+                                message: Text(Localisation.bundleDeleteActionSheetMessage()),
                                 buttons: [deleteButton, cancelButton]
                             )
                         }

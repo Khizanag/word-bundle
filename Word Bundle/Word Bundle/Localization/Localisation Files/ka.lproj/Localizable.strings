@@ -56,6 +56,7 @@
 "ukrainian" = "უკრაიკული";
 "vietnamese" = "ვიეტნამური";
 
+// MARK: - CreateWordBundleView
 "language" = "ენა";
 "title" = "სათაური";
 "keepGoing" = "განაგრძე";
@@ -64,3 +65,8 @@
 "chooseLanguage" = "აირჩიე ენა";
 "addBundleTitle" = "დაამატე კონის სათაური";
 "typeBundleTitle" =  "შეიყვანე კონის სათაური";
+
+// MARK: - WordBundlesView
+"delete" = "წაშლა";
+"bundleDeleteActionSheetTitle" = "შენ მიერ არჩეული `სიტყვის კონა` წაიშლება";
+"bundleDeleteActionSheetMessage" = "დარწმუნებული ხარ?";
