@@ -75,13 +75,5 @@ extension Language {
     
     var name: String { rawValue.capitalized }
     
-    var image: Image {
-        switch self {
-        case .english: return Image("eng")
-        case .georgian: return Image("geo")
-        case .spanish: return Image("spn")
-        default: return Image(systemName: "flag.fill")
-        }
-        
-    }
+    var image: Image { Image(rawValue) }
 }
