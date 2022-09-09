@@ -33,8 +33,11 @@ struct WordBundlePreviewItemView: View {
 
                 Spacer()
 
-                wordBundle.icon
-                    .frame(width: 36, height: 44, alignment: .center)
+                wordBundle.language.image
+                    .resizable()
+                    .frame(width: 44, height: 30)
+                    .cornerRadius(30)
+                    .font(.headline)
                     .padding()
             }
         }
