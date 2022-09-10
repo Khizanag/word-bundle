@@ -15,7 +15,7 @@ struct WelcomeView: View {
     var body: some View {
             ScrollView {
                 VStack(alignment: .center) {
-                    DesignSystem.Image.booksAndMobile(isSystemName: false)
+                    DesignSystem.Image.booksAndMobile()
                         .padding(.bottom)
                     titleLabel
                     descriptionLabel
