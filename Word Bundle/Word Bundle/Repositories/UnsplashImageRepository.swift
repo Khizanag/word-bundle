@@ -16,6 +16,7 @@ final class UnsplashImageRepository: ImageRepository {
     private let imageEndpoint = "search/photos"
 
     func getFullUrl(of word: String) async -> String? {
+        let word = word.trimmed()
         let queryParams: [String: String] = [
             "page": "1",
             "query": word,

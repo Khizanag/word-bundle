@@ -9,31 +9,31 @@ import AVFoundation
 import SwiftUI
 
 struct WordBundleView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+
     @AppStorage(AppStorageKeys.activeWordBundleId()) var activeWordBundleId = WordBundle.example.id
 
-    private let dictionariesRepository: DictionariesRepository = OxfordDictionariesRepository()
-    private let imageRepository: ImageRepository = UnsplashImageRepository()
+    @FetchRequest private var fetchedEntities: FetchedResults<WordEntity>
+    @FetchRequest private var wordBundleEntities: FetchedResults<WordBundleEntity>
 
     @State private var textFieldText = ""
     @State private var isTextFieldDisabled = false
     @State private var isButtonLoading = false
 
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest private var fetchedEntities: FetchedResults<WordEntity>
-    @FetchRequest private var wordBundleEntities: FetchedResults<WordBundleEntity>
+    private let dictionariesRepository: DictionariesRepository = OxfordDictionariesRepository()
+    private let imageRepository: ImageRepository = UnsplashImageRepository()
 
     // MARK: - Init
     init(activeBundleId: UUID) {
         _fetchedEntities = FetchRequest<WordEntity>(
             sortDescriptors: [],
-            predicate: NSPredicate(format: "bundleId == %@", activeBundleId as CVarArg),
+            predicate: NSPredicate(format: "bundleId == %@", activeBundleId as CVarArg), // TODO: change with K
             animation: .default // TODO: try others too
         )
 
         _wordBundleEntities = FetchRequest<WordBundleEntity>(
             sortDescriptors: [],
-            predicate: NSPredicate(format: "id == %@", activeBundleId as CVarArg)
+            predicate: NSPredicate(format: "id == %@", activeBundleId as CVarArg) // TODO: change with K
         )
     }
 
@@ -50,7 +50,7 @@ struct WordBundleView: View {
             }
 
             TextField(Localisation.textFieldMessage(), text: $textFieldText)
-                .disabled(isTextFieldDisabled)
+                .disabled(isTextFieldDisabled || textFieldText.isEmpty)
                 .padding()
                 .onSubmit {
                     addWord()
@@ -74,7 +74,6 @@ struct WordBundleView: View {
                 .onDelete(perform: deleteWords)
             }
         }
-        .navigationBarHidden(true)
     }
 
     private func reset() {
@@ -120,7 +119,7 @@ struct WordBundleView: View {
             }
 
             guard let language = wordBundleEntities.first?.language,
-                    var word = await dictionariesRepository.entries(of: textFieldText, language: language, wordBundleId: activeWordBundleId) else { return }
+                  var word = await dictionariesRepository.entries(of: textFieldText, language: language, wordBundleId: activeWordBundleId) else { return }
 
             word.imageUrl = await imageRepository.getFullUrl(of: textFieldText)
 

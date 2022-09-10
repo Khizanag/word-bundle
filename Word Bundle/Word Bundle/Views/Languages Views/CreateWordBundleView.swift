@@ -16,7 +16,7 @@ struct CreateWordBundleView: View {
 
     @ObservedObject private var stepsState = StepsState(data: items)
     @State var chosenLanguage = Language.english
-    @State private var bundleTitle: String = ""
+    @State private var bundleTitle = ""
 
     private static let items = [
         Item(title: Localisation.language(), image: DesignSystem.Image.circle()),
@@ -42,10 +42,7 @@ struct CreateWordBundleView: View {
                 chooseTitleView
                     .padding(.bottom, 48)
                 nextButton(title: Localisation.createBundle()) {
-                    saveNewWordBundle()
-                    withAnimation {
-                        presentationMode.wrappedValue.dismiss()
-                    }
+                    finishBundleCreation()
                 }
                 backButton(titled: Localisation.backToLanguagePage())
                 Spacer()
@@ -70,10 +67,8 @@ struct CreateWordBundleView: View {
 
                 TextField(Localisation.typeBundleTitle(), text: $bundleTitle)
                     .opacity(0.85)
-                    .textInputAutocapitalization(.never)
-                    .disableAutocorrection(true)
                     .onSubmit {
-                        print("Help") // TODO: finish this
+                        finishBundleCreation()
                     }
             }
             .frame(height: 36)
@@ -157,12 +152,19 @@ struct CreateWordBundleView: View {
     }
 
     // MARK: - Private functions
+    private func finishBundleCreation() {
+        saveNewWordBundle()
+        withAnimation {
+            presentationMode.wrappedValue.dismiss()
+        }
+    }
+
     private func saveNewWordBundle() {
         let entity = WordBundleEntity(context: viewContext)
 
         let id = UUID()
         entity.id = id
-        entity.name = bundleTitle
+        entity.name = bundleTitle.trimmed()
         entity.language = chosenLanguage
         entity.creationDate = .now
         entity.note = ""
