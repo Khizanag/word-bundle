@@ -12,11 +12,11 @@ struct Theme: Identifiable {
     let color: Color
     let opacity = 0.8
 
-    static var example: Theme { themes[0] }
-
     static func theme(id: Int) -> Theme {
-        themes.first(where: { $0.id == id }) ?? themes[0]
+        themes.first(where: { $0.id == id }) ?? example
     }
+
+    static var example: Theme { themes[0] }
 
     static let themes: [Theme] = [
         Theme(id: 0, color: .orange),

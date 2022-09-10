@@ -25,7 +25,7 @@ public extension DesignSystem {
         case plus
         case scrollFill = "scroll.fill"
         case settings = "gearshape.2.fill"
-        case speakerWave3 = "speaker.wave.3"
+        case speaker = "speaker.wave.3"
         case textBookClosedFill = "text.book.closed.fill"
         case textJustifyLeft = "text.justify.left"
         case textformat

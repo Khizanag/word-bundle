@@ -5,7 +5,6 @@
 //  Created by Giga Khizanishvili on 25.07.22.
 //
 
-import Foundation
 import SwiftUI
 
 public enum Language: String, CaseIterable {

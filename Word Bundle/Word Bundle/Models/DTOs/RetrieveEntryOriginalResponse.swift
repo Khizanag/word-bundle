@@ -19,7 +19,7 @@ struct RetrieveEntryOriginalResponse: Codable {
         let lexicalEntries: [LexicalEntry]
         let pronunciations: [Pronunciation]?
         let type: String?
-        let word: String // DEPRECATED TODO: remove?
+        let word: String
     }
 
     struct Metadata: Codable {

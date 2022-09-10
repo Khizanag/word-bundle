@@ -61,3 +61,50 @@ extension Word.LexicalEntry: Equatable { }
 extension Word.Pronunciation: Equatable { }
 extension Word.Entry: Equatable { }
 extension Word.Sense: Equatable { }
+
+// MARK: - Init from RetrieveEntryResponse
+extension Word {
+    static func make(from entity: RetrieveEntryResponse, bundleId: UUID) -> Word? {
+        guard let lexicalEntries = entity.results?.first?.lexicalEntries else { return nil }
+        guard let sharedLexicalEntry = lexicalEntries.first else { return nil }
+        guard let sharedEntry = sharedLexicalEntry.entries?.first else { return nil }
+
+        let pronunciationEntry = sharedEntry.pronunciations?.first
+
+        return Word(
+            id: UUID(),
+            bundleId: bundleId,
+            word: sharedLexicalEntry.text,
+            lexicalEntries: lexicalEntries.map { lexicalEntry in
+                Word.LexicalEntry(
+                    entries: lexicalEntry.entries?.map { entry in
+                        Word.Entry(
+                            etymologies: entry.etymologies ?? [],
+                            senses: entry.senses?.map { sense in
+                                Word.Sense(
+                                    antonyms: sense.antonyms?.map(\.text) ?? [],
+                                    definitions: sense.definitions ?? [],
+                                    examples: sense.examples?.map(\.text) ?? [],
+                                    shortDefinitions: sense.shortDefinitions ?? [],
+                                    synonyms: sense.synonyms?.map(\.text) ?? []
+                                )
+                            } ?? []
+                        )
+                    } ?? [],
+                    lexicalCategory: lexicalEntry.lexicalCategory.text,
+                    phrasalVerbs: lexicalEntry.phrasalVerbs?.map(\.text) ?? [], // FIXME: refactor using keyPath
+                    phrases: lexicalEntry.phrases?.map(\.text) ?? [] // FIXME: refactor using keyPath
+                )
+            },
+            pronunciation: .init(
+                audioFile: pronunciationEntry?.audioFile,
+                dialects: pronunciationEntry?.dialects,
+                phoneticNotation: pronunciationEntry?.phoneticNotation,
+                phoneticSpelling: pronunciationEntry?.phoneticSpelling
+            ),
+            imageUrl: nil,
+            note: "",
+            isFavourited: false
+        )
+    }
+}

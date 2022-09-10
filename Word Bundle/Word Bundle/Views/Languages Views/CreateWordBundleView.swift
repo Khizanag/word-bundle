@@ -9,12 +9,14 @@ import Steps
 import SwiftUI
 
 struct CreateWordBundleView: View {
+    // MARK: - Properties
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
 
     @AppStorage(AppStorageKeys.activeWordBundleId()) private var activeWordBundleId: UUID = WordBundle.example.id
 
     @ObservedObject private var stepsState = StepsState(data: items)
+
     @State var chosenLanguage = Language.english
     @State private var bundleTitle = ""
 
@@ -23,10 +25,11 @@ struct CreateWordBundleView: View {
         Item(title: Localisation.title(), image: DesignSystem.Image.textformat())
     ]
 
+    // MARK: - Body
     var body: some View {
         VStack {
             Steps(state: stepsState, onCreateStep: onCreateStep)
-                .itemSpacing(10)
+                .itemSpacing(DesignSystem.Size.small())
                 .font(.caption)
                 .padding()
 

@@ -50,7 +50,7 @@ struct WordView: View {
                 await replay()
             }
         } label: {
-            DesignSystem.Image.speakerWave3()
+            DesignSystem.Image.speaker()
                 .foregroundColor(player == nil ? .clear : Color(hex: 0x3F3F3F))
         }
         .onAppear {

@@ -11,7 +11,7 @@ import SwiftUI
 struct WordBundleApp: App {
     var body: some Scene {
         WindowGroup {
-            ZerothView()
+            RootView()
                 .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
         }
     }
