@@ -37,5 +37,4 @@ public extension DesignSystem {
             return SwiftUI.Image(rawValue)
         }
     }
-    
 }

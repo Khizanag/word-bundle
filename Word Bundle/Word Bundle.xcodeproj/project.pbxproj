@@ -50,6 +50,7 @@
 		FB66A469289051E700F9F850 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = FB66A468289051E700F9F850 /* SwiftUIPager */; };
 		FB66A46B2890590100F9F850 /* Word+Examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A46A2890590100F9F850 /* Word+Examples.swift */; };
 		FB66A46D2890665800F9F850 /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A46C2890665700F9F850 /* WordView.swift */; };
+		FB6CA8C628CCBE0A00B20908 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6CA8C528CCBE0A00B20908 /* NetworkLayer.swift */; };
 		FBBBA1F328C94D7100F64A78 /* Entities.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBBBA1F128C94D7100F64A78 /* Entities.xcdatamodeld */; };
 		FBBBA1F528C9515B00F64A78 /* Word_Bundle.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = FBBBA1F428C9515B00F64A78 /* Word_Bundle.xcdatamodel */; };
 		FBBBA1F728C952A600F64A78 /* WordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBA1F628C952A600F64A78 /* WordEntity.swift */; };
@@ -133,6 +134,7 @@
 		FB66A461288FCEDA00F9F850 /* ka */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ka; path = ka.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FB66A46A2890590100F9F850 /* Word+Examples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Word+Examples.swift"; sourceTree = "<group>"; };
 		FB66A46C2890665700F9F850 /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
+		FB6CA8C528CCBE0A00B20908 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		FBBBA1F228C94D7100F64A78 /* Entities.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Entities.xcdatamodel; sourceTree = "<group>"; };
 		FBBBA1F428C9515B00F64A78 /* Word_Bundle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Word_Bundle.xcdatamodel; sourceTree = "<group>"; };
 		FBBBA1F628C952A600F64A78 /* WordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntity.swift; sourceTree = "<group>"; };
@@ -337,6 +339,14 @@
 			path = "Reminders Setting";
 			sourceTree = "<group>";
 		};
+		FB6CA8C428CCBDF800B20908 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				FB6CA8C528CCBE0A00B20908 /* NetworkLayer.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
 		FBCECE8C2814847600CD558C = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +370,7 @@
 		FBCECE972814847600CD558C /* Word Bundle */ = {
 			isa = PBXGroup;
 			children = (
+				FB6CA8C428CCBDF800B20908 /* NetworkLayer */,
 				FB41906F28918F7F00D95C44 /* Repositories */,
 				FB66A44B2888B39800F9F850 /* Models */,
 				FB66A43328880EBE00F9F850 /* Views */,
@@ -628,6 +639,7 @@
 				FBE5450328C66E190093ABF3 /* LoadingButton+Style.swift in Sources */,
 				FBCECED2281488AE00CD558C /* Int+Extension.swift in Sources */,
 				FBCECECA2814863C00CD558C /* OptionalString+Extension.swift in Sources */,
+				FB6CA8C628CCBE0A00B20908 /* NetworkLayer.swift in Sources */,
 				D1F46EF628C8D4F40015132B /* WordBundlesView.swift in Sources */,
 				FB66A46B2890590100F9F850 /* Word+Examples.swift in Sources */,
 				D106671228CA99A1000E5E32 /* LanguageItemView.swift in Sources */,
@@ -754,7 +766,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -809,7 +821,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -829,7 +841,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Word Bundle/Preview Content\"";
-				DEVELOPMENT_TEAM = N9G67U68JX;
+				DEVELOPMENT_TEAM = 487Z879GSQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -843,7 +855,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "khizanag.Word-Bundle-Pro-3";
+				PRODUCT_BUNDLE_IDENTIFIER = "khizanag.Word-Bundle-Pro-4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -862,7 +874,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Word Bundle/Preview Content\"";
-				DEVELOPMENT_TEAM = N9G67U68JX;
+				DEVELOPMENT_TEAM = 487Z879GSQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -876,7 +888,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "khizanag.Word-Bundle-Pro-3";
+				PRODUCT_BUNDLE_IDENTIFIER = "khizanag.Word-Bundle-Pro-4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

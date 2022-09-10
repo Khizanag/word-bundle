@@ -43,7 +43,7 @@ public enum Localisation: String {
     case swahili
     case tamil
     case georgian
-    
+
     // MARK: - CreateWordBundleView
     case language
     case title
@@ -53,12 +53,12 @@ public enum Localisation: String {
     case chooseLanguage
     case addBundleTitle
     case typeBundleTitle
-    
+
     // MARK: - WordBundlesView
     case delete
     case bundleDeleteActionSheetTitle
     case bundleDeleteActionSheetMessage
-    
+
     // MARK: - WordView
     case phrases
     case examples
@@ -66,21 +66,21 @@ public enum Localisation: String {
     case antonyms
     case definitions
     case shortDefinitions
-    
+
     // MARK: - SettingsView
     case reminderSettings
     case changeBackgroundTheme
-    
+
     // MARK: - WordBundleView
     case textFieldMessage
     case addWord
-    
+
     // MARK: - HomeView
     case examplesNotFound
-    
+
     // MARK: - AddWordBundleItemView
     case addNewBundle
-    
+
     private var key: String { rawValue }
 
     private var localized: String {
