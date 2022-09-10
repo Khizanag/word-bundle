@@ -12,7 +12,8 @@ protocol DictionariesRepository {
 }
 
 final class OxfordDictionariesRepository: DictionariesRepository {
-    // TODO: refactor
+    private let networkLayer: NetworkLayer = DefaultNetworkLayer()
+
     private let appId = "30c65836"
     private let appKey = "98393f76981a3549edbdde7a3226b0ed"
 
@@ -30,15 +31,7 @@ final class OxfordDictionariesRepository: DictionariesRepository {
         request.addValue(appId, forHTTPHeaderField: "app_id")
         request.addValue(appKey, forHTTPHeaderField: "app_key")
 
-        do {
-            let (data, _) = try await URLSession.shared.data(for: request)
-            let response = try JSONDecoder().decode(RetrieveEntryResponse.self, from: data)
-            return .make(from: response, bundleId: wordBundleId)
-        } catch {
-            // Error handling in case the data couldn't be loaded
-            // For now, only display the error on the console
-            debugPrint("Error loading \(url): \(String(describing: error))")
-            return nil
-        }
+        guard let response = await networkLayer.download(RetrieveEntryResponse.self, using: request) else { return nil }
+        return .make(from: response, bundleId: wordBundleId)
     }
 }

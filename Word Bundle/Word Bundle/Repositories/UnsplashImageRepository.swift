@@ -11,6 +11,8 @@ protocol ImageRepository {
 }
 
 final class UnsplashImageRepository: ImageRepository {
+    private let networkLayer: NetworkLayer = DefaultNetworkLayer()
+
     private let clientID = "WxvZ6NKKvHcB_6jwRYBI9HuokIpaMOvNgogbSBXxKeE"
     private let baseUrl = "https://" + "api.unsplash.com"
     private let imageEndpoint = "search/photos"
@@ -29,15 +31,7 @@ final class UnsplashImageRepository: ImageRepository {
 
         let request = URLRequest(url: url)
 
-        do {
-            let (data, _) = try await URLSession.shared.data(for: request)
-            let jsonResult = try JSONDecoder().decode(UnsplashImageResponse.self, from: data)
-
-            return jsonResult.results.first?.urls.full
-        } catch {
-            // Error handling in case the data couldn't be loaded
-            debugPrint("Error loading \(url): \(String(describing: error))")
-            return nil
-        }
+        let response = await networkLayer.download(UnsplashImageResponse.self, using: request)
+        return response?.results.first?.urls.full
     }
 }
