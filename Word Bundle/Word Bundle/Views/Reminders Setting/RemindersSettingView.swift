@@ -31,19 +31,22 @@ struct RemindersSettingView: View {
     private var exampleWordComponentView: some View {
         HStack {
             // FIXME: icon should be lefter
-            DesignSystem.Image.bell(isSystemName: false)
+            DesignSystem.Image.bell()
                 .padding()
+
             VStack(alignment: .leading) {
                 HStack {
                     Text(Localisation.wordSalubrious())
                         .fontWeight(.bold)
                         .foregroundColor(DesignSystem.Color.primaryTextLight().value)
                         .multilineTextAlignment(.leading)
+
                     Text("(n.)")
                         .fontWeight(.regular)
                         .foregroundColor(DesignSystem.Color.secondaryTextLight().value)
                 }
                 .padding(.vertical, DesignSystem.Size.small())
+
                 Text(Localisation.wordSalubriousDefinition())
                     .font(.footnote)
                     .fontWeight(.regular)

@@ -50,7 +50,7 @@ struct MainView: View {
 
                 SettingsView()
                     .tabItem {
-                        DesignSystem.Image.gearshape2Fill()
+                        DesignSystem.Image.settings()
                         Text(Localisation.settings())
                     }
             }

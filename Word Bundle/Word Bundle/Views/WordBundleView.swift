@@ -9,6 +9,7 @@ import AVFoundation
 import SwiftUI
 
 struct WordBundleView: View {
+    // MARK: - Properties
     @Environment(\.managedObjectContext) private var viewContext
 
     @AppStorage(AppStorageKeys.activeWordBundleId()) var activeWordBundleId = WordBundle.example.id
@@ -17,7 +18,6 @@ struct WordBundleView: View {
     @FetchRequest private var wordBundleEntities: FetchedResults<WordBundleEntity>
 
     @State private var textFieldText = ""
-    @State private var isTextFieldDisabled = false
     @State private var isButtonLoading = false
 
     private let dictionariesRepository: DictionariesRepository = OxfordDictionariesRepository()
@@ -50,15 +50,16 @@ struct WordBundleView: View {
             }
 
             TextField(Localisation.textFieldMessage(), text: $textFieldText)
-                .disabled(isTextFieldDisabled || textFieldText.isEmpty)
+                .disabled(isButtonLoading)
                 .padding()
                 .onSubmit {
                     addWord()
                 }
 
             enterButton
+                .disabled(textFieldText.isEmpty)
                 .frame(maxWidth: .infinity)
-                .background(DesignSystem.Color.color3().value) // FIXME: try to remove
+                .background(DesignSystem.Color.color3().value)
                 .cornerRadius(DesignSystem.Size.small())
                 .padding()
 
@@ -78,7 +79,6 @@ struct WordBundleView: View {
 
     private func reset() {
         textFieldText = ""
-        isTextFieldDisabled = false
         isButtonLoading = false
     }
 
@@ -108,7 +108,6 @@ struct WordBundleView: View {
     }
 
     private func addWord() {
-        isTextFieldDisabled = true
         isButtonLoading = true
 
         Task {
