@@ -13,7 +13,5 @@ enum AppStorageKeys: String {
     case isFirstRun
     case hasCompletedOnboarding
 
-    func callAsFunction() -> RawValue {
-        rawValue
-    }
+    func callAsFunction() -> RawValue { rawValue }
 }

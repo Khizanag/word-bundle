@@ -5,8 +5,8 @@
 //  Created by Giga Khizanishvili on 23.04.22.
 //
 
-import SwiftUI
 import AudioToolbox
+import SwiftUI
 
 extension UIDevice {
     static func vibrate() {

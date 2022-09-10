@@ -34,19 +34,18 @@ struct WordBundlesView: View {
                             isActionSheetPresented = true
                         }
                         .actionSheet(isPresented: $isActionSheetPresented) {
-                            let deleteButton = ActionSheet.Button.destructive(Text(Localisation.delete())) {
-                                viewContext.delete(wordBundleEntity)
-                                withAnimation {
-                                    saveContext()
-                                }
-                            }
-
-                            let cancelButton = ActionSheet.Button.cancel()
-
-                            return .init(
+                            .init(
                                 title: Text(Localisation.bundleDeleteActionSheetTitle()),
                                 message: Text(Localisation.bundleDeleteActionSheetMessage()),
-                                buttons: [deleteButton, cancelButton]
+                                buttons: [
+                                    .destructive(Text(Localisation.delete())) {
+                                        viewContext.delete(wordBundleEntity)
+                                        withAnimation {
+                                            saveContext()
+                                        }
+                                    },
+                                    .cancel()
+                                ]
                             )
                         }
                 }
