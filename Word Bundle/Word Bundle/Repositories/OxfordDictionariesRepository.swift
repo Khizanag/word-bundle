@@ -21,7 +21,7 @@ final class OxfordDictionariesRepository: DictionariesRepository {
 
     func entries(of word: String, language: Language, wordBundleId: UUID) async -> Word? {
         let endpoint = "entries"
-        let wordId = word.lowercased() // FIXME: when there is space in input
+        let wordId = word.trimmed()
 
         guard let url = URL(string: "\(baseUrl)/\(version)/\(endpoint)/\(language.localizableIdentifier)/\(wordId)") else { return nil }
 
