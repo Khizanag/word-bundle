@@ -27,7 +27,7 @@ struct AddWordBundleItemView: View {
             }
         }
         .frame(height: 96)
-        .cornerRadius(DesignSystem.Size.xxLarge())
+        .cornerRadius(DesignSystem.Size.xLarge())
         .padding(.horizontal, 32)
     }
 }

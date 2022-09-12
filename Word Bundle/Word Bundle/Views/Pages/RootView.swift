@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct RootView: View {
+    // MARK: - Properties
     @AppStorage(AppStorageKeys.hasCompletedOnboarding()) private var hasCompletedOnboarding = false
 
+    // MARK: - Body
     var body: some View {
         NavigationView {
             if hasCompletedOnboarding {

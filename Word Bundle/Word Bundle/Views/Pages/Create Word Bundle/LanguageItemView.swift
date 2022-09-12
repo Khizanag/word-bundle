@@ -22,7 +22,7 @@ struct LanguageItemView: View {
 
             Text(language.name)
                 .foregroundColor(Color(hex: 0x3F3F3F))
-                .padding(.leading, DesignSystem.Size.xLarge())
+                .padding(.leading, DesignSystem.Size.large())
 
             Spacer()
 

@@ -11,25 +11,23 @@ struct CollapsibleView<Content: View>: View {
     @State var label: () -> Text
     @State var content: () -> Content
 
-    @State private var collapsed: Bool = true
+    @State private var isCollapsed: Bool = true
 
     var body: some View {
         VStack (alignment: .leading) {
             Button(
                 action: {
                     withAnimation {
-                        collapsed.toggle()
+                        isCollapsed.toggle()
                     }
                 },
                 label: {
                     HStack {
                         label()
-                        collapsed ? DesignSystem.Image.chevronRight()
-                            .foregroundColor(Color(hex: 0x3F3F3F))
-                        : DesignSystem.Image.chevronDown()
+                        (isCollapsed ? DesignSystem.Image.chevronRight() : DesignSystem.Image.chevronDown())
                             .foregroundColor(Color(hex: 0x3F3F3F))
                     }
-                    .padding(.bottom, 1)
+                    .padding(.bottom, DesignSystem.Size.min())
                     .background(Color.white.opacity(0.1))
                 }
             )
@@ -39,7 +37,7 @@ struct CollapsibleView<Content: View>: View {
                 content()
             }
 
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: collapsed ? 0 : .none)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: isCollapsed ? 0 : .none)
             .transition(.flipFromTop)
             .clipped()
         }

@@ -52,7 +52,6 @@
 		FB66A46D2890665800F9F850 /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB66A46C2890665700F9F850 /* WordView.swift */; };
 		FB6CA8C628CCBE0A00B20908 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6CA8C528CCBE0A00B20908 /* NetworkLayer.swift */; };
 		FBBBA1F328C94D7100F64A78 /* Entities.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBBBA1F128C94D7100F64A78 /* Entities.xcdatamodeld */; };
-		FBBBA1F528C9515B00F64A78 /* Word_Bundle.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = FBBBA1F428C9515B00F64A78 /* Word_Bundle.xcdatamodel */; };
 		FBBBA1F728C952A600F64A78 /* WordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBA1F628C952A600F64A78 /* WordEntity.swift */; };
 		FBCECE992814847600CD558C /* WordBundleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCECE982814847600CD558C /* WordBundleApp.swift */; };
 		FBCECE9D2814847900CD558C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBCECE9C2814847900CD558C /* Assets.xcassets */; };
@@ -136,7 +135,6 @@
 		FB66A46C2890665700F9F850 /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
 		FB6CA8C528CCBE0A00B20908 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		FBBBA1F228C94D7100F64A78 /* Entities.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Entities.xcdatamodel; sourceTree = "<group>"; };
-		FBBBA1F428C9515B00F64A78 /* Word_Bundle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Word_Bundle.xcdatamodel; sourceTree = "<group>"; };
 		FBBBA1F628C952A600F64A78 /* WordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntity.swift; sourceTree = "<group>"; };
 		FBCECE952814847600CD558C /* Word Bundle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Bundle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCECE982814847600CD558C /* WordBundleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBundleApp.swift; sourceTree = "<group>"; };
@@ -190,32 +188,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D10045BB28CA456100A65917 /* Word Bundles Views */ = {
+		D10045BB28CA456100A65917 /* Word Bundles */ = {
 			isa = PBXGroup;
 			children = (
 				D1F46EF528C8D4F40015132B /* WordBundlesView.swift */,
 				D1F46EF328C8CF360015132B /* WordBundlePreviewItemView.swift */,
 				D10045BC28CA45AC00A65917 /* AddWordBundleItemView.swift */,
 			);
-			path = "Word Bundles Views";
+			path = "Word Bundles";
 			sourceTree = "<group>";
 		};
-		D106670B28CA5565000E5E32 /* Themes Views */ = {
+		D106670B28CA5565000E5E32 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
 				FB66A4522888B8ED00F9F850 /* ThemesView.swift */,
 				D16D1A8828A6B03A00000984 /* ThemeView.swift */,
 			);
-			path = "Themes Views";
+			path = Themes;
 			sourceTree = "<group>";
 		};
-		D106671028CA998E000E5E32 /* Languages Views */ = {
+		D106671028CA998E000E5E32 /* Create Word Bundle */ = {
 			isa = PBXGroup;
 			children = (
 				D106670E28CA990F000E5E32 /* CreateWordBundleView.swift */,
 				D106671128CA99A1000E5E32 /* LanguageItemView.swift */,
 			);
-			path = "Languages Views";
+			path = "Create Word Bundle";
 			sourceTree = "<group>";
 		};
 		FB08299F2884BA2B00FFFB4B /* Design System */ = {
@@ -237,6 +235,15 @@
 				FBBBA1F628C952A600F64A78 /* WordEntity.swift */,
 			);
 			path = Word;
+			sourceTree = "<group>";
+		};
+		FB3DACC428CF12B300F2FFC1 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				FBCECEA12814847900CD558C /* Persistence.swift */,
+				FBBBA1F128C94D7100F64A78 /* Entities.xcdatamodeld */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		FB41906C2891752700D95C44 /* DTOs */ = {
@@ -289,9 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				FB6CA8C728CCFA3200B20908 /* Pages */,
-				D106671028CA998E000E5E32 /* Languages Views */,
-				D106670B28CA5565000E5E32 /* Themes Views */,
-				D10045BB28CA456100A65917 /* Word Bundles Views */,
+				D10045BB28CA456100A65917 /* Word Bundles */,
 				FB66A462289006BA00F9F850 /* Reminders Setting */,
 				FB66A4382888157E00F9F850 /* Components */,
 			);
@@ -344,6 +349,8 @@
 		FB6CA8C728CCFA3200B20908 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				D106670B28CA5565000E5E32 /* Themes */,
+				D106671028CA998E000E5E32 /* Create Word Bundle */,
 				FB66A439288816B700F9F850 /* MainView.swift */,
 				FB66A4282887EB7100F9F850 /* WelcomeView.swift */,
 				FB66A4502888B5F100F9F850 /* HomeView.swift */,
@@ -378,6 +385,7 @@
 		FBCECE972814847600CD558C /* Word Bundle */ = {
 			isa = PBXGroup;
 			children = (
+				FB3DACC428CF12B300F2FFC1 /* Storage */,
 				FB6CA8C428CCBDF800B20908 /* NetworkLayer */,
 				FB41906F28918F7F00D95C44 /* Repositories */,
 				FB66A44B2888B39800F9F850 /* Models */,
@@ -385,13 +393,10 @@
 				FB66A4252887209300F9F850 /* Localization */,
 				FB0829A12884BA9D00FFFB4B /* Word Bundle.entitlements */,
 				FB08299F2884BA2B00FFFB4B /* Design System */,
-				FBCECEA12814847900CD558C /* Persistence.swift */,
 				FBCECE982814847600CD558C /* WordBundleApp.swift */,
 				FBCECE9C2814847900CD558C /* Assets.xcassets */,
 				FBCECE9E2814847900CD558C /* Preview Content */,
 				FBCECEC72814862600CD558C /* Shared */,
-				FBBBA1F428C9515B00F64A78 /* Word_Bundle.xcdatamodel */,
-				FBBBA1F128C94D7100F64A78 /* Entities.xcdatamodeld */,
 				FBCECED828148CFD00CD558C /* MyPlayground.playground */,
 			);
 			path = "Word Bundle";
@@ -623,7 +628,6 @@
 				FBBBA1F328C94D7100F64A78 /* Entities.xcdatamodeld in Sources */,
 				FBE5450128C66DE40093ABF3 /* LoadingButton.swift in Sources */,
 				D17B645C28C36E6C005CB55D /* SettingsView.swift in Sources */,
-				FBBBA1F528C9515B00F64A78 /* Word_Bundle.xcdatamodel in Sources */,
 				D100617728C7746F00B027C2 /* WordBundleView.swift in Sources */,
 				FBCECEA22814847900CD558C /* Persistence.swift in Sources */,
 				FB66A457288F3EBA00F9F850 /* WordBundle.swift in Sources */,

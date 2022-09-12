@@ -12,7 +12,7 @@ struct WordBundleView: View {
     // MARK: - Properties
     @Environment(\.managedObjectContext) private var viewContext
 
-    @AppStorage(AppStorageKeys.activeWordBundleId()) var activeWordBundleId = WordBundle.example.id
+    @AppStorage(AppStorageKeys.activeWordBundleId()) private var activeWordBundleId = WordBundle.example.id
 
     @FetchRequest private var fetchedEntities: FetchedResults<WordEntity>
     @FetchRequest private var wordBundleEntities: FetchedResults<WordBundleEntity>
@@ -37,6 +37,7 @@ struct WordBundleView: View {
         )
     }
 
+    // MARK: - Body
     var body: some View {
         VStack {
             HStack {
@@ -59,8 +60,8 @@ struct WordBundleView: View {
             enterButton
                 .disabled(textFieldText.isEmpty)
                 .frame(maxWidth: .infinity)
-                .background(DesignSystem.Color.color3().value)
-                .cornerRadius(DesignSystem.Size.small())
+                .background(DesignSystem.Color.color3())
+                .cornerRadius(DesignSystem.Size.xSmall())
                 .padding()
 
             List {
@@ -88,7 +89,7 @@ struct WordBundleView: View {
                 addWord()
             },
             isLoading: $isButtonLoading,
-            style: .init(backgroundColor: DesignSystem.Color.color3().value),
+            style: .init(backgroundColor: DesignSystem.Color.color3()),
             builder: {
                 Text(Localisation.addWord())
                     .foregroundColor(.white)
@@ -133,7 +134,7 @@ struct WordBundleView: View {
                     saveContext()
                 }
             } catch {
-                fatalError("An error occured during encoding word")
+                fatalError("An error occured during encoding word: \(word.word)")
             }
         }
     }

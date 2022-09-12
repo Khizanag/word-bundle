@@ -92,8 +92,8 @@ extension Word {
                         )
                     } ?? [],
                     lexicalCategory: lexicalEntry.lexicalCategory.text,
-                    phrasalVerbs: lexicalEntry.phrasalVerbs?.map(\.text) ?? [], // FIXME: refactor using keyPath
-                    phrases: lexicalEntry.phrases?.map(\.text) ?? [] // FIXME: refactor using keyPath
+                    phrasalVerbs: lexicalEntry.phrasalVerbs?.map(\.text) ?? [],
+                    phrases: lexicalEntry.phrases?.map(\.text) ?? []
                 )
             },
             pronunciation: .init(

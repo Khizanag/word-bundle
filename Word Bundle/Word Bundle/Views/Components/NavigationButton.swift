@@ -24,8 +24,8 @@ struct NavigationButton<DestinationType: View>: View {
                     .padding()
             }
             .frame(maxWidth: .infinity)
-            .background(DesignSystem.Color.color3().value)
-            .cornerRadius(8)
+            .background(DesignSystem.Color.color3())
+            .cornerRadius(DesignSystem.Size.small())
             .padding()
         }
     }

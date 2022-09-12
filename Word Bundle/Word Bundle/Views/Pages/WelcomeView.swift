@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    // MARK: - Properties
     @Environment(\.managedObjectContext) private var viewContext
 
     @AppStorage(AppStorageKeys.isFirstRun()) private var isFirstRun = true
 
+    // MARK: - Body
     var body: some View {
             ScrollView {
                 VStack(alignment: .center) {
@@ -38,7 +40,7 @@ struct WelcomeView: View {
         Text(Localisation.welcomePageTitle())
             .font(.title)
             .fontWeight(.bold)
-            .foregroundColor(DesignSystem.Color.primaryTextDark().value)
+            .foregroundColor(DesignSystem.Color.primaryTextDark())
             .multilineTextAlignment(.center)
             .padding()
             .padding(.horizontal)
@@ -46,7 +48,7 @@ struct WelcomeView: View {
 
     private var descriptionLabel: some View {
         Text(Localisation.welcomePageDescription())
-            .foregroundColor(DesignSystem.Color.secondaryTextDark().value)
+            .foregroundColor(DesignSystem.Color.secondaryTextDark())
             .multilineTextAlignment(.center)
             .padding()
     }

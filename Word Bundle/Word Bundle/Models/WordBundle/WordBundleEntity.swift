@@ -18,12 +18,13 @@ extension WordBundleEntity {
 
     @NSManaged public var id: UUID
     @NSManaged public var name: String
-    @NSManaged public var languageValue: String
     @NSManaged public var creationDate: Date
     @NSManaged public var note: String
     @NSManaged public var isFavourited: Bool
 
-    var language: Language {
+    @NSManaged private var languageValue: String
+
+    public var language: Language {
         get {
             Language(rawValue: languageValue) ?? .english
         }

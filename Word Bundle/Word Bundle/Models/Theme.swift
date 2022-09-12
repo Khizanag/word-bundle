@@ -12,6 +12,13 @@ struct Theme: Identifiable {
     let color: Color
     let opacity = 0.8
 
+    func getColor() -> Color {
+        color.opacity(opacity)
+    }
+}
+
+// MARK: - Static
+extension Theme {
     static func theme(id: Int) -> Theme {
         themes.first(where: { $0.id == id }) ?? example
     }

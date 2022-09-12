@@ -13,13 +13,13 @@ struct RemindersSettingView: View {
         ScrollView {
             VStack {
                 exampleWordComponentView
-                    .padding(.top, DesignSystem.Size.xxLarge())
+                    .padding(.top, DesignSystem.Size.xLarge())
 
                 titleLabel
                     .padding(.top, 64)
 
                 properties
-                    .padding(DesignSystem.Size.xSmall())
+                    .padding(DesignSystem.Size.xxSmall())
 
                 NavigationButton(title: Localisation.getStarted(), destination: MainView())
                     .padding()
@@ -38,33 +38,33 @@ struct RemindersSettingView: View {
                 HStack {
                     Text(Localisation.wordSalubrious())
                         .fontWeight(.bold)
-                        .foregroundColor(DesignSystem.Color.primaryTextLight().value)
+                        .foregroundColor(DesignSystem.Color.primaryTextLight())
                         .multilineTextAlignment(.leading)
 
                     Text("(n.)")
                         .fontWeight(.regular)
-                        .foregroundColor(DesignSystem.Color.secondaryTextLight().value)
+                        .foregroundColor(DesignSystem.Color.secondaryTextLight())
                 }
-                .padding(.vertical, DesignSystem.Size.small())
+                .padding(.vertical, DesignSystem.Size.xSmall())
 
                 Text(Localisation.wordSalubriousDefinition())
                     .font(.footnote)
                     .fontWeight(.regular)
-                    .foregroundColor(DesignSystem.Color.secondaryTextLight().value)
+                    .foregroundColor(DesignSystem.Color.secondaryTextLight())
                     .multilineTextAlignment(.leading)
             }
         }
         .padding(.vertical)
-        .padding(.horizontal, DesignSystem.Size.xxxLarge())
-        .background(DesignSystem.Color.color6().value)
-        .cornerRadius(DesignSystem.Size.small())
+        .padding(.horizontal, DesignSystem.Size.xxLarge())
+        .background(DesignSystem.Color.color6())
+        .cornerRadius(DesignSystem.Size.xSmall())
     }
 
     private var titleLabel: some View {
         Text(Localisation.remindersSettingPageTitle())
             .font(.subheadline)
             .fontWeight(.regular)
-            .foregroundColor(DesignSystem.Color.primaryTextDark().value)
+            .foregroundColor(DesignSystem.Color.primaryTextDark())
             .multilineTextAlignment(.center)
     }
 
@@ -80,7 +80,7 @@ struct RemindersSettingView: View {
         let dateDisplayer: (Date) -> String = { dateFormatter.string(from: $0) }
         let dateUpdater: (Date, Int) -> Date = { $0.addingTimeInterval(.init($1 * 60 * numMinutesPerStep)) }
 
-        return VStack(spacing: DesignSystem.Size.medium()) {
+        return VStack(spacing: DesignSystem.Size.small()) {
             ReminderSettingItem(title: Localisation.howMany(), value: 10, valueDisplayer: { "\($0)x" }, valueUpdater: { max(1, $0 + $1) })
             ReminderSettingItem(title: Localisation.startAt(), value: fromDate, valueDisplayer: dateDisplayer, valueUpdater: dateUpdater)
             ReminderSettingItem(title: Localisation.endAt(), value: toDate, valueDisplayer: dateDisplayer, valueUpdater: dateUpdater)

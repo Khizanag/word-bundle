@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct WordBundlesView: View {
+    // MARK: - Properties
     @Environment(\.managedObjectContext) private var viewContext
 
     @AppStorage(AppStorageKeys.activeWordBundleId()) var activeWordBundleId: UUID = WordBundle.example.id
 
-    @Binding var selection: TabItem
+    @FetchRequest(entity: WordBundleEntity.entity(), sortDescriptors: []) private var wordBundleEntities: FetchedResults<WordBundleEntity>
+
     @State private var isActionSheetPresented = false
 
-    @FetchRequest(entity: WordBundleEntity.entity(), sortDescriptors: [])
-    private var wordBundleEntities: FetchedResults<WordBundleEntity>
-
+    // MARK: - Body
     var body: some View {
         ScrollView {
-            VStack(spacing: DesignSystem.Size.xxxLarge()) {
+            VStack(spacing: DesignSystem.Size.xxLarge()) {
                 NavigationLink(destination: CreateWordBundleView()) {
                     AddWordBundleItemView()
                 }
@@ -52,7 +52,6 @@ struct WordBundlesView: View {
                 Spacer()
             }
         }
-        .navigationBarHidden(true)
     }
 
     private func saveContext() {
@@ -67,6 +66,6 @@ struct WordBundlesView: View {
 
 struct WordBundlesView_Previews: PreviewProvider {
     static var previews: some View {
-        WordBundlesView(selection: .init(projectedValue: .constant(.words)))
+        WordBundlesView()
     }
 }
