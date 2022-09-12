@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ThemesView: View {
+    // MARK: - Properties
     @AppStorage(AppStorageKeys.chosenThemeId()) var chosenThemeId = Theme.example.id
 
     @State var themes: [Theme]
 
+    // MARK: - Body
     var body: some View {
         AspectVGrid(items: themes, aspectRatio: 2/3) { theme in
             ThemeView(theme: theme, chosenThemeId: $chosenThemeId)
-                .padding(DesignSystem.Size.small())
+                .padding(DesignSystem.Size.xSmall())
                 .onTapGesture {
                     withAnimation {
                         chosenThemeId = theme.id

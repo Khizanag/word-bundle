@@ -17,7 +17,6 @@ enum PartOfSpeech {
 }
 
 extension PartOfSpeech {
-    // FIXME: correct forms
     var shortTitle: String {
         switch self {
         case .noun: return "nou"

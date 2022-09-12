@@ -9,19 +9,18 @@ import Foundation
 
 public extension DesignSystem {
     enum Size: Double {
-        // TODO: think about changing naming
-        case xxxLarge = 32
-        case xxLarge  = 24
-        case xLarge   = 20
-        case large    = 16
-        case medium   = 12
-        case small    = 8
-        case xSmall   = 4
-        case xxSmall  = 2
-        case xxxSmall = 1
+        case min      = 1
+        case xxxSmall = 2
+        case xxSmall  = 4
+        case xSmall   = 8
+        case small    = 12
+        case medium   = 16
+        case large    = 20
+        case xLarge   = 24
+        case xxLarge  = 32
+        case xxxLarge = 48
+        case max      = 64
 
-        public func callAsFunction() -> Double {
-            rawValue
-        }
+        public func callAsFunction() -> RawValue { rawValue }
     }
 }

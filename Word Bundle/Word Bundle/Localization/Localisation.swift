@@ -80,7 +80,9 @@ public enum Localisation: String {
 
     // MARK: - AddWordBundleItemView
     case addNewBundle
+}
 
+extension Localisation {
     private var key: String { rawValue }
 
     private var localized: String {

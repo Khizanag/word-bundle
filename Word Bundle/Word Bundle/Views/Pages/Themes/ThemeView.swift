@@ -16,7 +16,7 @@ struct ThemeView: View {
 
     var body: some View {
         ZStack {
-            let rect = RoundedRectangle(cornerRadius: Size.medium())
+            let rect = RoundedRectangle(cornerRadius: Size.small())
             rect.fill(theme.color)
                 .opacity(0.8)
             rect
@@ -29,7 +29,7 @@ struct ThemeView: View {
                         DesignSystem.Image.checkmarkSquareFill()
                             .font(.title3)
                             .foregroundColor(.white)
-                            .padding(Size.small())
+                            .padding(Size.xSmall())
                     }
                     Spacer()
                 }

@@ -22,14 +22,14 @@ struct CreateWordBundleView: View {
 
     private static let items = [
         Item(title: Localisation.language(), image: DesignSystem.Image.circle()),
-        Item(title: Localisation.title(), image: DesignSystem.Image.textformat())
+        Item(title: Localisation.title(), image: DesignSystem.Image.textFormat())
     ]
 
     // MARK: - Body
     var body: some View {
         VStack {
             Steps(state: stepsState, onCreateStep: onCreateStep)
-                .itemSpacing(DesignSystem.Size.small())
+                .itemSpacing(DesignSystem.Size.xSmall())
                 .font(.caption)
                 .padding()
 
@@ -78,7 +78,7 @@ struct CreateWordBundleView: View {
 
             Divider()
         }
-        .padding([.leading, .trailing], DesignSystem.Size.xxxLarge())
+        .padding([.leading, .trailing], DesignSystem.Size.xxLarge())
     }
 
     private var chooseLanguageView: some View {
@@ -93,7 +93,7 @@ struct CreateWordBundleView: View {
                         }
 
                     Divider()
-                        .padding([.leading, .trailing], DesignSystem.Size.xxxLarge())
+                        .padding([.leading, .trailing], DesignSystem.Size.xxLarge())
                 }
             }
         }
@@ -117,7 +117,7 @@ struct CreateWordBundleView: View {
                         .padding()
                 }
                 .frame(maxWidth: .infinity)
-                .background(DesignSystem.Color.color3().value)
+                .background(DesignSystem.Color.color3())
                 .cornerRadius(8)
                 .padding()
             }

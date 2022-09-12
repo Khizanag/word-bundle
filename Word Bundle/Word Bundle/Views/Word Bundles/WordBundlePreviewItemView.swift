@@ -43,12 +43,12 @@ struct WordBundlePreviewItemView: View {
             }
         }
         .overlay(
-            RoundedRectangle(cornerRadius: DesignSystem.Size.xxLarge())
+            RoundedRectangle(cornerRadius: DesignSystem.Size.xLarge())
                     .stroke(Color(hex: 0x039be5), lineWidth: 7)
                     .opacity(activeWordBundleId == wordBundle.id ? 1 : 0)
         )
         .frame(height: 96)
-        .cornerRadius(DesignSystem.Size.xxLarge())
+        .cornerRadius(DesignSystem.Size.xLarge())
         .padding(.horizontal, 32)
     }
 }

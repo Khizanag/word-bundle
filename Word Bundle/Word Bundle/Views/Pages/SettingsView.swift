@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State var words: [Word] = []
+    // MARK: - Body
     var body: some View {
         List {
             NavigationLink(destination: RemindersSettingView()) {
@@ -21,7 +21,6 @@ struct SettingsView: View {
                 Text(Localisation.changeBackgroundTheme())
             }
         }
-        .navigationBarHidden(true)
     }
 }
 

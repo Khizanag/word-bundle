@@ -36,8 +36,8 @@ struct ReminderSettingItem<Value>: View {
             plusButton
         }
         .padding()
-        .background(DesignSystem.Color.secondaryBackground().value)
-        .cornerRadius(DesignSystem.Size.xSmall())
+        .background(DesignSystem.Color.secondaryBackground())
+        .cornerRadius(DesignSystem.Size.xxSmall())
     }
 
     private var minusButton: some View {
