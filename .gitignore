@@ -88,3 +88,6 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# SwiftLint's cache of the shared config it fetches from ios-toolkit
+Word Bundle/.swiftlint/RemoteConfigCache
